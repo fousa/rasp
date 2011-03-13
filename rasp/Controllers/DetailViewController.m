@@ -113,7 +113,7 @@
     UINavigationController *inTwoDaysNavigation = [[UINavigationController alloc] initWithRootViewController:inTwoDays];
     [inTwoDays release];
     
-    [self setViewControllers:[NSArray arrayWithObjects:yesterdayNavigation, todayNavigation, tomorrowNavigation, inTwoDaysNavigation, nil]];
+    [self setViewControllers:[NSArray arrayWithObjects:yesterdayNavigation, todayNavigation, tomorrowNavigation, inTwoDaysNavigation, nil] animated:YES];
     yesterdayNavigation.tabBarItem.image = [UIImage imageNamed:@"yesterday.png"];
     yesterdayNavigation.tabBarItem.title = [NSString stringWithKey:@"title.yesterday"];
     todayNavigation.tabBarItem.image = [UIImage imageNamed:@"today.png"];
