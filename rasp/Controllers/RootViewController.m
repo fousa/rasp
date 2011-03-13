@@ -72,7 +72,7 @@
     
     self.detailViewController.element = element;
 	
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+//	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)dealloc {
