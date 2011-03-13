@@ -36,13 +36,13 @@
 
 - (void)awakeFromNib {
     EmptyViewController *empty = [[EmptyViewController alloc] initWithNibName:@"EmptyViewController" bundle:[NSBundle mainBundle]];
-    empty.title = @"Select a chart";
+    empty.title = [NSString stringWithKey:@"text.select"];
     UINavigationController *emptyNavigation = [[UINavigationController alloc] initWithRootViewController:empty];
     [empty release];
     
     [self setViewControllers:[NSArray arrayWithObjects:emptyNavigation, nil]];
     emptyNavigation.tabBarItem.image = [UIImage imageNamed:@"empty.png"];  
-    emptyNavigation.tabBarItem.title = @"Empty";
+    emptyNavigation.tabBarItem.title = [NSString stringWithKey:@"title.empty"];
     [emptyNavigation release];
 }
 
@@ -89,38 +89,38 @@
 
 - (void)configureView {
     NSDictionary *yesterdayDict = [self chartsFor:@"yesterday"];
-    MWPhotoBrowser *yesterday = [[MWPhotoBrowser alloc] initWithPhotos:[yesterdayDict objectForKey:@"charts"] andTimeStamps:[yesterdayDict objectForKey:@"timeStamps"] andTabTitle:@"Yesterday"];
+    MWPhotoBrowser *yesterday = [[MWPhotoBrowser alloc] initWithPhotos:[yesterdayDict objectForKey:@"charts"] andTimeStamps:[yesterdayDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.yesterday"]];
 	[yesterday setInitialPageIndex:7];
     UINavigationController *yesterdayNavigation = [[UINavigationController alloc] initWithRootViewController:yesterday];
     [yesterday release];
     
     NSDictionary *todayDict = [self chartsFor:@"today"];
-    MWPhotoBrowser *today = [[MWPhotoBrowser alloc] initWithPhotos:[todayDict objectForKey:@"charts"] andTimeStamps:[todayDict objectForKey:@"timeStamps"] andTabTitle:@"Today"];
+    MWPhotoBrowser *today = [[MWPhotoBrowser alloc] initWithPhotos:[todayDict objectForKey:@"charts"] andTimeStamps:[todayDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.today"]];
 	[today setInitialPageIndex:7];
     UINavigationController *todayNavigation = [[UINavigationController alloc] initWithRootViewController:today];
     [today release];
     
     NSDictionary *tomorrowDict = [self chartsFor:@"tomorrow"];
-    MWPhotoBrowser *tomorrow = [[MWPhotoBrowser alloc] initWithPhotos:[tomorrowDict objectForKey:@"charts"] andTimeStamps:[tomorrowDict objectForKey:@"timeStamps"] andTabTitle:@"Tomorrow"];
+    MWPhotoBrowser *tomorrow = [[MWPhotoBrowser alloc] initWithPhotos:[tomorrowDict objectForKey:@"charts"] andTimeStamps:[tomorrowDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.tomorrow"]];
 	[tomorrow setInitialPageIndex:7];
     UINavigationController *tomorrowNavigation = [[UINavigationController alloc] initWithRootViewController:tomorrow];
     [tomorrow release];
     
     NSDictionary *inTwoDaysDict = [self chartsFor:@"in_two_days"];
-    MWPhotoBrowser *inTwoDays = [[MWPhotoBrowser alloc] initWithPhotos:[inTwoDaysDict objectForKey:@"charts"] andTimeStamps:[inTwoDaysDict objectForKey:@"timeStamps"] andTabTitle:@"In 2 Days"];
+    MWPhotoBrowser *inTwoDays = [[MWPhotoBrowser alloc] initWithPhotos:[inTwoDaysDict objectForKey:@"charts"] andTimeStamps:[inTwoDaysDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.intwodays"]];
 	[inTwoDays setInitialPageIndex:7];
     UINavigationController *inTwoDaysNavigation = [[UINavigationController alloc] initWithRootViewController:inTwoDays];
     [inTwoDays release];
     
     [self setViewControllers:[NSArray arrayWithObjects:yesterdayNavigation, todayNavigation, tomorrowNavigation, inTwoDaysNavigation, nil]];
     yesterdayNavigation.tabBarItem.image = [UIImage imageNamed:@"yesterday.png"];
-    yesterdayNavigation.tabBarItem.title = @"Yesterday";
+    yesterdayNavigation.tabBarItem.title = [NSString stringWithKey:@"title.yesterday"];
     todayNavigation.tabBarItem.image = [UIImage imageNamed:@"today.png"];
-    todayNavigation.tabBarItem.title = @"Today";
+    todayNavigation.tabBarItem.title = [NSString stringWithKey:@"title.today"];
     tomorrowNavigation.tabBarItem.image = [UIImage imageNamed:@"tomorrow.png"];
-    tomorrowNavigation.tabBarItem.title = @"Tomorrow";
+    tomorrowNavigation.tabBarItem.title = [NSString stringWithKey:@"title.tomorrow"];
     inTwoDaysNavigation.tabBarItem.image = [UIImage imageNamed:@"in-two-days.png"];
-    inTwoDaysNavigation.tabBarItem.title = @"In 2 Days";
+    inTwoDaysNavigation.tabBarItem.title = [NSString stringWithKey:@"title.intwodays"];
     
     [yesterdayNavigation release];
     [todayNavigation release];
@@ -139,7 +139,7 @@
 #pragma mark - Split view support
 
 - (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController: (UIPopoverController *)pc {
-    barButtonItem.title = @"Charts";
+    barButtonItem.title = [NSString stringWithKey:@"title.charts"];
     _barButtonItem = barButtonItem;
     if (self.viewControllers.count > 0) {
         ((UINavigationController *)[self.viewControllers objectAtIndex:0]).topViewController.navigationItem.leftBarButtonItem = _barButtonItem;

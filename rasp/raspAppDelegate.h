@@ -10,6 +10,9 @@
 @class DetailViewController;
 
 @interface raspAppDelegate : NSObject <UIApplicationDelegate>
++ (raspAppDelegate *)sharedAppDelegate;
+
+- (NSString *)selectedLanguage;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UISplitViewController *splitViewController;

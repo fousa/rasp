@@ -48,7 +48,7 @@ static RaspController *singletonRaspController = nil;
 #pragma mark Loading
 
 - (void)loadMenu {
-	NSURL *url = [NSURL URLWithString:[BASE_URL stringByAppendingString:@"menu"]];
+	NSURL *url = [NSURL URLWithString:[[BASE_URL stringByAppendingString:@"menu?language="] stringByAppendingString:current_language]];
 	
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self];

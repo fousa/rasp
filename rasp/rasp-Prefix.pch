@@ -8,10 +8,15 @@
 #warning "This project uses features only available in iPhone SDK 3.0 and later."
 #endif
 
+#define current_language [[raspAppDelegate sharedAppDelegate] selectedLanguage]
+#define kSelectedLanguageKey @"RaspSelectedLanguage"
+
 //#define BASE_URL @"http://rasp.local/"
 #define BASE_URL @"http://rasp.heroku.com/"
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "NSString+Localization.h"
+    #import "raspAppDelegate.h"
 #endif

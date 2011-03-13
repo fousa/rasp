@@ -31,7 +31,7 @@
 		
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.title = @"Select Chart";
+    self.title = [NSString stringWithKey:@"title.charts"];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -71,8 +71,6 @@
 	NSDictionary *element = [[[_menu objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row];
     
     self.detailViewController.element = element;
-	
-//	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)dealloc {

@@ -14,10 +14,11 @@
 		60058E21132D213500A266FF /* EmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60058E1F132D213200A266FF /* EmptyViewController.m */; };
 		60058E25132D213F00A266FF /* EmptyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60058E23132D213F00A266FF /* EmptyViewController.xib */; };
 		60058E27132D225A00A266FF /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 60058E26132D225A00A266FF /* empty.png */; };
+		60058E34132D348000A266FF /* NSString+Localization.m in Sources */ = {isa = PBXBuildFile; fileRef = 60058E33132D348000A266FF /* NSString+Localization.m */; };
 		602E79CF132CFAC00021FBAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79CE132CFAC00021FBAF /* UIKit.framework */; };
 		602E79D1132CFAC00021FBAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D0132CFAC00021FBAF /* Foundation.framework */; };
 		602E79D3132CFAC00021FBAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D2132CFAC00021FBAF /* CoreGraphics.framework */; };
-		602E79D9132CFAC00021FBAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 602E79D7132CFAC00021FBAF /* InfoPlist.strings */; };
+		602E79D9132CFAC00021FBAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 602E79D7132CFAC00021FBAF /* Localizable.strings */; };
 		602E79DC132CFAC00021FBAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E79DB132CFAC00021FBAF /* main.m */; };
 		602E79DF132CFAC00021FBAF /* raspAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E79DE132CFAC00021FBAF /* raspAppDelegate.m */; };
 		602E79E2132CFAC00021FBAF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602E79E0132CFAC00021FBAF /* MainWindow.xib */; };
@@ -76,12 +77,14 @@
 		60058E1F132D213200A266FF /* EmptyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyViewController.m; sourceTree = "<group>"; };
 		60058E24132D213F00A266FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EmptyViewController.xib; sourceTree = "<group>"; };
 		60058E26132D225A00A266FF /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
+		60058E32132D348000A266FF /* NSString+Localization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Localization.h"; sourceTree = "<group>"; };
+		60058E33132D348000A266FF /* NSString+Localization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Localization.m"; sourceTree = "<group>"; };
 		602E79CA132CFAC00021FBAF /* rasp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rasp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		602E79CE132CFAC00021FBAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		602E79D0132CFAC00021FBAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		602E79D2132CFAC00021FBAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		602E79D6132CFAC00021FBAF /* rasp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rasp-Info.plist"; sourceTree = "<group>"; };
-		602E79D8132CFAC00021FBAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		602E79D8132CFAC00021FBAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		602E79DA132CFAC00021FBAF /* rasp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rasp-Prefix.pch"; sourceTree = "<group>"; };
 		602E79DB132CFAC00021FBAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		602E79DD132CFAC00021FBAF /* raspAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = raspAppDelegate.h; sourceTree = "<group>"; };
@@ -191,6 +194,15 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		60058E31132D347F00A266FF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				60058E32132D348000A266FF /* NSString+Localization.h */,
+				60058E33132D348000A266FF /* NSString+Localization.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		602E79BF132CFAC00021FBAF = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +239,7 @@
 		602E79D4132CFAC00021FBAF /* rasp */ = {
 			isa = PBXGroup;
 			children = (
+				60058E31132D347F00A266FF /* Utilities */,
 				60058E0C132D1E4C00A266FF /* Images */,
 				602E7A1D132CFD810021FBAF /* Frameworks */,
 				602E7A0A132CFB5D0021FBAF /* Controllers */,
@@ -242,7 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				602E79D6132CFAC00021FBAF /* rasp-Info.plist */,
-				602E79D7132CFAC00021FBAF /* InfoPlist.strings */,
+				602E79D7132CFAC00021FBAF /* Localizable.strings */,
 				602E79DA132CFAC00021FBAF /* rasp-Prefix.pch */,
 				602E79DB132CFAC00021FBAF /* main.m */,
 			);
@@ -472,7 +485,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				602E79D9132CFAC00021FBAF /* InfoPlist.strings in Resources */,
+				602E79D9132CFAC00021FBAF /* Localizable.strings in Resources */,
 				602E79E2132CFAC00021FBAF /* MainWindow.xib in Resources */,
 				602E79E8132CFAC00021FBAF /* DetailView.xib in Resources */,
 				60058E0E132D1E4C00A266FF /* yesterday.png in Resources */,
@@ -542,6 +555,7 @@
 				602E7AB0132D026B0021FBAF /* UIViewTap.m in Sources */,
 				602E7AB3132D070C0021FBAF /* MWPhotoBrowser.m in Sources */,
 				60058E21132D213500A266FF /* EmptyViewController.m in Sources */,
+				60058E34132D348000A266FF /* NSString+Localization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,12 +586,12 @@
 			name = EmptyViewController.xib;
 			sourceTree = "<group>";
 		};
-		602E79D7132CFAC00021FBAF /* InfoPlist.strings */ = {
+		602E79D7132CFAC00021FBAF /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				602E79D8132CFAC00021FBAF /* en */,
 			);
-			name = InfoPlist.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		602E79E0132CFAC00021FBAF /* MainWindow.xib */ = {
