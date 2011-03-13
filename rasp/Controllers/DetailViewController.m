@@ -16,6 +16,7 @@
 
 @interface DetailViewController () {
     NSArray *photos;
+    UIBarButtonItem *_barButtonItem;
 }
 @property (nonatomic, retain) UIPopoverController *popoverController;
 @end
@@ -125,6 +126,10 @@
     [todayNavigation release];
     [tomorrowNavigation release];
     [inTwoDaysNavigation release];
+    
+    if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
+        ((UINavigationController *)[self.viewControllers objectAtIndex:0]).topViewController.navigationItem.leftBarButtonItem = _barButtonItem;
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -135,13 +140,15 @@
 
 - (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController: (UIPopoverController *)pc {
     barButtonItem.title = @"Charts";
+    _barButtonItem = barButtonItem;
     if (self.viewControllers.count > 0) {
-        ((UINavigationController *)[self.viewControllers objectAtIndex:0]).topViewController.navigationItem.leftBarButtonItem = barButtonItem;
+        ((UINavigationController *)[self.viewControllers objectAtIndex:0]).topViewController.navigationItem.leftBarButtonItem = _barButtonItem;
     }
     self.popoverController = pc;
 }
 
 - (void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+    _barButtonItem = barButtonItem;
     if (self.viewControllers.count > 0) {
         ((UINavigationController *)[self.viewControllers objectAtIndex:0]).topViewController.navigationItem.leftBarButtonItem = nil;
     }
