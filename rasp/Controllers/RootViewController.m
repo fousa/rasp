@@ -25,6 +25,10 @@
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     
+    self.tableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds] style:UITableViewStyleGrouped];
+	self.tableView.delegate = self;
+	self.tableView.dataSource = self;
+    
     _menu = [[RaspController instance].menu retain];
 }
 
