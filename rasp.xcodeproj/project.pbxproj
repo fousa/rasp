@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60058E0E132D1E4C00A266FF /* yesterday.png in Resources */ = {isa = PBXBuildFile; fileRef = 60058E0D132D1E4C00A266FF /* yesterday.png */; };
+		60058E13132D1F3B00A266FF /* in-two-days.png in Resources */ = {isa = PBXBuildFile; fileRef = 60058E10132D1F3B00A266FF /* in-two-days.png */; };
+		60058E14132D1F3B00A266FF /* today.png in Resources */ = {isa = PBXBuildFile; fileRef = 60058E11132D1F3B00A266FF /* today.png */; };
+		60058E15132D1F3B00A266FF /* tomorrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 60058E12132D1F3B00A266FF /* tomorrow.png */; };
+		60058E21132D213500A266FF /* EmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60058E1F132D213200A266FF /* EmptyViewController.m */; };
+		60058E25132D213F00A266FF /* EmptyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60058E23132D213F00A266FF /* EmptyViewController.xib */; };
+		60058E27132D225A00A266FF /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 60058E26132D225A00A266FF /* empty.png */; };
+		602E79CF132CFAC00021FBAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79CE132CFAC00021FBAF /* UIKit.framework */; };
+		602E79D1132CFAC00021FBAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D0132CFAC00021FBAF /* Foundation.framework */; };
+		602E79D3132CFAC00021FBAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D2132CFAC00021FBAF /* CoreGraphics.framework */; };
+		602E79D9132CFAC00021FBAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 602E79D7132CFAC00021FBAF /* InfoPlist.strings */; };
+		602E79DC132CFAC00021FBAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E79DB132CFAC00021FBAF /* main.m */; };
+		602E79DF132CFAC00021FBAF /* raspAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E79DE132CFAC00021FBAF /* raspAppDelegate.m */; };
+		602E79E2132CFAC00021FBAF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602E79E0132CFAC00021FBAF /* MainWindow.xib */; };
+		602E79E8132CFAC00021FBAF /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602E79E6132CFAC00021FBAF /* DetailView.xib */; };
+		602E79F2132CFAC10021FBAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79CE132CFAC00021FBAF /* UIKit.framework */; };
+		602E79F3132CFAC10021FBAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D0132CFAC00021FBAF /* Foundation.framework */; };
+		602E79F4132CFAC10021FBAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D2132CFAC00021FBAF /* CoreGraphics.framework */; };
+		602E79FC132CFAC10021FBAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 602E79FA132CFAC10021FBAF /* InfoPlist.strings */; };
+		602E79FF132CFAC10021FBAF /* raspTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 602E79FE132CFAC10021FBAF /* raspTests.h */; };
+		602E7A01132CFAC10021FBAF /* raspTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A00132CFAC10021FBAF /* raspTests.m */; };
+		602E7A0F132CFB5D0021FBAF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A0C132CFB5D0021FBAF /* DetailViewController.m */; };
+		602E7A10132CFB5D0021FBAF /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A0E132CFB5D0021FBAF /* RootViewController.m */; };
+		602E7A14132CFBF90021FBAF /* RaspController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A13132CFBF90021FBAF /* RaspController.m */; };
+		602E7A16132CFD2A0021FBAF /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E7A15132CFD2A0021FBAF /* libz.1.2.3.dylib */; };
+		602E7A18132CFD380021FBAF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E7A17132CFD380021FBAF /* SystemConfiguration.framework */; };
+		602E7A1A132CFD420021FBAF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E7A19132CFD420021FBAF /* CFNetwork.framework */; };
+		602E7A1C132CFD550021FBAF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E7A1B132CFD550021FBAF /* MobileCoreServices.framework */; };
+		602E7A42132CFD810021FBAF /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A20132CFD810021FBAF /* ASIAuthenticationDialog.m */; };
+		602E7A43132CFD810021FBAF /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A23132CFD810021FBAF /* ASIDataCompressor.m */; };
+		602E7A44132CFD810021FBAF /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A25132CFD810021FBAF /* ASIDataDecompressor.m */; };
+		602E7A45132CFD810021FBAF /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A27132CFD810021FBAF /* ASIDownloadCache.m */; };
+		602E7A46132CFD810021FBAF /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A29132CFD810021FBAF /* ASIFormDataRequest.m */; };
+		602E7A47132CFD810021FBAF /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A2B132CFD810021FBAF /* ASIHTTPRequest.m */; };
+		602E7A48132CFD810021FBAF /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A2F132CFD810021FBAF /* ASIInputStream.m */; };
+		602E7A49132CFD810021FBAF /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A31132CFD810021FBAF /* ASINetworkQueue.m */; };
+		602E7A4A132CFD810021FBAF /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A36132CFD810021FBAF /* NSObject+SBJSON.m */; };
+		602E7A4B132CFD810021FBAF /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A38132CFD810021FBAF /* NSString+SBJSON.m */; };
+		602E7A4C132CFD810021FBAF /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A3A132CFD810021FBAF /* SBJsonBase.m */; };
+		602E7A4D132CFD810021FBAF /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A3C132CFD810021FBAF /* SBJsonParser.m */; };
+		602E7A4E132CFD810021FBAF /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A3E132CFD810021FBAF /* SBJsonWriter.m */; };
+		602E7A4F132CFD810021FBAF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A41132CFD810021FBAF /* Reachability.m */; };
+		602E7AAB132D026B0021FBAF /* UIImage+Decompress.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A9E132D026B0021FBAF /* UIImage+Decompress.m */; };
+		602E7AAC132D026B0021FBAF /* MWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7AA1132D026B0021FBAF /* MWPhoto.m */; };
+		602E7AAE132D026B0021FBAF /* ZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7AA5132D026B0021FBAF /* ZoomingScrollView.m */; };
+		602E7AAF132D026B0021FBAF /* UIImageViewTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7AA8132D026B0021FBAF /* UIImageViewTap.m */; };
+		602E7AB0132D026B0021FBAF /* UIViewTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7AAA132D026B0021FBAF /* UIViewTap.m */; };
+		602E7AB3132D070C0021FBAF /* MWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7AB2132D070C0021FBAF /* MWPhotoBrowser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		602E79F5132CFAC10021FBAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 602E79C1132CFAC00021FBAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 602E79C9132CFAC00021FBAF;
+			remoteInfo = rasp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		60058E0D132D1E4C00A266FF /* yesterday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yesterday.png; sourceTree = "<group>"; };
+		60058E10132D1F3B00A266FF /* in-two-days.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "in-two-days.png"; sourceTree = "<group>"; };
+		60058E11132D1F3B00A266FF /* today.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = today.png; sourceTree = "<group>"; };
+		60058E12132D1F3B00A266FF /* tomorrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tomorrow.png; sourceTree = "<group>"; };
+		60058E1E132D213100A266FF /* EmptyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyViewController.h; sourceTree = "<group>"; };
+		60058E1F132D213200A266FF /* EmptyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyViewController.m; sourceTree = "<group>"; };
+		60058E24132D213F00A266FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EmptyViewController.xib; sourceTree = "<group>"; };
+		60058E26132D225A00A266FF /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
+		602E79CA132CFAC00021FBAF /* rasp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rasp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		602E79CE132CFAC00021FBAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		602E79D0132CFAC00021FBAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		602E79D2132CFAC00021FBAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		602E79D6132CFAC00021FBAF /* rasp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rasp-Info.plist"; sourceTree = "<group>"; };
+		602E79D8132CFAC00021FBAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		602E79DA132CFAC00021FBAF /* rasp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rasp-Prefix.pch"; sourceTree = "<group>"; };
+		602E79DB132CFAC00021FBAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		602E79DD132CFAC00021FBAF /* raspAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = raspAppDelegate.h; sourceTree = "<group>"; };
+		602E79DE132CFAC00021FBAF /* raspAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = raspAppDelegate.m; sourceTree = "<group>"; };
+		602E79E1132CFAC00021FBAF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		602E79E7132CFAC00021FBAF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
+		602E79F1132CFAC10021FBAF /* raspTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = raspTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		602E79F9132CFAC10021FBAF /* raspTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "raspTests-Info.plist"; sourceTree = "<group>"; };
+		602E79FB132CFAC10021FBAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		602E79FD132CFAC10021FBAF /* raspTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "raspTests-Prefix.pch"; sourceTree = "<group>"; };
+		602E79FE132CFAC10021FBAF /* raspTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = raspTests.h; sourceTree = "<group>"; };
+		602E7A00132CFAC10021FBAF /* raspTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = raspTests.m; sourceTree = "<group>"; };
+		602E7A0B132CFB5D0021FBAF /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		602E7A0C132CFB5D0021FBAF /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		602E7A0D132CFB5D0021FBAF /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		602E7A0E132CFB5D0021FBAF /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		602E7A12132CFBF90021FBAF /* RaspController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaspController.h; sourceTree = "<group>"; };
+		602E7A13132CFBF90021FBAF /* RaspController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaspController.m; sourceTree = "<group>"; };
+		602E7A15132CFD2A0021FBAF /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		602E7A17132CFD380021FBAF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		602E7A19132CFD420021FBAF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		602E7A1B132CFD550021FBAF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		602E7A1F132CFD810021FBAF /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		602E7A20132CFD810021FBAF /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		602E7A21132CFD810021FBAF /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		602E7A22132CFD810021FBAF /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		602E7A23132CFD810021FBAF /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		602E7A24132CFD810021FBAF /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		602E7A25132CFD810021FBAF /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		602E7A26132CFD810021FBAF /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		602E7A27132CFD810021FBAF /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		602E7A28132CFD810021FBAF /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		602E7A29132CFD810021FBAF /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		602E7A2A132CFD810021FBAF /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		602E7A2B132CFD810021FBAF /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		602E7A2C132CFD810021FBAF /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		602E7A2D132CFD810021FBAF /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		602E7A2E132CFD810021FBAF /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		602E7A2F132CFD810021FBAF /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		602E7A30132CFD810021FBAF /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		602E7A31132CFD810021FBAF /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		602E7A32132CFD810021FBAF /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		602E7A34132CFD810021FBAF /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		602E7A35132CFD810021FBAF /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		602E7A36132CFD810021FBAF /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		602E7A37132CFD810021FBAF /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		602E7A38132CFD810021FBAF /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		602E7A39132CFD810021FBAF /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		602E7A3A132CFD810021FBAF /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		602E7A3B132CFD810021FBAF /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		602E7A3C132CFD810021FBAF /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		602E7A3D132CFD810021FBAF /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		602E7A3E132CFD810021FBAF /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		602E7A40132CFD810021FBAF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		602E7A41132CFD810021FBAF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		602E7A9D132D026B0021FBAF /* UIImage+Decompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Decompress.h"; sourceTree = "<group>"; };
+		602E7A9E132D026B0021FBAF /* UIImage+Decompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Decompress.m"; sourceTree = "<group>"; };
+		602E7AA0132D026B0021FBAF /* MWPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhoto.h; sourceTree = "<group>"; };
+		602E7AA1132D026B0021FBAF /* MWPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPhoto.m; sourceTree = "<group>"; };
+		602E7AA4132D026B0021FBAF /* ZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomingScrollView.h; sourceTree = "<group>"; };
+		602E7AA5132D026B0021FBAF /* ZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomingScrollView.m; sourceTree = "<group>"; };
+		602E7AA7132D026B0021FBAF /* UIImageViewTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewTap.h; sourceTree = "<group>"; };
+		602E7AA8132D026B0021FBAF /* UIImageViewTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewTap.m; sourceTree = "<group>"; };
+		602E7AA9132D026B0021FBAF /* UIViewTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewTap.h; sourceTree = "<group>"; };
+		602E7AAA132D026B0021FBAF /* UIViewTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewTap.m; sourceTree = "<group>"; };
+		602E7AB1132D070C0021FBAF /* MWPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhotoBrowser.h; sourceTree = "<group>"; };
+		602E7AB2132D070C0021FBAF /* MWPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPhotoBrowser.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		602E79C7132CFAC00021FBAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				602E7A1C132CFD550021FBAF /* MobileCoreServices.framework in Frameworks */,
+				602E7A1A132CFD420021FBAF /* CFNetwork.framework in Frameworks */,
+				602E7A18132CFD380021FBAF /* SystemConfiguration.framework in Frameworks */,
+				602E7A16132CFD2A0021FBAF /* libz.1.2.3.dylib in Frameworks */,
+				602E79CF132CFAC00021FBAF /* UIKit.framework in Frameworks */,
+				602E79D1132CFAC00021FBAF /* Foundation.framework in Frameworks */,
+				602E79D3132CFAC00021FBAF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		602E79ED132CFAC10021FBAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				602E79F2132CFAC10021FBAF /* UIKit.framework in Frameworks */,
+				602E79F3132CFAC10021FBAF /* Foundation.framework in Frameworks */,
+				602E79F4132CFAC10021FBAF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		60058E0C132D1E4C00A266FF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				60058E26132D225A00A266FF /* empty.png */,
+				60058E10132D1F3B00A266FF /* in-two-days.png */,
+				60058E11132D1F3B00A266FF /* today.png */,
+				60058E12132D1F3B00A266FF /* tomorrow.png */,
+				60058E0D132D1E4C00A266FF /* yesterday.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		602E79BF132CFAC00021FBAF = {
+			isa = PBXGroup;
+			children = (
+				602E79D4132CFAC00021FBAF /* rasp */,
+				602E79F7132CFAC10021FBAF /* raspTests */,
+				602E79CD132CFAC00021FBAF /* Frameworks */,
+				602E79CB132CFAC00021FBAF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		602E79CB132CFAC00021FBAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				602E79CA132CFAC00021FBAF /* rasp.app */,
+				602E79F1132CFAC10021FBAF /* raspTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		602E79CD132CFAC00021FBAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				602E7A1B132CFD550021FBAF /* MobileCoreServices.framework */,
+				602E7A19132CFD420021FBAF /* CFNetwork.framework */,
+				602E7A17132CFD380021FBAF /* SystemConfiguration.framework */,
+				602E7A15132CFD2A0021FBAF /* libz.1.2.3.dylib */,
+				602E79CE132CFAC00021FBAF /* UIKit.framework */,
+				602E79D0132CFAC00021FBAF /* Foundation.framework */,
+				602E79D2132CFAC00021FBAF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		602E79D4132CFAC00021FBAF /* rasp */ = {
+			isa = PBXGroup;
+			children = (
+				60058E0C132D1E4C00A266FF /* Images */,
+				602E7A1D132CFD810021FBAF /* Frameworks */,
+				602E7A0A132CFB5D0021FBAF /* Controllers */,
+				602E79DD132CFAC00021FBAF /* raspAppDelegate.h */,
+				602E79DE132CFAC00021FBAF /* raspAppDelegate.m */,
+				602E7A11132CFB770021FBAF /* XIB */,
+				602E79D5132CFAC00021FBAF /* Supporting Files */,
+			);
+			path = rasp;
+			sourceTree = "<group>";
+		};
+		602E79D5132CFAC00021FBAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				602E79D6132CFAC00021FBAF /* rasp-Info.plist */,
+				602E79D7132CFAC00021FBAF /* InfoPlist.strings */,
+				602E79DA132CFAC00021FBAF /* rasp-Prefix.pch */,
+				602E79DB132CFAC00021FBAF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		602E79F7132CFAC10021FBAF /* raspTests */ = {
+			isa = PBXGroup;
+			children = (
+				602E79FE132CFAC10021FBAF /* raspTests.h */,
+				602E7A00132CFAC10021FBAF /* raspTests.m */,
+				602E79F8132CFAC10021FBAF /* Supporting Files */,
+			);
+			path = raspTests;
+			sourceTree = "<group>";
+		};
+		602E79F8132CFAC10021FBAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				602E79F9132CFAC10021FBAF /* raspTests-Info.plist */,
+				602E79FA132CFAC10021FBAF /* InfoPlist.strings */,
+				602E79FD132CFAC10021FBAF /* raspTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		602E7A0A132CFB5D0021FBAF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				602E7AB1132D070C0021FBAF /* MWPhotoBrowser.h */,
+				602E7AB2132D070C0021FBAF /* MWPhotoBrowser.m */,
+				602E7A0B132CFB5D0021FBAF /* DetailViewController.h */,
+				602E7A0C132CFB5D0021FBAF /* DetailViewController.m */,
+				602E7A0D132CFB5D0021FBAF /* RootViewController.h */,
+				602E7A0E132CFB5D0021FBAF /* RootViewController.m */,
+				602E7A12132CFBF90021FBAF /* RaspController.h */,
+				602E7A13132CFBF90021FBAF /* RaspController.m */,
+				60058E1E132D213100A266FF /* EmptyViewController.h */,
+				60058E1F132D213200A266FF /* EmptyViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		602E7A11132CFB770021FBAF /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				60058E23132D213F00A266FF /* EmptyViewController.xib */,
+				602E79E0132CFAC00021FBAF /* MainWindow.xib */,
+				602E79E6132CFAC00021FBAF /* DetailView.xib */,
+			);
+			name = XIB;
+			sourceTree = "<group>";
+		};
+		602E7A1D132CFD810021FBAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				602E7A9B132D026B0021FBAF /* MWPhotoBrowser */,
+				602E7A1E132CFD810021FBAF /* ASIHttpRequest */,
+				602E7A33132CFD810021FBAF /* JSON */,
+				602E7A3F132CFD810021FBAF /* Reachability */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		602E7A1E132CFD810021FBAF /* ASIHttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				602E7A1F132CFD810021FBAF /* ASIAuthenticationDialog.h */,
+				602E7A20132CFD810021FBAF /* ASIAuthenticationDialog.m */,
+				602E7A21132CFD810021FBAF /* ASICacheDelegate.h */,
+				602E7A22132CFD810021FBAF /* ASIDataCompressor.h */,
+				602E7A23132CFD810021FBAF /* ASIDataCompressor.m */,
+				602E7A24132CFD810021FBAF /* ASIDataDecompressor.h */,
+				602E7A25132CFD810021FBAF /* ASIDataDecompressor.m */,
+				602E7A26132CFD810021FBAF /* ASIDownloadCache.h */,
+				602E7A27132CFD810021FBAF /* ASIDownloadCache.m */,
+				602E7A28132CFD810021FBAF /* ASIFormDataRequest.h */,
+				602E7A29132CFD810021FBAF /* ASIFormDataRequest.m */,
+				602E7A2A132CFD810021FBAF /* ASIHTTPRequest.h */,
+				602E7A2B132CFD810021FBAF /* ASIHTTPRequest.m */,
+				602E7A2C132CFD810021FBAF /* ASIHTTPRequestConfig.h */,
+				602E7A2D132CFD810021FBAF /* ASIHTTPRequestDelegate.h */,
+				602E7A2E132CFD810021FBAF /* ASIInputStream.h */,
+				602E7A2F132CFD810021FBAF /* ASIInputStream.m */,
+				602E7A30132CFD810021FBAF /* ASINetworkQueue.h */,
+				602E7A31132CFD810021FBAF /* ASINetworkQueue.m */,
+				602E7A32132CFD810021FBAF /* ASIProgressDelegate.h */,
+			);
+			path = ASIHttpRequest;
+			sourceTree = "<group>";
+		};
+		602E7A33132CFD810021FBAF /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				602E7A34132CFD810021FBAF /* JSON.h */,
+				602E7A35132CFD810021FBAF /* NSObject+SBJSON.h */,
+				602E7A36132CFD810021FBAF /* NSObject+SBJSON.m */,
+				602E7A37132CFD810021FBAF /* NSString+SBJSON.h */,
+				602E7A38132CFD810021FBAF /* NSString+SBJSON.m */,
+				602E7A39132CFD810021FBAF /* SBJsonBase.h */,
+				602E7A3A132CFD810021FBAF /* SBJsonBase.m */,
+				602E7A3B132CFD810021FBAF /* SBJsonParser.h */,
+				602E7A3C132CFD810021FBAF /* SBJsonParser.m */,
+				602E7A3D132CFD810021FBAF /* SBJsonWriter.h */,
+				602E7A3E132CFD810021FBAF /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		602E7A3F132CFD810021FBAF /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				602E7A40132CFD810021FBAF /* Reachability.h */,
+				602E7A41132CFD810021FBAF /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		602E7A9B132D026B0021FBAF /* MWPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				602E7A9C132D026B0021FBAF /* Categories */,
+				602E7A9F132D026B0021FBAF /* Classes */,
+				602E7AA6132D026B0021FBAF /* Subclasses */,
+			);
+			path = MWPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		602E7A9C132D026B0021FBAF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				602E7A9D132D026B0021FBAF /* UIImage+Decompress.h */,
+				602E7A9E132D026B0021FBAF /* UIImage+Decompress.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		602E7A9F132D026B0021FBAF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				602E7AA0132D026B0021FBAF /* MWPhoto.h */,
+				602E7AA1132D026B0021FBAF /* MWPhoto.m */,
+				602E7AA4132D026B0021FBAF /* ZoomingScrollView.h */,
+				602E7AA5132D026B0021FBAF /* ZoomingScrollView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		602E7AA6132D026B0021FBAF /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				602E7AA7132D026B0021FBAF /* UIImageViewTap.h */,
+				602E7AA8132D026B0021FBAF /* UIImageViewTap.m */,
+				602E7AA9132D026B0021FBAF /* UIViewTap.h */,
+				602E7AAA132D026B0021FBAF /* UIViewTap.m */,
+			);
+			path = Subclasses;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		602E79C9132CFAC00021FBAF /* rasp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 602E7A04132CFAC10021FBAF /* Build configuration list for PBXNativeTarget "rasp" */;
+			buildPhases = (
+				602E79C6132CFAC00021FBAF /* Sources */,
+				602E79C7132CFAC00021FBAF /* Frameworks */,
+				602E79C8132CFAC00021FBAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rasp;
+			productName = rasp;
+			productReference = 602E79CA132CFAC00021FBAF /* rasp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		602E79F0132CFAC10021FBAF /* raspTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 602E7A07132CFAC10021FBAF /* Build configuration list for PBXNativeTarget "raspTests" */;
+			buildPhases = (
+				602E79EC132CFAC10021FBAF /* Sources */,
+				602E79ED132CFAC10021FBAF /* Frameworks */,
+				602E79EE132CFAC10021FBAF /* Resources */,
+				602E79EF132CFAC10021FBAF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				602E79F6132CFAC10021FBAF /* PBXTargetDependency */,
+			);
+			name = raspTests;
+			productName = raspTests;
+			productReference = 602E79F1132CFAC10021FBAF /* raspTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		602E79C1132CFAC00021FBAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = 10to1;
+			};
+			buildConfigurationList = 602E79C4132CFAC00021FBAF /* Build configuration list for PBXProject "rasp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 602E79BF132CFAC00021FBAF;
+			productRefGroup = 602E79CB132CFAC00021FBAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				602E79C9132CFAC00021FBAF /* rasp */,
+				602E79F0132CFAC10021FBAF /* raspTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		602E79C8132CFAC00021FBAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				602E79D9132CFAC00021FBAF /* InfoPlist.strings in Resources */,
+				602E79E2132CFAC00021FBAF /* MainWindow.xib in Resources */,
+				602E79E8132CFAC00021FBAF /* DetailView.xib in Resources */,
+				60058E0E132D1E4C00A266FF /* yesterday.png in Resources */,
+				60058E13132D1F3B00A266FF /* in-two-days.png in Resources */,
+				60058E14132D1F3B00A266FF /* today.png in Resources */,
+				60058E15132D1F3B00A266FF /* tomorrow.png in Resources */,
+				60058E25132D213F00A266FF /* EmptyViewController.xib in Resources */,
+				60058E27132D225A00A266FF /* empty.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		602E79EE132CFAC10021FBAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				602E79FC132CFAC10021FBAF /* InfoPlist.strings in Resources */,
+				602E79FF132CFAC10021FBAF /* raspTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		602E79EF132CFAC10021FBAF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		602E79C6132CFAC00021FBAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				602E79DC132CFAC00021FBAF /* main.m in Sources */,
+				602E79DF132CFAC00021FBAF /* raspAppDelegate.m in Sources */,
+				602E7A0F132CFB5D0021FBAF /* DetailViewController.m in Sources */,
+				602E7A10132CFB5D0021FBAF /* RootViewController.m in Sources */,
+				602E7A14132CFBF90021FBAF /* RaspController.m in Sources */,
+				602E7A42132CFD810021FBAF /* ASIAuthenticationDialog.m in Sources */,
+				602E7A43132CFD810021FBAF /* ASIDataCompressor.m in Sources */,
+				602E7A44132CFD810021FBAF /* ASIDataDecompressor.m in Sources */,
+				602E7A45132CFD810021FBAF /* ASIDownloadCache.m in Sources */,
+				602E7A46132CFD810021FBAF /* ASIFormDataRequest.m in Sources */,
+				602E7A47132CFD810021FBAF /* ASIHTTPRequest.m in Sources */,
+				602E7A48132CFD810021FBAF /* ASIInputStream.m in Sources */,
+				602E7A49132CFD810021FBAF /* ASINetworkQueue.m in Sources */,
+				602E7A4A132CFD810021FBAF /* NSObject+SBJSON.m in Sources */,
+				602E7A4B132CFD810021FBAF /* NSString+SBJSON.m in Sources */,
+				602E7A4C132CFD810021FBAF /* SBJsonBase.m in Sources */,
+				602E7A4D132CFD810021FBAF /* SBJsonParser.m in Sources */,
+				602E7A4E132CFD810021FBAF /* SBJsonWriter.m in Sources */,
+				602E7A4F132CFD810021FBAF /* Reachability.m in Sources */,
+				602E7AAB132D026B0021FBAF /* UIImage+Decompress.m in Sources */,
+				602E7AAC132D026B0021FBAF /* MWPhoto.m in Sources */,
+				602E7AAE132D026B0021FBAF /* ZoomingScrollView.m in Sources */,
+				602E7AAF132D026B0021FBAF /* UIImageViewTap.m in Sources */,
+				602E7AB0132D026B0021FBAF /* UIViewTap.m in Sources */,
+				602E7AB3132D070C0021FBAF /* MWPhotoBrowser.m in Sources */,
+				60058E21132D213500A266FF /* EmptyViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		602E79EC132CFAC10021FBAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				602E7A01132CFAC10021FBAF /* raspTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		602E79F6132CFAC10021FBAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 602E79C9132CFAC00021FBAF /* rasp */;
+			targetProxy = 602E79F5132CFAC10021FBAF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		60058E23132D213F00A266FF /* EmptyViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60058E24132D213F00A266FF /* en */,
+			);
+			name = EmptyViewController.xib;
+			sourceTree = "<group>";
+		};
+		602E79D7132CFAC00021FBAF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				602E79D8132CFAC00021FBAF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		602E79E0132CFAC00021FBAF /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				602E79E1132CFAC00021FBAF /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		602E79E6132CFAC00021FBAF /* DetailView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				602E79E7132CFAC00021FBAF /* en */,
+			);
+			name = DetailView.xib;
+			sourceTree = "<group>";
+		};
+		602E79FA132CFAC10021FBAF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				602E79FB132CFAC10021FBAF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		602E7A02132CFAC10021FBAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		602E7A03132CFAC10021FBAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		602E7A05132CFAC10021FBAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "rasp/rasp-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "rasp/rasp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		602E7A06132CFAC10021FBAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "rasp/rasp-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "rasp/rasp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		602E7A08132CFAC10021FBAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/rasp.app/rasp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "raspTests/raspTests-Prefix.pch";
+				INFOPLIST_FILE = "raspTests/raspTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		602E7A09132CFAC10021FBAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/rasp.app/rasp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "raspTests/raspTests-Prefix.pch";
+				INFOPLIST_FILE = "raspTests/raspTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		602E79C4132CFAC00021FBAF /* Build configuration list for PBXProject "rasp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				602E7A02132CFAC10021FBAF /* Debug */,
+				602E7A03132CFAC10021FBAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		602E7A04132CFAC10021FBAF /* Build configuration list for PBXNativeTarget "rasp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				602E7A05132CFAC10021FBAF /* Debug */,
+				602E7A06132CFAC10021FBAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		602E7A07132CFAC10021FBAF /* Build configuration list for PBXNativeTarget "raspTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				602E7A08132CFAC10021FBAF /* Debug */,
+				602E7A09132CFAC10021FBAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 602E79C1132CFAC00021FBAF /* Project object */;
+}
