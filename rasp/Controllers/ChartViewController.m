@@ -98,9 +98,9 @@
     [inTwoDays release];
 }
 
-- (void)updateTitle:(NSString *)aTitle andTabTitle:(NSString *)aTabTitle {
+- (void)updateTitle:(NSString *)aTitle andTabTitle:(NSString *)aTabTitle onBrowser:(MWPhotoBrowser *)browser {
     self.title = aTitle;
-    self.selectedViewController.tabBarItem.title = aTabTitle;
+    browser.tabBarItem.title = aTabTitle;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

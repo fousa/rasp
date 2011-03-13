@@ -356,7 +356,7 @@
 #pragma mark Navigation
 
 - (void)updateNavigation {
-    if ([self.delegate respondsToSelector:@selector(updateTitle:andTabTitle:)]) {
+    if ([self.delegate respondsToSelector:@selector(updateTitle:andTabTitle:onBrowser:)]) {
         NSString *time = [timeStamps objectAtIndex:currentPageIndex];
         NSString *aTitle;
         if ([time length] > 4) {
@@ -364,7 +364,7 @@
         } else {
             aTitle = [NSString stringWithFormat:@"%@:%@", [time substringToIndex:2], [time substringFromIndex:2]];
         }
-        [self.delegate performSelector:@selector(updateTitle:andTabTitle:) withObject:aTitle withObject:tabTitle];
+        [self.delegate updateTitle:aTitle andTabTitle:tabTitle onBrowser:self];
     }
 }
 

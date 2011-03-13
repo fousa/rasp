@@ -7,14 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "MWPhoto.h"
 
 @class ZoomingScrollView;
-
-@protocol MWPhotoBrowserDelegate <NSObject>
-@required
-- (void)updateTitle:(NSString *)aTitle andTabTitle:(NSString *)aTabTitle;
-@end
 
 @interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, MWPhotoDelegate> {
 	
@@ -35,7 +31,7 @@
 	BOOL rotating;
 }
 
-@property (nonatomic, retain) id<MWPhotoBrowserDelegate> delegate;
+@property (nonatomic, retain) id delegate;
 
 // Init
 - (id)initWithPhotos:(NSArray *)photosArray andTimeStamps:(NSArray *)timeStampsArray andTabTitle:(NSString *)aTabTitle;
@@ -73,3 +69,7 @@
 
 @end
 
+@protocol MWPhotoBrowserDelegate <NSObject>
+@required
+- (void)updateTitle:(NSString *)aTitle andTabTitle:(NSString *)aTabTitle onBrowser:(MWPhotoBrowser *)browser;
+@end
