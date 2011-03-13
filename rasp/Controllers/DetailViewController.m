@@ -14,20 +14,24 @@
 #import "MWPhoto.h"
 #import "MWPhotoBrowser.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () {
+    NSArray *photos;
+}
 @property (nonatomic, retain) UIPopoverController *popoverController;
+@end
+
+@interface DetailViewController (View)
 - (void)configureView;
 @end
 
 @implementation DetailViewController
 
 @synthesize toolbar=_toolbar;
-
 @synthesize element=_element;
-
 @synthesize detailDescriptionLabel=_detailDescriptionLabel;
-
 @synthesize popoverController=_myPopoverController;
+
+#pragma mark - Initialization
 
 - (void)awakeFromNib {
     EmptyViewController *empty = [[EmptyViewController alloc] initWithNibName:@"EmptyViewController" bundle:[NSBundle mainBundle]];
@@ -41,18 +45,13 @@
     [emptyNavigation release];
 }
 
-#pragma mark - Managing the detail item
+#pragma mark - Detail element
 
-/*
- When setting the detail item, update the view and dismiss the popover controller if it's showing.
- */
-- (void)setElement:(NSDictionary *)anElement
-{
+- (void)setElement:(NSDictionary *)anElement {
     if (_element != anElement) {
         [_element release];
         _element = [anElement retain];
         
-        // Update the view.
         [self configureView];
     }
 
@@ -87,8 +86,7 @@
     return dict;
 }
 
-- (void)configureView
-{
+- (void)configureView {
     NSDictionary *yesterdayDict = [self chartsFor:@"yesterday"];
     MWPhotoBrowser *yesterday = [[MWPhotoBrowser alloc] initWithPhotos:[yesterdayDict objectForKey:@"charts"] andTimeStamps:[yesterdayDict objectForKey:@"timeStamps"] andTabTitle:@"Yesterday"];
 	[yesterday setInitialPageIndex:7];
@@ -135,8 +133,7 @@
 
 #pragma mark - Split view support
 
-- (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController: (UIPopoverController *)pc
-{
+- (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController: (UIPopoverController *)pc {
     barButtonItem.title = @"Charts";
     if (self.viewControllers.count > 0) {
         ((UINavigationController *)[self.viewControllers objectAtIndex:0]).topViewController.navigationItem.leftBarButtonItem = barButtonItem;
@@ -144,26 +141,21 @@
     self.popoverController = pc;
 }
 
-// Called when the view is shown again in the split view, invalidating the button and popover controller.
-- (void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
+- (void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
     if (self.viewControllers.count > 0) {
         ((UINavigationController *)[self.viewControllers objectAtIndex:0]).topViewController.navigationItem.leftBarButtonItem = nil;
     }
     self.popoverController = nil;
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
 	[super viewDidUnload];
 
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
 	self.popoverController = nil;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
+    [photos release], photos = nil;
     [_myPopoverController release];
     [_toolbar release];
     [_element release];

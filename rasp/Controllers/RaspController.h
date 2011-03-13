@@ -6,8 +6,6 @@
 //  Copyright 2011 10to1. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface RaspController : NSObject
 @property (nonatomic, readonly) NSArray *menu;
 

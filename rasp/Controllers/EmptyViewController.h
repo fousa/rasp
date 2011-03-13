@@ -6,11 +6,6 @@
 //  Copyright 2011 10to1. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-
-@interface EmptyViewController : UIViewController {
-    
-}
+@interface EmptyViewController : UIViewController
 
 @end

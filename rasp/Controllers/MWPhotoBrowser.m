@@ -58,10 +58,11 @@
 }
 
 - (void)dealloc {
-	[photos release];
-	[pagingScrollView release];
-	[visiblePages release];
-	[recycledPages release];
+    [timeStamps release], timeStamps = nil;
+	[photos release], photos = nil;
+	[pagingScrollView release], pagingScrollView = nil;
+	[visiblePages release], visiblePages = nil;
+	[recycledPages release], recycledPages = nil;
     [super dealloc];
 }
 

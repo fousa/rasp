@@ -67,4 +67,12 @@ static RaspController *singletonRaspController = nil;
 	}
 }
 
+#pragma mark -
+#pragma mark Memory
+
+- (void)dealloc {
+    [_menu release], _menu = nil;
+    [super dealloc];
+}
+
 @end

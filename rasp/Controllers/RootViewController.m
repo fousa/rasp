@@ -29,25 +29,9 @@
 }
 
 		
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.title = @"Select Chart";
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -91,9 +75,10 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)dealloc
-{
-    [detailViewController release];
+- (void)dealloc {
+    [_menu release], _menu = nil;
+    [detailViewController release], detailViewController = nil;
+    
     [super dealloc];
 }
 

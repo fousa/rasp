@@ -6,14 +6,9 @@
 //  Copyright 2011 10to1. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @class DetailViewController;
 
-@interface RootViewController : UITableViewController {
-
-}
-
+@interface RootViewController : UITableViewController
 		
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 
