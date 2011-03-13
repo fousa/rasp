@@ -23,14 +23,20 @@
 		60058E56132D445200A266FF /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 60058E55132D445200A266FF /* Default-Portrait~ipad.png */; };
 		60058E58132D445C00A266FF /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 60058E57132D445B00A266FF /* Default-Landscape~ipad.png */; };
 		60058E5A132D46AD00A266FF /* filler.png in Resources */ = {isa = PBXBuildFile; fileRef = 60058E59132D46AD00A266FF /* filler.png */; };
+		60058EA2132D4BC500A266FF /* DetailView-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60058E9E132D4BC500A266FF /* DetailView-iPad.xib */; };
+		60058EA3132D4BC500A266FF /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60058EA0132D4BC500A266FF /* MainWindow-iPad.xib */; };
+		60058EA7132D4BFA00A266FF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60058EA5132D4BEB00A266FF /* MenuViewController.m */; };
+		60058EAB132D4C5500A266FF /* raspAppDelegate-iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 60058EAA132D4C4600A266FF /* raspAppDelegate-iPhone.m */; };
+		60058EAE132D4C9F00A266FF /* raspAppDelegate-iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 60058EAD132D4C8C00A266FF /* raspAppDelegate-iPad.m */; };
+		60058EB1132D504000A266FF /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60058EAF132D504000A266FF /* MainWindow-iPhone.xib */; };
+		60058EB5132D56A600A266FF /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60058EB3132D567F00A266FF /* ChartViewController.m */; };
+		60058EB9132D5E0B00A266FF /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60058EB7132D5E0B00A266FF /* ChartViewController.xib */; };
 		602E79CF132CFAC00021FBAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79CE132CFAC00021FBAF /* UIKit.framework */; };
 		602E79D1132CFAC00021FBAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D0132CFAC00021FBAF /* Foundation.framework */; };
 		602E79D3132CFAC00021FBAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D2132CFAC00021FBAF /* CoreGraphics.framework */; };
 		602E79D9132CFAC00021FBAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 602E79D7132CFAC00021FBAF /* Localizable.strings */; };
 		602E79DC132CFAC00021FBAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E79DB132CFAC00021FBAF /* main.m */; };
 		602E79DF132CFAC00021FBAF /* raspAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E79DE132CFAC00021FBAF /* raspAppDelegate.m */; };
-		602E79E2132CFAC00021FBAF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602E79E0132CFAC00021FBAF /* MainWindow.xib */; };
-		602E79E8132CFAC00021FBAF /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602E79E6132CFAC00021FBAF /* DetailView.xib */; };
 		602E79F2132CFAC10021FBAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79CE132CFAC00021FBAF /* UIKit.framework */; };
 		602E79F3132CFAC10021FBAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D0132CFAC00021FBAF /* Foundation.framework */; };
 		602E79F4132CFAC10021FBAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D2132CFAC00021FBAF /* CoreGraphics.framework */; };
@@ -95,6 +101,18 @@
 		60058E55132D445200A266FF /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		60058E57132D445B00A266FF /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		60058E59132D46AD00A266FF /* filler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filler.png; sourceTree = "<group>"; };
+		60058E9F132D4BC500A266FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/DetailView-iPad.xib"; sourceTree = "<group>"; };
+		60058EA1132D4BC500A266FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		60058EA4132D4BE900A266FF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		60058EA5132D4BEB00A266FF /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		60058EA9132D4C4000A266FF /* raspAppDelegate-iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "raspAppDelegate-iPhone.h"; sourceTree = "<group>"; };
+		60058EAA132D4C4600A266FF /* raspAppDelegate-iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "raspAppDelegate-iPhone.m"; sourceTree = "<group>"; };
+		60058EAC132D4C8500A266FF /* raspAppDelegate-iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "raspAppDelegate-iPad.h"; sourceTree = "<group>"; };
+		60058EAD132D4C8C00A266FF /* raspAppDelegate-iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "raspAppDelegate-iPad.m"; sourceTree = "<group>"; };
+		60058EB0132D504000A266FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/MainWindow-iPhone.xib"; sourceTree = "<group>"; };
+		60058EB2132D567A00A266FF /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
+		60058EB3132D567F00A266FF /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
+		60058EB8132D5E0B00A266FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ChartViewController.xib; sourceTree = "<group>"; };
 		602E79CA132CFAC00021FBAF /* rasp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rasp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		602E79CE132CFAC00021FBAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		602E79D0132CFAC00021FBAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -105,8 +123,6 @@
 		602E79DB132CFAC00021FBAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		602E79DD132CFAC00021FBAF /* raspAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = raspAppDelegate.h; sourceTree = "<group>"; };
 		602E79DE132CFAC00021FBAF /* raspAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = raspAppDelegate.m; sourceTree = "<group>"; };
-		602E79E1132CFAC00021FBAF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		602E79E7132CFAC00021FBAF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
 		602E79F1132CFAC10021FBAF /* raspTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = raspTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		602E79F9132CFAC10021FBAF /* raspTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "raspTests-Info.plist"; sourceTree = "<group>"; };
 		602E79FB132CFAC10021FBAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -269,6 +285,10 @@
 				602E7A0A132CFB5D0021FBAF /* Controllers */,
 				602E79DD132CFAC00021FBAF /* raspAppDelegate.h */,
 				602E79DE132CFAC00021FBAF /* raspAppDelegate.m */,
+				60058EA9132D4C4000A266FF /* raspAppDelegate-iPhone.h */,
+				60058EAA132D4C4600A266FF /* raspAppDelegate-iPhone.m */,
+				60058EAC132D4C8500A266FF /* raspAppDelegate-iPad.h */,
+				60058EAD132D4C8C00A266FF /* raspAppDelegate-iPad.m */,
 				602E7A11132CFB770021FBAF /* XIB */,
 				602E79D5132CFAC00021FBAF /* Supporting Files */,
 			);
@@ -319,6 +339,10 @@
 				602E7A13132CFBF90021FBAF /* RaspController.m */,
 				60058E1E132D213100A266FF /* EmptyViewController.h */,
 				60058E1F132D213200A266FF /* EmptyViewController.m */,
+				60058EA4132D4BE900A266FF /* MenuViewController.h */,
+				60058EA5132D4BEB00A266FF /* MenuViewController.m */,
+				60058EB2132D567A00A266FF /* ChartViewController.h */,
+				60058EB3132D567F00A266FF /* ChartViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -326,9 +350,11 @@
 		602E7A11132CFB770021FBAF /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				60058EB7132D5E0B00A266FF /* ChartViewController.xib */,
+				60058EA0132D4BC500A266FF /* MainWindow-iPad.xib */,
+				60058EAF132D504000A266FF /* MainWindow-iPhone.xib */,
+				60058E9E132D4BC500A266FF /* DetailView-iPad.xib */,
 				60058E23132D213F00A266FF /* EmptyViewController.xib */,
-				602E79E0132CFAC00021FBAF /* MainWindow.xib */,
-				602E79E6132CFAC00021FBAF /* DetailView.xib */,
 			);
 			name = XIB;
 			sourceTree = "<group>";
@@ -510,8 +536,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				602E79D9132CFAC00021FBAF /* Localizable.strings in Resources */,
-				602E79E2132CFAC00021FBAF /* MainWindow.xib in Resources */,
-				602E79E8132CFAC00021FBAF /* DetailView.xib in Resources */,
 				60058E0E132D1E4C00A266FF /* yesterday.png in Resources */,
 				60058E13132D1F3B00A266FF /* in-two-days.png in Resources */,
 				60058E14132D1F3B00A266FF /* today.png in Resources */,
@@ -526,6 +550,10 @@
 				60058E56132D445200A266FF /* Default-Portrait~ipad.png in Resources */,
 				60058E58132D445C00A266FF /* Default-Landscape~ipad.png in Resources */,
 				60058E5A132D46AD00A266FF /* filler.png in Resources */,
+				60058EA2132D4BC500A266FF /* DetailView-iPad.xib in Resources */,
+				60058EA3132D4BC500A266FF /* MainWindow-iPad.xib in Resources */,
+				60058EB1132D504000A266FF /* MainWindow-iPhone.xib in Resources */,
+				60058EB9132D5E0B00A266FF /* ChartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +616,10 @@
 				602E7AB3132D070C0021FBAF /* MWPhotoBrowser.m in Sources */,
 				60058E21132D213500A266FF /* EmptyViewController.m in Sources */,
 				60058E34132D348000A266FF /* NSString+Localization.m in Sources */,
+				60058EA7132D4BFA00A266FF /* MenuViewController.m in Sources */,
+				60058EAB132D4C5500A266FF /* raspAppDelegate-iPhone.m in Sources */,
+				60058EAE132D4C9F00A266FF /* raspAppDelegate-iPad.m in Sources */,
+				60058EB5132D56A600A266FF /* ChartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,28 +650,44 @@
 			name = EmptyViewController.xib;
 			sourceTree = "<group>";
 		};
+		60058E9E132D4BC500A266FF /* DetailView-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60058E9F132D4BC500A266FF /* en */,
+			);
+			name = "DetailView-iPad.xib";
+			sourceTree = "<group>";
+		};
+		60058EA0132D4BC500A266FF /* MainWindow-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60058EA1132D4BC500A266FF /* en */,
+			);
+			name = "MainWindow-iPad.xib";
+			sourceTree = "<group>";
+		};
+		60058EAF132D504000A266FF /* MainWindow-iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60058EB0132D504000A266FF /* en */,
+			);
+			name = "MainWindow-iPhone.xib";
+			sourceTree = "<group>";
+		};
+		60058EB7132D5E0B00A266FF /* ChartViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60058EB8132D5E0B00A266FF /* en */,
+			);
+			name = ChartViewController.xib;
+			sourceTree = "<group>";
+		};
 		602E79D7132CFAC00021FBAF /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				602E79D8132CFAC00021FBAF /* en */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		602E79E0132CFAC00021FBAF /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				602E79E1132CFAC00021FBAF /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		602E79E6132CFAC00021FBAF /* DetailView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				602E79E7132CFAC00021FBAF /* en */,
-			);
-			name = DetailView.xib;
 			sourceTree = "<group>";
 		};
 		602E79FA132CFAC10021FBAF /* InfoPlist.strings */ = {

@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  ChartViewController.h
 //  rasp
 //
 //  Created by Jelle Vandebeeck on 13/03/11.
@@ -8,7 +8,7 @@
 
 #import "MWPhotoBrowser.h"
 
-@interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, MWPhotoBrowserDelegate>
+@interface ChartViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, MWPhotoBrowserDelegate>
 @property (nonatomic, retain) NSDictionary *element;
 
 - (NSDictionary *)chartsFor:(NSString *)period;

@@ -14,6 +14,8 @@
 // MWPhotoBrowser
 @implementation MWPhotoBrowser
 
+@synthesize delegate;
+
 - (id)initWithPhotos:(NSArray *)photosArray andTimeStamps:(NSArray *)timeStampsArray andTabTitle:(NSString *)aTabTitle {
 	if ((self = [super init])) {
 		
@@ -354,13 +356,16 @@
 #pragma mark Navigation
 
 - (void)updateNavigation {
-    NSString *time = [timeStamps objectAtIndex:currentPageIndex];
-    if ([time length] > 4) {
-        self.title = time;
-    } else {
-        self.title = [NSString stringWithFormat:@"%@:%@", [time substringToIndex:2], [time substringFromIndex:2]];
+    if ([self.delegate respondsToSelector:@selector(updateTitle:andTabTitle:)]) {
+        NSString *time = [timeStamps objectAtIndex:currentPageIndex];
+        NSString *aTitle;
+        if ([time length] > 4) {
+            aTitle = time;
+        } else {
+            aTitle = [NSString stringWithFormat:@"%@:%@", [time substringToIndex:2], [time substringFromIndex:2]];
+        }
+        [self.delegate performSelector:@selector(updateTitle:andTabTitle:) withObject:aTitle withObject:tabTitle];
     }
-    self.navigationController.tabBarItem.title = tabTitle;
 }
 
 - (void)jumpToPageAtIndex:(int)index {

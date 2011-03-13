@@ -1,0 +1,85 @@
+//
+//  RootViewiPhoneController.m
+//  rasp
+//
+//  Created by Jelle Vandebeeck on 13/03/11.
+//  Copyright 2011 10to1. All rights reserved.
+//
+
+#import "MenuViewController.h"
+
+#import "RaspController.h"
+#import "ChartViewController.h"
+
+@interface MenuViewController () {
+    NSArray *_menu;
+}
+@end
+
+@implementation MenuViewController
+
+@synthesize chartViewController=_chartViewController;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds] style:UITableViewStyleGrouped];
+	self.tableView.delegate = self;
+	self.tableView.dataSource = self;
+    
+    _menu = [[RaspController instance].menu retain];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.title = [NSString stringWithKey:@"title.charts"];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [_menu count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [[_menu objectAtIndex:section] objectAtIndex:0];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [((NSArray *) [((NSArray *) [_menu objectAtIndex:section]) objectAtIndex:1]) count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {    
+    static NSString *CellIdentifier = @"MenuCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    NSDictionary *element = [[[_menu objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row];
+    cell.textLabel.text = [element objectForKey:@"name"];
+    cell.textLabel.font = [UIFont systemFontOfSize:13];
+    cell.textLabel.numberOfLines = 2;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {	
+	NSDictionary *element = [[[_menu objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row];
+    
+    self.chartViewController.element = element;
+    [self.navigationController pushViewController:self.chartViewController animated:YES];
+}
+
+- (void)dealloc {
+    [_menu release], _menu = nil;
+    [_chartViewController release], _chartViewController = nil;
+    [super dealloc];
+}
+
+@end

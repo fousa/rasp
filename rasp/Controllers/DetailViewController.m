@@ -12,7 +12,6 @@
 #import "EmptyViewController.h"
 
 #import "MWPhoto.h"
-#import "MWPhotoBrowser.h"
 
 @interface DetailViewController () {
     NSArray *photos;
@@ -27,9 +26,7 @@
 
 @implementation DetailViewController
 
-@synthesize toolbar=_toolbar;
 @synthesize element=_element;
-@synthesize detailDescriptionLabel=_detailDescriptionLabel;
 @synthesize popoverController=_myPopoverController;
 
 #pragma mark - Initialization
@@ -90,25 +87,29 @@
 - (void)configureView {
     NSDictionary *yesterdayDict = [self chartsFor:@"yesterday"];
     MWPhotoBrowser *yesterday = [[MWPhotoBrowser alloc] initWithPhotos:[yesterdayDict objectForKey:@"charts"] andTimeStamps:[yesterdayDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.yesterday"]];
-	[yesterday setInitialPageIndex:7];
+    yesterday.delegate = self;
+    [yesterday setInitialPageIndex:7];
     UINavigationController *yesterdayNavigation = [[UINavigationController alloc] initWithRootViewController:yesterday];
     [yesterday release];
     
     NSDictionary *todayDict = [self chartsFor:@"today"];
     MWPhotoBrowser *today = [[MWPhotoBrowser alloc] initWithPhotos:[todayDict objectForKey:@"charts"] andTimeStamps:[todayDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.today"]];
 	[today setInitialPageIndex:7];
+    today.delegate = self;
     UINavigationController *todayNavigation = [[UINavigationController alloc] initWithRootViewController:today];
     [today release];
     
     NSDictionary *tomorrowDict = [self chartsFor:@"tomorrow"];
     MWPhotoBrowser *tomorrow = [[MWPhotoBrowser alloc] initWithPhotos:[tomorrowDict objectForKey:@"charts"] andTimeStamps:[tomorrowDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.tomorrow"]];
 	[tomorrow setInitialPageIndex:7];
+    tomorrow.delegate = self;
     UINavigationController *tomorrowNavigation = [[UINavigationController alloc] initWithRootViewController:tomorrow];
     [tomorrow release];
     
     NSDictionary *inTwoDaysDict = [self chartsFor:@"in_two_days"];
     MWPhotoBrowser *inTwoDays = [[MWPhotoBrowser alloc] initWithPhotos:[inTwoDaysDict objectForKey:@"charts"] andTimeStamps:[inTwoDaysDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.intwodays"]];
 	[inTwoDays setInitialPageIndex:7];
+    inTwoDays.delegate = self;
     UINavigationController *inTwoDaysNavigation = [[UINavigationController alloc] initWithRootViewController:inTwoDays];
     [inTwoDays release];
     
@@ -130,6 +131,11 @@
     if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
         ((UINavigationController *)[self.viewControllers objectAtIndex:0]).topViewController.navigationItem.leftBarButtonItem = _barButtonItem;
     }
+}
+
+- (void)updateTitle:(NSString *)aTitle andTabTitle:(NSString *)aTabTitle {
+    ((UINavigationController *)self.selectedViewController).topViewController.title = aTitle;
+    self.selectedViewController.tabBarItem.title = aTabTitle;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -164,9 +170,7 @@
 - (void)dealloc {
     [photos release], photos = nil;
     [_myPopoverController release];
-    [_toolbar release];
     [_element release];
-    [_detailDescriptionLabel release];
     [super dealloc];
 }
 

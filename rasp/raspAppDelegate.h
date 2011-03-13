@@ -6,16 +6,11 @@
 //  Copyright 2011 10to1. All rights reserved.
 //
 
-@class RootViewController;
-@class DetailViewController;
-
 @interface raspAppDelegate : NSObject <UIApplicationDelegate>
 + (raspAppDelegate *)sharedAppDelegate;
 
 - (NSString *)selectedLanguage;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UISplitViewController *splitViewController;
-@property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
-@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+
 @end

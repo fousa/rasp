@@ -14,17 +14,6 @@
 @implementation raspAppDelegate
 
 @synthesize window=_window;
-@synthesize splitViewController=_splitViewController;
-@synthesize rootViewController=_rootViewController;
-@synthesize detailViewController=_detailViewController;
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [RaspController instance];
-    
-    self.window.rootViewController = self.splitViewController;
-    [self.window makeKeyAndVisible];
-    return YES;
-}
 
 + (raspAppDelegate *)sharedAppDelegate {
     return (raspAppDelegate *) [UIApplication sharedApplication].delegate;
@@ -50,9 +39,6 @@
 
 - (void)dealloc {
     [_window release];
-    [_splitViewController release];
-    [_rootViewController release];
-    [_detailViewController release];
     [super dealloc];
 }
 
