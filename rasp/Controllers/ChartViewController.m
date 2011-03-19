@@ -83,6 +83,8 @@
     inTwoDays.delegate = self;
     
     [self setViewControllers:[NSArray arrayWithObjects:yesterday, today, tomorrow, inTwoDays, nil]];
+    self.selectedIndex = 1;
+    
     yesterday.tabBarItem.image = [UIImage imageNamed:@"yesterday.png"];
     yesterday.tabBarItem.title = [NSString stringWithKey:@"title.yesterday"];
     today.tabBarItem.image = [UIImage imageNamed:@"today.png"];

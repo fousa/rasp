@@ -114,6 +114,7 @@
     [inTwoDays release];
     
     [self setViewControllers:[NSArray arrayWithObjects:yesterdayNavigation, todayNavigation, tomorrowNavigation, inTwoDaysNavigation, nil] animated:YES];
+    self.selectedIndex = 1;
     yesterdayNavigation.tabBarItem.image = [UIImage imageNamed:@"yesterday.png"];
     yesterdayNavigation.tabBarItem.title = [NSString stringWithKey:@"title.yesterday"];
     todayNavigation.tabBarItem.image = [UIImage imageNamed:@"today.png"];
@@ -148,7 +149,7 @@
     barButtonItem.title = [NSString stringWithKey:@"title.charts"];
     _barButtonItem = barButtonItem;
     if (self.viewControllers.count > 0) {
-        ((UINavigationController *)[self.viewControllers objectAtIndex:0]).topViewController.navigationItem.leftBarButtonItem = _barButtonItem;
+        ((UINavigationController *)self.selectedViewController).topViewController.navigationItem.leftBarButtonItem = _barButtonItem;
     }
     self.popoverController = pc;
 }
@@ -156,7 +157,7 @@
 - (void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
     _barButtonItem = barButtonItem;
     if (self.viewControllers.count > 0) {
-        ((UINavigationController *)[self.viewControllers objectAtIndex:0]).topViewController.navigationItem.leftBarButtonItem = nil;
+        ((UINavigationController *)self.selectedViewController).topViewController.navigationItem.leftBarButtonItem = nil;
     }
     self.popoverController = nil;
 }
