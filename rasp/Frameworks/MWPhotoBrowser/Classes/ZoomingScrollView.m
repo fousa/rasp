@@ -111,7 +111,6 @@
 			// Hide image view
 			photoImageView.hidden = YES;
 			[spinner startAnimating];
-			
 		}
 		[self setNeedsLayout];
 	}

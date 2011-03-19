@@ -29,6 +29,7 @@
 
 	BOOL performingLayout;
 	BOOL rotating;
+    BOOL initialLoad;
 }
 
 @property (nonatomic, retain) id delegate;

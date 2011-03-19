@@ -30,6 +30,7 @@
 		performingLayout = NO;
 		rotating = NO;
 		
+        initialLoad = YES;
 	}
 	return self;
 }
@@ -332,9 +333,13 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 	
 	if (performingLayout || rotating) return;
-	
-	// Tile pages
-	[self tilePages];
+    
+    // Tile pages
+    if (!initialLoad) {
+        [self tilePages];
+    } else {
+        initialLoad = NO;
+    }
 	
 	// Calculate current page
 	CGRect visibleBounds = pagingScrollView.bounds;
@@ -344,7 +349,6 @@
 	int previousCurrentPage = currentPageIndex;
 	currentPageIndex = index;
 	if (currentPageIndex != previousCurrentPage) [self didStartViewingPageAtIndex:index];
-	
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
