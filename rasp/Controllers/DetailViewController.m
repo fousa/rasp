@@ -13,9 +13,13 @@
 
 #import "MWPhoto.h"
 
+#define BAR_VIEW_TAG 101
+#define DETAIL_VIEW_TAG 102
+
 @interface DetailViewController () {
     NSArray *photos;
     UIBarButtonItem *_barButtonItem;
+    BOOL initialLoad;
 }
 @property (nonatomic, retain) UIPopoverController *popoverController;
 @end
@@ -41,6 +45,19 @@
     emptyNavigation.tabBarItem.image = [UIImage imageNamed:@"empty.png"];  
     emptyNavigation.tabBarItem.title = [NSString stringWithKey:@"title.empty"];
     [emptyNavigation release];
+    
+    for (UIView *v in self.view.subviews) {
+        if ([v class] == [UITabBar class]) {
+            v.hidden = YES;
+            v.tag = BAR_VIEW_TAG;
+        } else {
+            CGRect rect = v.frame;
+            rect.size.height += 49;
+            v.frame = rect;
+            v.tag = DETAIL_VIEW_TAG;
+        }
+    }
+    initialLoad = YES;
 }
 
 #pragma mark - Detail element
@@ -49,6 +66,15 @@
     if (_element != anElement) {
         [_element release];
         _element = [anElement retain];
+        
+        if (initialLoad) {
+            [self.view viewWithTag:BAR_VIEW_TAG].hidden = NO;
+            UIView *v = [self.view viewWithTag:DETAIL_VIEW_TAG];
+            CGRect rect = v.frame;
+            rect.size.height -= 49;
+            v.frame = rect;
+            initialLoad = NO;
+        }
         
         [self configureView];
     }
