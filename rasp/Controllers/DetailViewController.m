@@ -42,7 +42,7 @@
     [empty release];
     
     [self setViewControllers:[NSArray arrayWithObjects:emptyNavigation, nil]];
-    emptyNavigation.tabBarItem.image = [UIImage imageNamed:@"empty.png"];  
+    self.selectedViewController = emptyNavigation;
     emptyNavigation.tabBarItem.title = [NSString stringWithKey:@"title.empty"];
     [emptyNavigation release];
     
@@ -156,7 +156,7 @@
     [inTwoDaysNavigation release];
     
     if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
-        ((UINavigationController *)[self.viewControllers objectAtIndex:0]).topViewController.navigationItem.leftBarButtonItem = _barButtonItem;
+        ((UINavigationController *)self.selectedViewController).topViewController.navigationItem.leftBarButtonItem = _barButtonItem;
     }
 }
 
