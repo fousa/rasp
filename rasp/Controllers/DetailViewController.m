@@ -16,6 +16,8 @@
 #define BAR_VIEW_TAG 101
 #define DETAIL_VIEW_TAG 102
 
+#define TINT_COLOR [UIColor colorWithRed:.209882 green:.459732 blue:.75887 alpha:1]
+
 @interface DetailViewController () {
     NSArray *photos;
     UIBarButtonItem *_barButtonItem;
@@ -39,6 +41,7 @@
     EmptyViewController *empty = [[EmptyViewController alloc] initWithNibName:@"EmptyViewController" bundle:[NSBundle mainBundle]];
     empty.title = [NSString stringWithKey:@"text.select"];
     UINavigationController *emptyNavigation = [[UINavigationController alloc] initWithRootViewController:empty];
+    emptyNavigation.navigationBar.tintColor = TINT_COLOR;
     [empty release];
     
     [self setViewControllers:[NSArray arrayWithObjects:emptyNavigation, nil]];
@@ -116,6 +119,7 @@
     yesterday.delegate = self;
     [yesterday setInitialPageIndex:7];
     UINavigationController *yesterdayNavigation = [[UINavigationController alloc] initWithRootViewController:yesterday];
+    yesterdayNavigation.navigationBar.tintColor = TINT_COLOR;
     [yesterday release];
     
     NSDictionary *todayDict = [self chartsFor:@"today"];
@@ -123,6 +127,7 @@
 	[today setInitialPageIndex:7];
     today.delegate = self;
     UINavigationController *todayNavigation = [[UINavigationController alloc] initWithRootViewController:today];
+    todayNavigation.navigationBar.tintColor = TINT_COLOR;
     [today release];
     
     NSDictionary *tomorrowDict = [self chartsFor:@"tomorrow"];
@@ -130,6 +135,7 @@
 	[tomorrow setInitialPageIndex:7];
     tomorrow.delegate = self;
     UINavigationController *tomorrowNavigation = [[UINavigationController alloc] initWithRootViewController:tomorrow];
+    tomorrowNavigation.navigationBar.tintColor = TINT_COLOR;
     [tomorrow release];
     
     NSDictionary *inTwoDaysDict = [self chartsFor:@"in_two_days"];
@@ -137,6 +143,7 @@
 	[inTwoDays setInitialPageIndex:7];
     inTwoDays.delegate = self;
     UINavigationController *inTwoDaysNavigation = [[UINavigationController alloc] initWithRootViewController:inTwoDays];
+    inTwoDaysNavigation.navigationBar.tintColor = TINT_COLOR;
     [inTwoDays release];
     
     [self setViewControllers:[NSArray arrayWithObjects:yesterdayNavigation, todayNavigation, tomorrowNavigation, inTwoDaysNavigation, nil] animated:YES];
