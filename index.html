@@ -3,77 +3,60 @@
 <head>
   <meta charset='utf-8'>
 
-  <title>fousa/rasp @ GitHub</title>
+  <title>Rasp</title>
 
   <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #284E8F;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #d7b170; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #d7b170; }
-    h3 { text-align: center; color: #d7b170; }
-    a { color: #d7b170; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
+		* { padding: 0; margin: 0; }
+		body { font-family: "Trebuchet MS", Verdana, sans-serif; font-size: medium; background-color: #DDD; }
+
+		#container { width: 800px; margin: 0 auto; padding: 20px 0 20px 0; }
+		h1 { font-size: 600%; color: #666; }
+		h1 a { color: #000; }
+		h1 img { border: none; }
+		.appstore { float: right; }
+		a { text-decoration: none; }
+		p { margin: 0 0 10px 0; font-family: Georgia, serif; font-size: 120%; line-height: 40px; color: #666; }
+		h2 { margin: 20px 0; color: #000; }
+		.download { margin: 20px; }
+		p a, li a { color: #000; text-decoration: none; }
+		li { list-style-type: none; font-size: 120%; font-family: Georgia, serif; line-height: 40px; color: #666; margin: 0 0 0 20px; }
+
   </style>
 </head>
 
 <body>
-  <a href="http://github.com/fousa/rasp"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+	<a href="http://github.com/fousa/rasp"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" /></a>
 
-  <div id="container">
+	<div id="container">
+		
+		<h1>
+			<a href="http://itunes.apple.com/be/app/raso/id412017767?mt=8" class="appstore"><img src="appstore.png" alt="Download at the iTunes App Store" /></a>
+			<a href="http://github.com/fousa/rasp">RASP</a>
+		</h1>
 
-    <div class="download">
-      <a href="http://github.com/fousa/rasp/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/fousa/rasp/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
+		<div class="description">
+			<p>View the soaring weather charts available at <a href="http://rasp.kzc.nl/">rasp.kzc.nl</a> on your iPhone or iPad.</p>
+		<p>Can be very useful when you're on an airfield and want to check the soaring weather forecast for today.</p>
+		<p>Scroll through the different hours of the day by swiping through the charts and check the forecast for tomorrow or the day after. Ow, and don't forget to pinch when you want to take a closer look.</p>
 
-    <h1><a href="http://github.com/fousa/rasp">rasp</a>
-      <span class="small">by <a href="http://github.com/fousa">fousa</a></span></h1>
+			<h2>Download</h2>
+			<p>Download the source directly below or go to <a href="http://github.com/fousa/rasp">Github</a>.</p>
+			<p class="download">
+				<a href="http://github.com/fousa/rasp/zipball/master">
+					<img border="0" width="60" src="http://github.com/images/modules/download/zip.png"></a>
+				<a href="http://github.com/fousa/rasp/tarball/master">
+					<img border="0" width="60" src="http://github.com/images/modules/download/tar.png"></a>
+			</p>
 
-    <div class="description">
-      The RASP iPhone application
-    </div>
+			<h2>Screenshots</h2>
 
-    <p>All the info available to you on this website (http://rasp.kzc.nl/) is now also available on your iPhone/iPad.</p><h2>Install</h2>
-<p>Go to iTunes and download</p>
-<h2>Authors</h2>
-<p>Jelle Vandebeeck      </p>
-<h2>Contact</h2>
-<p>You can contact me at www.fousa.be</p>
+			<div><img src="screenshot.png" alt="Screenshots" /></div>
 
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/fousa/rasp/zipball/master">zip</a> or
-      <a href="http://github.com/fousa/rasp/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/fousa/rasp</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/fousa/rasp">fousa/rasp</a>
-    </div>
-
-  </div>
-
-  
+			<h2>Devs</h2>
+			<ul>
+				<li><a href="http://www.fousa.be">Jelle Vandebeeck</a></li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>
