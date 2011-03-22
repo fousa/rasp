@@ -349,11 +349,8 @@
 	int previousCurrentPage = currentPageIndex;
 	currentPageIndex = index;
 	if (currentPageIndex != previousCurrentPage) [self didStartViewingPageAtIndex:index];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-	// Update nav when page changes
-	[self updateNavigation];
+    
+    [self updateNavigation];
 }
 
 #pragma mark -
