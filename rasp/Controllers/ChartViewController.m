@@ -85,13 +85,13 @@
     [self setViewControllers:[NSArray arrayWithObjects:yesterday, today, tomorrow, inTwoDays, nil]];
     self.selectedIndex = 1;
     
-    yesterday.tabBarItem.image = [UIImage imageNamed:@"yesterday.png"];
+    yesterday.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
     yesterday.tabBarItem.title = [NSString stringWithKey:@"title.yesterday"];
-    today.tabBarItem.image = [UIImage imageNamed:@"today.png"];
+    today.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
     today.tabBarItem.title = [NSString stringWithKey:@"title.today"];
-    tomorrow.tabBarItem.image = [UIImage imageNamed:@"tomorrow.png"];
+    tomorrow.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
     tomorrow.tabBarItem.title = [NSString stringWithKey:@"title.tomorrow"];
-    inTwoDays.tabBarItem.image = [UIImage imageNamed:@"in-two-days.png"];
+    inTwoDays.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
     inTwoDays.tabBarItem.title = [NSString stringWithKey:@"title.intwodays"];
     
     [yesterday release];
