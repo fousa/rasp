@@ -9,5 +9,6 @@
 @class ChartViewController;
 
 @interface MenuViewController : UITableViewController
-@property (nonatomic, retain) IBOutlet ChartViewController *chartViewController;
+@property (nonatomic, retain) NSDictionary *country;
+@property (nonatomic, retain) NSArray *charts;
 @end

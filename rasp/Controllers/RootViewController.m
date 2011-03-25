@@ -12,7 +12,7 @@
 #import "RaspController.h"
 
 @interface RootViewController () {
-    NSArray *_menu;
+    NSArray *_charts;
 }
 @end
 
@@ -29,7 +29,7 @@
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
     
-    _menu = [[RaspController instance].menu retain];
+//    _charts = [[RaspController instance].charts retain];
 }
 
 		
@@ -43,15 +43,15 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [_menu count];
+    return [_charts count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [[_menu objectAtIndex:section] objectAtIndex:0];
+    return [[_charts objectAtIndex:section] objectAtIndex:0];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [((NSArray *) [((NSArray *) [_menu objectAtIndex:section]) objectAtIndex:1]) count];
+    return [((NSArray *) [((NSArray *) [_charts objectAtIndex:section]) objectAtIndex:1]) count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {    
@@ -62,7 +62,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    NSDictionary *element = [[[_menu objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row];
+    NSDictionary *element = [[[_charts objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row];
     cell.textLabel.text = [element objectForKey:@"name"];
     cell.textLabel.font = [UIFont systemFontOfSize:13];
     cell.textLabel.numberOfLines = 2;
@@ -72,13 +72,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {	
-	NSDictionary *element = [[[_menu objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row];
+	NSDictionary *element = [[[_charts objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row];
     
     self.detailViewController.element = element;
 }
 
 - (void)dealloc {
-    [_menu release], _menu = nil;
+    [_charts release], _charts = nil;
     [detailViewController release], detailViewController = nil;
     
     [super dealloc];

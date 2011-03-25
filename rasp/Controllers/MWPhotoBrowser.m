@@ -14,7 +14,7 @@
 // MWPhotoBrowser
 @implementation MWPhotoBrowser
 
-@synthesize delegate;
+@synthesize delegate, day;
 
 - (id)initWithPhotos:(NSArray *)photosArray andTimeStamps:(NSArray *)timeStampsArray andTabTitle:(NSString *)aTabTitle {
 	if ((self = [super init])) {

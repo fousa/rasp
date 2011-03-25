@@ -17,23 +17,15 @@
 @end
 
 @interface ChartViewController (View)
-- (void)configureView;
+- (NSDictionary *)chartsFor:(NSString *)period;
 @end
 
 @implementation ChartViewController
 
 @synthesize element=_element;
+@synthesize country=_country;
 
 #pragma mark - Detail element
-
-- (void)setElement:(NSDictionary *)anElement {
-    if (_element != anElement) {
-        [_element release];
-        _element = [anElement retain];
-        
-        [self configureView];
-    }      
-}
 
 - (NSDictionary *)chartsFor:(NSString *)period {
     NSString *name           = (NSString *)[_element objectForKey:@"name"];
@@ -43,12 +35,10 @@
 	NSMutableArray *timeStamps = [[NSMutableArray alloc] init];
 	NSString *path = (NSString *)[_element objectForKey:period];
 	if (multipleCharts) {
-		int timeStamp = 830;
-		for (int i = 0; i < 22; i++) {
-            [charts addObject:[MWPhoto photoWithURL:[NSURL URLWithString:[NSString stringWithFormat:path, timeStamp]]]];
-			[timeStamps addObject:[NSString stringWithFormat:@"%04d", timeStamp]];
-			timeStamp += timeStamp % 100 == 0 ? 30 : 70;
-		}
+        for (NSString *period in ((NSArray *)[self.country objectForKey:@"periods"])) {
+            [charts addObject:[MWPhoto photoWithURL:[NSURL URLWithString:[NSString stringWithFormat:path, [period intValue]]]]];
+			[timeStamps addObject:[NSString stringWithFormat:@"%04d", [period intValue]]];
+        }
 	} else {
         [charts addObject:[MWPhoto photoWithURL:[NSURL URLWithString:path]]];
 		[timeStamps addObject:name];
@@ -62,47 +52,31 @@
 }
 
 - (void)configureView {
-    NSDictionary *yesterdayDict = [self chartsFor:@"yesterday"];
-    MWPhotoBrowser *yesterday = [[MWPhotoBrowser alloc] initWithPhotos:[yesterdayDict objectForKey:@"charts"] andTimeStamps:[yesterdayDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.yesterday"]];
-	[yesterday setInitialPageIndex:7];
-    yesterday.delegate = self;
+    NSArray *days = (NSArray *)[self.country objectForKey:@"days"];
+    NSMutableArray *controllers = [NSMutableArray array];
     
-    NSDictionary *todayDict = [self chartsFor:@"today"];
-    MWPhotoBrowser *today = [[MWPhotoBrowser alloc] initWithPhotos:[todayDict objectForKey:@"charts"] andTimeStamps:[todayDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.today"]];
-	[today setInitialPageIndex:7];
-    today.delegate = self;
+    for (NSString *day in days) {
+        NSDictionary *dict = [self chartsFor:day];
+        MWPhotoBrowser *controller = [[MWPhotoBrowser alloc] initWithPhotos:[dict objectForKey:@"charts"] andTimeStamps:[dict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:[NSString stringWithFormat:@"title.%@", day]]];
+        controller.day = day;
+        [controller setInitialPageIndex:7];
+        controller.delegate = self;
+        [controllers addObject:controller];
+        [controller release];
+    }
     
-    NSDictionary *tomorrowDict = [self chartsFor:@"tomorrow"];
-    MWPhotoBrowser *tomorrow = [[MWPhotoBrowser alloc] initWithPhotos:[tomorrowDict objectForKey:@"charts"] andTimeStamps:[tomorrowDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.tomorrow"]];
-	[tomorrow setInitialPageIndex:7];
-    tomorrow.delegate = self;
-    
-    NSDictionary *inTwoDaysDict = [self chartsFor:@"in_two_days"];
-    MWPhotoBrowser *inTwoDays = [[MWPhotoBrowser alloc] initWithPhotos:[inTwoDaysDict objectForKey:@"charts"] andTimeStamps:[inTwoDaysDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.intwodays"]];
-	[inTwoDays setInitialPageIndex:7];
-    inTwoDays.delegate = self;
-    
-    [self setViewControllers:[NSArray arrayWithObjects:yesterday, today, tomorrow, inTwoDays, nil]];
+    [self setViewControllers:controllers];
+    for (int i = 0; i < [controllers count]; i++) {
+        MWPhotoBrowser *browser = ((MWPhotoBrowser *)[controllers objectAtIndex:i]);
+        browser.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
+        browser.tabBarItem.title = [NSString stringWithKey:[NSString stringWithFormat:@"title.%@", browser.day]];
+    }
     self.selectedIndex = 1;
-    
-    yesterday.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
-    yesterday.tabBarItem.title = [NSString stringWithKey:@"title.yesterday"];
-    today.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
-    today.tabBarItem.title = [NSString stringWithKey:@"title.today"];
-    tomorrow.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
-    tomorrow.tabBarItem.title = [NSString stringWithKey:@"title.tomorrow"];
-    inTwoDays.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
-    inTwoDays.tabBarItem.title = [NSString stringWithKey:@"title.intwodays"];
-    
-    [yesterday release];
-    [today release];
-    [tomorrow release];
-    [inTwoDays release];
 }
 
 - (void)updateTitle:(NSString *)aTitle andTabTitle:(NSString *)aTabTitle onBrowser:(MWPhotoBrowser *)browser {
     self.title = aTitle;
-    browser.tabBarItem.title = aTabTitle;
+    browser.tabBarItem.title = [NSString stringWithKey:[NSString stringWithFormat:@"title.%@", browser.day]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

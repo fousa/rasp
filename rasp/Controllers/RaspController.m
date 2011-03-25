@@ -14,15 +14,19 @@
 static RaspController *singletonRaspController = nil;
 
 @interface RaspController () {
-	NSMutableArray *_menu;
+	NSMutableArray *_charts;
+    NSMutableDictionary *_countries;
 }
 @end
 
 @interface RaspController (Loading)
-- (void)loadMenu;
+- (void)loadChartsForCountry:(NSString *)country;
+- (void)loadCountries;
 @end
 
 @implementation RaspController
+
+@synthesize delegate=_delegate;
 
 #pragma mark -
 #pragma mark Singleton
@@ -31,7 +35,7 @@ static RaspController *singletonRaspController = nil;
 	@synchronized(self) {
 		if (!singletonRaspController) {
 			singletonRaspController = [[RaspController alloc] init];
-			[singletonRaspController loadMenu];
+            [singletonRaspController loadCountries];
 		}
 	}
 	return singletonRaspController;
@@ -40,38 +44,34 @@ static RaspController *singletonRaspController = nil;
 #pragma mark -
 #pragma mark Getters
 
-- (NSArray *)menu {
-    return _menu;
+- (NSDictionary *)countries {
+    return _countries;
 }
 
-#pragma mark -
-#pragma mark Loading
+#pragma - Countries
 
-- (void)loadMenu {
-	NSURL *url = [NSURL URLWithString:[[BASE_URL stringByAppendingString:@"menu?language="] stringByAppendingString:current_language]];
+- (void)loadCountries {
+	_countries = [[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Countries" ofType:@"plist"]] retain];
+}
+
+#pragma mark - Charts
+
+- (void)loadChartsForCountry:(NSString *)country {
+	NSURL *url = [NSURL URLWithString:[BASE_URL stringByAppendingFormat:@"menu?language=%@&country=%@",current_language, country]];
 	
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-    [request setDelegate:self];
+    [request setDelegate:self.delegate];
     [request setTimeOutSeconds:25];
     [request setDidFinishSelector:@selector(requestSuccess:)];
     [request setUseKeychainPersistence:YES];
-    [request startSynchronous];
-}
-
-- (void)requestSuccess:(ASIHTTPRequest *)aRequest {
-    _menu = [[[aRequest responseString] JSONValue] retain];
-	if ([_menu count] == 0) {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection error" message:@"An error occured trying to connect to the server." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
-		[alert show];
-		[alert release];
-	}
+    [request startAsynchronous];
 }
 
 #pragma mark -
 #pragma mark Memory
 
 - (void)dealloc {
-    [_menu release], _menu = nil;
+    [_countries release], _countries = nil;
     [super dealloc];
 }
 

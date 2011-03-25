@@ -26,6 +26,8 @@
 		60058EB1132D504000A266FF /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60058EAF132D504000A266FF /* MainWindow-iPhone.xib */; };
 		60058EB5132D56A600A266FF /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60058EB3132D567F00A266FF /* ChartViewController.m */; };
 		60058EB9132D5E0B00A266FF /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60058EB7132D5E0B00A266FF /* ChartViewController.xib */; };
+		60134234133D386100FCF99E /* Countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60134233133D386100FCF99E /* Countries.plist */; };
+		60134238133D3BE800FCF99E /* CountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60134237133D3BE800FCF99E /* CountryViewController.m */; };
 		602E79CF132CFAC00021FBAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79CE132CFAC00021FBAF /* UIKit.framework */; };
 		602E79D1132CFAC00021FBAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D0132CFAC00021FBAF /* Foundation.framework */; };
 		602E79D3132CFAC00021FBAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E79D2132CFAC00021FBAF /* CoreGraphics.framework */; };
@@ -105,6 +107,9 @@
 		60058EB2132D567A00A266FF /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
 		60058EB3132D567F00A266FF /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
 		60058EB8132D5E0B00A266FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ChartViewController.xib; sourceTree = "<group>"; };
+		60134233133D386100FCF99E /* Countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Countries.plist; sourceTree = "<group>"; };
+		60134236133D3BE800FCF99E /* CountryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryViewController.h; sourceTree = "<group>"; };
+		60134237133D3BE800FCF99E /* CountryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryViewController.m; sourceTree = "<group>"; };
 		602E79CA132CFAC00021FBAF /* rasp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rasp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		602E79CE132CFAC00021FBAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		602E79D0132CFAC00021FBAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -290,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				602E79D6132CFAC00021FBAF /* rasp-Info.plist */,
+				60134233133D386100FCF99E /* Countries.plist */,
 				602E79D7132CFAC00021FBAF /* Localizable.strings */,
 				602E79DA132CFAC00021FBAF /* rasp-Prefix.pch */,
 				602E79DB132CFAC00021FBAF /* main.m */,
@@ -476,6 +482,8 @@
 				60058EA5132D4BEB00A266FF /* MenuViewController.m */,
 				60058EB2132D567A00A266FF /* ChartViewController.h */,
 				60058EB3132D567F00A266FF /* ChartViewController.m */,
+				60134236133D3BE800FCF99E /* CountryViewController.h */,
+				60134237133D3BE800FCF99E /* CountryViewController.m */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -566,6 +574,7 @@
 				60058EB9132D5E0B00A266FF /* ChartViewController.xib in Resources */,
 				604687E513394E1300CEB80E /* calendar.png in Resources */,
 				604687E613394E1300CEB80E /* calendar@2x.png in Resources */,
+				60134234133D386100FCF99E /* Countries.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +641,7 @@
 				60058EAB132D4C5500A266FF /* raspAppDelegate-iPhone.m in Sources */,
 				60058EAE132D4C9F00A266FF /* raspAppDelegate-iPad.m in Sources */,
 				60058EB5132D56A600A266FF /* ChartViewController.m in Sources */,
+				60134238133D3BE800FCF99E /* CountryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

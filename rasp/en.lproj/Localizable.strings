@@ -1,17 +1,17 @@
 /* Dutch */
-"nl.title.charts"    = "Kaarten";
-"nl.title.empty"     = "Geen kaart";
-"nl.title.today"     = "Vandaag";
-"nl.title.tomorrow"  = "Morgen";
-"nl.title.intwodays" = "Overmorgen";
-"nl.title.yesterday" = "Gisteren";
-"nl.text.select"     = "Kies een kaart";
+"nl.title.charts"      = "Kaarten";
+"nl.title.empty"       = "Geen kaart";
+"nl.title.today"       = "Vandaag";
+"nl.title.tomorrow"    = "Morgen";
+"nl.title.in_two_days" = "Overmorgen";
+"nl.title.yesterday"   = "Gisteren";
+"nl.text.select"       = "Kies een kaart";
 
 /* English */
-"en.title.charts"    = "Charts";
-"en.title.empty"     = "No chart";
-"en.title.today"     = "Today";
-"en.title.tomorrow"  = "Tomorrow";
-"en.title.intwodays" = "The Day After";
-"en.title.yesterday" = "Yesterday";
-"en.text.select"     = "Choose a chart";
+"en.title.countries"   = "Countries";
+"en.title.empty"       = "No chart";
+"en.title.today"       = "Today";
+"en.title.tomorrow"    = "Tomorrow";
+"en.title.in_two_days" = "The Day After";
+"en.title.yesterday"   = "Yesterday";
+"en.text.select"       = "Choose a chart";

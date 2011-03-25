@@ -10,6 +10,7 @@
 
 @interface ChartViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, MWPhotoBrowserDelegate>
 @property (nonatomic, retain) NSDictionary *element;
+@property (nonatomic, retain) NSDictionary *country;
 
-- (NSDictionary *)chartsFor:(NSString *)period;
+- (void)configureView;
 @end

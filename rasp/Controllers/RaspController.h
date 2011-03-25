@@ -7,7 +7,10 @@
 //
 
 @interface RaspController : NSObject
-@property (nonatomic, readonly) NSArray *menu;
+@property (nonatomic, readonly) NSDictionary *countries;
+@property (nonatomic, retain) id delegate;
 
 + (RaspController *)instance;
+
+- (void)loadChartsForCountry:(NSString *)country;
 @end

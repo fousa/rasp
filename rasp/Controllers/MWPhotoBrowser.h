@@ -33,6 +33,7 @@
 }
 
 @property (nonatomic, retain) id delegate;
+@property (nonatomic, retain) NSString *day;
 
 // Init
 - (id)initWithPhotos:(NSArray *)photosArray andTimeStamps:(NSArray *)timeStampsArray andTabTitle:(NSString *)aTabTitle;
