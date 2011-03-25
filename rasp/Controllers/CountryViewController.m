@@ -96,7 +96,7 @@
 #pragma mark - Chart loading
 
 - (void)requestSuccess:(ASIHTTPRequest *)aRequest {
-    NSArray *charts = [[[aRequest responseString] JSONValue] retain];
+    NSArray *charts = [[aRequest responseString] JSONValue];
     UITableViewCell *cell = ((UITableViewCell *)[self.tableView viewWithTag:999]);
 	if ([charts count] == 0) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection error" message:@"An error occured trying to connect to the server." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];

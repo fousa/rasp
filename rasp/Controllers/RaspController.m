@@ -51,7 +51,23 @@ static RaspController *singletonRaspController = nil;
 #pragma - Countries
 
 - (void)loadCountries {
-	_countries = [[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Countries" ofType:@"plist"]] retain];
+	NSDictionary *parts = [[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Countries" ofType:@"plist"]] retain];
+    
+    NSMutableDictionary *filteredCountries = [NSMutableDictionary dictionary];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    for (NSString *key in [parts allKeys]) {
+        NSArray *countries = ((NSArray *)[parts objectForKey:key]);
+        NSMutableArray *newCountries = [NSMutableArray array];
+        for (NSDictionary *dict in countries) {
+            if ([defaults boolForKey:((NSString *)[dict objectForKey:@"name"])]) {
+                [newCountries addObject:dict];
+            }
+        }
+        if ([newCountries count] > 0) {
+            [filteredCountries setObject:newCountries forKey:key];
+        }
+    }
+    _countries = filteredCountries;
 }
 
 #pragma mark - Charts

@@ -69,6 +69,7 @@
 		602E7AB3132D070C0021FBAF /* MWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7AB2132D070C0021FBAF /* MWPhotoBrowser.m */; };
 		604687E513394E1300CEB80E /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 604687E313394E1200CEB80E /* calendar.png */; };
 		604687E613394E1300CEB80E /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 604687E413394E1300CEB80E /* calendar@2x.png */; };
+		60BCCE19133D5F9100CA9B96 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60BCCE18133D5F9100CA9B96 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		602E7AB2132D070C0021FBAF /* MWPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPhotoBrowser.m; sourceTree = "<group>"; };
 		604687E313394E1200CEB80E /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		604687E413394E1300CEB80E /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
+		60BCCE18133D5F9100CA9B96 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +301,7 @@
 				602E79D7132CFAC00021FBAF /* Localizable.strings */,
 				602E79DA132CFAC00021FBAF /* rasp-Prefix.pch */,
 				602E79DB132CFAC00021FBAF /* main.m */,
+				60BCCE18133D5F9100CA9B96 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				604687E513394E1300CEB80E /* calendar.png in Resources */,
 				604687E613394E1300CEB80E /* calendar@2x.png in Resources */,
 				60134234133D386100FCF99E /* Countries.plist in Resources */,
+				60BCCE19133D5F9100CA9B96 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
