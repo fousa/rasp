@@ -8,8 +8,8 @@
 
 #import "MWPhotoBrowser.h"
 
-@interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, MWPhotoBrowserDelegate>
-@property (nonatomic, retain) NSDictionary *element;
+#import "Chart.h"
 
-- (NSDictionary *)chartsFor:(NSString *)period;
+@interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, MWPhotoBrowserDelegate>
+@property (nonatomic, retain) Chart *chart;
 @end

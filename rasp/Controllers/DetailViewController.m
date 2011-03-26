@@ -8,7 +8,6 @@
 
 #import "DetailViewController.h"
 
-#import "RootViewController.h"
 #import "EmptyViewController.h"
 
 #import "MWPhoto.h"
@@ -19,7 +18,6 @@
 #define TINT_COLOR [UIColor colorWithRed:.209882 green:.459732 blue:.75887 alpha:1]
 
 @interface DetailViewController () {
-    NSArray *photos;
     UIBarButtonItem *_barButtonItem;
     BOOL initialLoad;
 }
@@ -28,11 +26,13 @@
 
 @interface DetailViewController (View)
 - (void)configureView;
+- (NSArray *)chartsFor:(NSString *)path andTimestamps:(NSArray *)timestamps;
+- (UINavigationController *)browserForURL:(NSString *)URLString withName:(NSString *)aName;
 @end
 
 @implementation DetailViewController
 
-@synthesize element=_element;
+@synthesize chart=_chart;
 @synthesize popoverController=_myPopoverController;
 
 #pragma mark - Initialization
@@ -65,10 +65,10 @@
 
 #pragma mark - Detail element
 
-- (void)setElement:(NSDictionary *)anElement {
-    if (_element != anElement) {
-        [_element release];
-        _element = [anElement retain];
+- (void)setChart:(Chart *)aChart {
+    if (_chart != aChart) {
+        [_chart release];
+        _chart = [aChart retain];
         
         if (initialLoad) {
             [self.view viewWithTag:BAR_VIEW_TAG].hidden = NO;
@@ -87,80 +87,71 @@
     }        
 }
 
-- (NSDictionary *)chartsFor:(NSString *)period {
-    NSString *name           = (NSString *)[_element objectForKey:@"name"];
-	BOOL multipleCharts = [((NSNumber *)[_element objectForKey:@"animated"]) boolValue];
+- (NSArray *)chartsFor:(NSString *)path andTimestamps:(NSArray *)timestamps {
+    NSMutableArray *charts = [NSMutableArray array];
+    for (NSString *timestamp in timestamps) {
+        [charts addObject:[MWPhoto photoWithURL:[NSURL URLWithString:[NSString stringWithFormat:path, [timestamp intValue]]]]];
+    }
     
-	NSMutableArray *charts = [[NSMutableArray alloc] init];
-	NSMutableArray *timeStamps = [[NSMutableArray alloc] init];
-	NSString *path = (NSString *)[_element objectForKey:period];
-	if (multipleCharts) {
-		int timeStamp = 830;
-		for (int i = 0; i < 22; i++) {
-            [charts addObject:[MWPhoto photoWithURL:[NSURL URLWithString:[NSString stringWithFormat:path, timeStamp]]]];
-			[timeStamps addObject:[NSString stringWithFormat:@"%04d", timeStamp]];
-			timeStamp += timeStamp % 100 == 0 ? 30 : 70;
-		}
-	} else {
-        [charts addObject:[MWPhoto photoWithURL:[NSURL URLWithString:path]]];
-		[timeStamps addObject:name];
-	}
+    return [NSArray arrayWithArray:charts];
+}
+
+- (UINavigationController *)browserForURL:(NSString *)URLString withName:(NSString *)aName {
+    NSMutableArray *_periods;
+    NSArray *_photos;
+    if (self.chart.hasPeriods) {
+        _photos = [self chartsFor:URLString andTimestamps:self.chart.country.periods];
+        _periods = [NSMutableArray array];
+        for (NSNumber *period in self.chart.country.periods) {
+            [_periods addObject:[NSString stringWithFormat:@"%@", period]];
+        }
+    } else {
+        _photos = [NSArray arrayWithObject:[MWPhoto photoWithURL:[NSURL URLWithString:URLString]]];
+        _periods = [NSArray arrayWithObject:self.chart.name];
+    }
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:_photos andTimeStamps:_periods andTabTitle:[NSString stringWithKey:[NSString stringWithFormat:@"title.%@", aName]]];
+    browser.day = aName;
+    [browser setInitialPageIndex:7];
+    browser.delegate = self;
     
-    NSDictionary *dict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:timeStamps, charts, nil] forKeys:[NSArray arrayWithObjects:@"timeStamps", @"charts", nil]];
-    [charts release];
-    [timeStamps release];
     
-    return dict;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:browser];
+    navigationController.navigationBar.tintColor = TINT_COLOR;
+    [browser release];
+    
+    return navigationController;
 }
 
 - (void)configureView {
-    NSDictionary *yesterdayDict = [self chartsFor:@"yesterday"];
-    MWPhotoBrowser *yesterday = [[MWPhotoBrowser alloc] initWithPhotos:[yesterdayDict objectForKey:@"charts"] andTimeStamps:[yesterdayDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.yesterday"]];
-    yesterday.delegate = self;
-    [yesterday setInitialPageIndex:7];
-    UINavigationController *yesterdayNavigation = [[UINavigationController alloc] initWithRootViewController:yesterday];
-    yesterdayNavigation.navigationBar.tintColor = TINT_COLOR;
-    [yesterday release];
+    NSMutableArray *browsers = [NSMutableArray array];
+    if (self.chart.yesterdayURL != nil) {
+        UINavigationController *browser = [self browserForURL:self.chart.yesterdayURL withName:@"yesterday"];
+        [browsers addObject:browser];
+        [browser release];
+    }
+    if (self.chart.yesterdayURL != nil) {
+        UINavigationController *browser = [self browserForURL:self.chart.todayURL withName:@"today"];
+        [browsers addObject:browser];
+        [browser release];
+    }
+    if (self.chart.yesterdayURL != nil) {
+        UINavigationController *browser = [self browserForURL:self.chart.tomorrowURL withName:@"tomorrow"];
+        [browsers addObject:browser];
+        [browser release];
+    }
+    if (self.chart.yesterdayURL != nil) {
+        UINavigationController *browser = [self browserForURL:self.chart.theDayAfterURL withName:@"the_day_after"];
+        [browsers addObject:browser];
+        [browser release];
+    }
     
-    NSDictionary *todayDict = [self chartsFor:@"today"];
-    MWPhotoBrowser *today = [[MWPhotoBrowser alloc] initWithPhotos:[todayDict objectForKey:@"charts"] andTimeStamps:[todayDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.today"]];
-	[today setInitialPageIndex:7];
-    today.delegate = self;
-    UINavigationController *todayNavigation = [[UINavigationController alloc] initWithRootViewController:today];
-    todayNavigation.navigationBar.tintColor = TINT_COLOR;
-    [today release];
-    
-    NSDictionary *tomorrowDict = [self chartsFor:@"tomorrow"];
-    MWPhotoBrowser *tomorrow = [[MWPhotoBrowser alloc] initWithPhotos:[tomorrowDict objectForKey:@"charts"] andTimeStamps:[tomorrowDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.tomorrow"]];
-	[tomorrow setInitialPageIndex:7];
-    tomorrow.delegate = self;
-    UINavigationController *tomorrowNavigation = [[UINavigationController alloc] initWithRootViewController:tomorrow];
-    tomorrowNavigation.navigationBar.tintColor = TINT_COLOR;
-    [tomorrow release];
-    
-    NSDictionary *inTwoDaysDict = [self chartsFor:@"in_two_days"];
-    MWPhotoBrowser *inTwoDays = [[MWPhotoBrowser alloc] initWithPhotos:[inTwoDaysDict objectForKey:@"charts"] andTimeStamps:[inTwoDaysDict objectForKey:@"timeStamps"] andTabTitle:[NSString stringWithKey:@"title.intwodays"]];
-	[inTwoDays setInitialPageIndex:7];
-    inTwoDays.delegate = self;
-    UINavigationController *inTwoDaysNavigation = [[UINavigationController alloc] initWithRootViewController:inTwoDays];
-    inTwoDaysNavigation.navigationBar.tintColor = TINT_COLOR;
-    [inTwoDays release];
-    
-    [self setViewControllers:[NSArray arrayWithObjects:yesterdayNavigation, todayNavigation, tomorrowNavigation, inTwoDaysNavigation, nil] animated:YES];
+    [self setViewControllers:browsers];
+    for (int i = 0; i < [browsers count]; i++) {
+        UINavigationController *browser = ((UINavigationController *)[browsers objectAtIndex:i]);
+        browser.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
+        browser.tabBarItem.title = [NSString stringWithKey:[NSString stringWithFormat:@"title.%@", ((MWPhotoBrowser *)browser.topViewController).day]];
+    }
     self.selectedIndex = 1;
-    yesterdayNavigation.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
-    yesterdayNavigation.tabBarItem.title = [NSString stringWithKey:@"title.yesterday"];
-    todayNavigation.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
-    todayNavigation.tabBarItem.title = [NSString stringWithKey:@"title.today"];
-    tomorrowNavigation.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
-    tomorrowNavigation.tabBarItem.title = [NSString stringWithKey:@"title.tomorrow"];
-    inTwoDaysNavigation.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
-    inTwoDaysNavigation.tabBarItem.title = [NSString stringWithKey:@"title.intwodays"];
-    
-    [yesterdayNavigation release];
-    [todayNavigation release];
-    [tomorrowNavigation release];
-    [inTwoDaysNavigation release];
     
     if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
         ((UINavigationController *)self.selectedViewController).topViewController.navigationItem.leftBarButtonItem = _barButtonItem;
@@ -202,9 +193,8 @@
 }
 
 - (void)dealloc {
-    [photos release], photos = nil;
     [_myPopoverController release];
-    [_element release];
+    [_chart release];
     [super dealloc];
 }
 

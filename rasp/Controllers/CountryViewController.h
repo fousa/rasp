@@ -6,9 +6,13 @@
 //  Copyright 2011 10to1. All rights reserved.
 //
 
+#import "Country.h"
+
 @class MenuViewController;
+@class DetailViewController;
 
 @interface CountryViewController : UITableViewController
-@property (nonatomic, retain) NSDictionary *country;
+@property (nonatomic, retain) Country *country;
+@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 @end
 

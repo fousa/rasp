@@ -41,7 +41,6 @@
 		602E79FF132CFAC10021FBAF /* raspTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 602E79FE132CFAC10021FBAF /* raspTests.h */; };
 		602E7A01132CFAC10021FBAF /* raspTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A00132CFAC10021FBAF /* raspTests.m */; };
 		602E7A0F132CFB5D0021FBAF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A0C132CFB5D0021FBAF /* DetailViewController.m */; };
-		602E7A10132CFB5D0021FBAF /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A0E132CFB5D0021FBAF /* RootViewController.m */; };
 		602E7A14132CFBF90021FBAF /* RaspController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7A13132CFBF90021FBAF /* RaspController.m */; };
 		602E7A16132CFD2A0021FBAF /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E7A15132CFD2A0021FBAF /* libz.1.2.3.dylib */; };
 		602E7A18132CFD380021FBAF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602E7A17132CFD380021FBAF /* SystemConfiguration.framework */; };
@@ -69,6 +68,10 @@
 		602E7AB3132D070C0021FBAF /* MWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7AB2132D070C0021FBAF /* MWPhotoBrowser.m */; };
 		604687E513394E1300CEB80E /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 604687E313394E1200CEB80E /* calendar.png */; };
 		604687E613394E1300CEB80E /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 604687E413394E1300CEB80E /* calendar@2x.png */; };
+		605649E0134245720023F2A7 /* Chart.m in Sources */ = {isa = PBXBuildFile; fileRef = 605649DF134245720023F2A7 /* Chart.m */; };
+		605649E3134245EF0023F2A7 /* ChartGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 605649E2134245EF0023F2A7 /* ChartGroup.m */; };
+		605649E61342461E0023F2A7 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 605649E51342461E0023F2A7 /* Country.m */; };
+		605649E91342463D0023F2A7 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 605649E81342463D0023F2A7 /* Region.m */; };
 		60BCCE19133D5F9100CA9B96 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60BCCE18133D5F9100CA9B96 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
@@ -129,8 +132,6 @@
 		602E7A00132CFAC10021FBAF /* raspTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = raspTests.m; sourceTree = "<group>"; };
 		602E7A0B132CFB5D0021FBAF /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		602E7A0C132CFB5D0021FBAF /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		602E7A0D132CFB5D0021FBAF /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		602E7A0E132CFB5D0021FBAF /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		602E7A12132CFBF90021FBAF /* RaspController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaspController.h; sourceTree = "<group>"; };
 		602E7A13132CFBF90021FBAF /* RaspController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaspController.m; sourceTree = "<group>"; };
 		602E7A15132CFD2A0021FBAF /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
@@ -184,6 +185,14 @@
 		602E7AB2132D070C0021FBAF /* MWPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPhotoBrowser.m; sourceTree = "<group>"; };
 		604687E313394E1200CEB80E /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		604687E413394E1300CEB80E /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
+		605649DE134245720023F2A7 /* Chart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chart.h; path = Models/Chart.h; sourceTree = "<group>"; };
+		605649DF134245720023F2A7 /* Chart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chart.m; path = Models/Chart.m; sourceTree = "<group>"; };
+		605649E1134245EF0023F2A7 /* ChartGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChartGroup.h; path = Models/ChartGroup.h; sourceTree = "<group>"; };
+		605649E2134245EF0023F2A7 /* ChartGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChartGroup.m; path = Models/ChartGroup.m; sourceTree = "<group>"; };
+		605649E41342461D0023F2A7 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Country.h; path = Models/Country.h; sourceTree = "<group>"; };
+		605649E51342461E0023F2A7 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Country.m; path = Models/Country.m; sourceTree = "<group>"; };
+		605649E71342463D0023F2A7 /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Region.h; path = Models/Region.h; sourceTree = "<group>"; };
+		605649E81342463D0023F2A7 /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Region.m; path = Models/Region.m; sourceTree = "<group>"; };
 		60BCCE18133D5F9100CA9B96 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -277,6 +286,7 @@
 		602E79D4132CFAC00021FBAF /* rasp */ = {
 			isa = PBXGroup;
 			children = (
+				605649DC134245450023F2A7 /* Models */,
 				60058E31132D347F00A266FF /* Utilities */,
 				60058E0C132D1E4C00A266FF /* Images */,
 				602E7A1D132CFD810021FBAF /* Frameworks */,
@@ -461,6 +471,10 @@
 				602E7AB2132D070C0021FBAF /* MWPhotoBrowser.m */,
 				602E7A12132CFBF90021FBAF /* RaspController.h */,
 				602E7A13132CFBF90021FBAF /* RaspController.m */,
+				60058EA4132D4BE900A266FF /* MenuViewController.h */,
+				60058EA5132D4BEB00A266FF /* MenuViewController.m */,
+				60134236133D3BE800FCF99E /* CountryViewController.h */,
+				60134237133D3BE800FCF99E /* CountryViewController.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -470,8 +484,6 @@
 			children = (
 				602E7A0B132CFB5D0021FBAF /* DetailViewController.h */,
 				602E7A0C132CFB5D0021FBAF /* DetailViewController.m */,
-				602E7A0D132CFB5D0021FBAF /* RootViewController.h */,
-				602E7A0E132CFB5D0021FBAF /* RootViewController.m */,
 				60058E1E132D213100A266FF /* EmptyViewController.h */,
 				60058E1F132D213200A266FF /* EmptyViewController.m */,
 			);
@@ -481,14 +493,25 @@
 		6053DEF1132D789000702CE3 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				60058EA4132D4BE900A266FF /* MenuViewController.h */,
-				60058EA5132D4BEB00A266FF /* MenuViewController.m */,
 				60058EB2132D567A00A266FF /* ChartViewController.h */,
 				60058EB3132D567F00A266FF /* ChartViewController.m */,
-				60134236133D3BE800FCF99E /* CountryViewController.h */,
-				60134237133D3BE800FCF99E /* CountryViewController.m */,
 			);
 			name = iPhone;
+			sourceTree = "<group>";
+		};
+		605649DC134245450023F2A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				605649DE134245720023F2A7 /* Chart.h */,
+				605649DF134245720023F2A7 /* Chart.m */,
+				605649E1134245EF0023F2A7 /* ChartGroup.h */,
+				605649E2134245EF0023F2A7 /* ChartGroup.m */,
+				605649E41342461D0023F2A7 /* Country.h */,
+				605649E51342461E0023F2A7 /* Country.m */,
+				605649E71342463D0023F2A7 /* Region.h */,
+				605649E81342463D0023F2A7 /* Region.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -617,7 +640,6 @@
 				602E79DC132CFAC00021FBAF /* main.m in Sources */,
 				602E79DF132CFAC00021FBAF /* raspAppDelegate.m in Sources */,
 				602E7A0F132CFB5D0021FBAF /* DetailViewController.m in Sources */,
-				602E7A10132CFB5D0021FBAF /* RootViewController.m in Sources */,
 				602E7A14132CFBF90021FBAF /* RaspController.m in Sources */,
 				602E7A42132CFD810021FBAF /* ASIAuthenticationDialog.m in Sources */,
 				602E7A43132CFD810021FBAF /* ASIDataCompressor.m in Sources */,
@@ -646,6 +668,10 @@
 				60058EAE132D4C9F00A266FF /* raspAppDelegate-iPad.m in Sources */,
 				60058EB5132D56A600A266FF /* ChartViewController.m in Sources */,
 				60134238133D3BE800FCF99E /* CountryViewController.m in Sources */,
+				605649E0134245720023F2A7 /* Chart.m in Sources */,
+				605649E3134245EF0023F2A7 /* ChartGroup.m in Sources */,
+				605649E61342461E0023F2A7 /* Country.m in Sources */,
+				605649E91342463D0023F2A7 /* Region.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

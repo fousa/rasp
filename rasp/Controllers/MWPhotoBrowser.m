@@ -22,7 +22,7 @@
 		// Store photos
 		photos = [photosArray retain];
         timeStamps = [timeStampsArray retain];
-        tabTitle = aTabTitle;
+        tabTitle = [aTabTitle retain];
 		
         // Defaults
 		self.wantsFullScreenLayout = YES;
@@ -55,9 +55,12 @@
 // Release any retained subviews of the main view.
 - (void)viewDidUnload {
 	currentPageIndex = 0;
-	[pagingScrollView release];
-	[visiblePages release];
-	[recycledPages release];
+	[timeStamps release], timeStamps = nil;
+	[photos release], photos = nil;
+	[pagingScrollView release], pagingScrollView = nil;
+	[visiblePages release], visiblePages = nil;
+	[recycledPages release], recycledPages = nil;
+    self.delegate = nil;
 }
 
 - (void)dealloc {
@@ -66,6 +69,7 @@
 	[pagingScrollView release], pagingScrollView = nil;
 	[visiblePages release], visiblePages = nil;
 	[recycledPages release], recycledPages = nil;
+    self.delegate = nil;
     [super dealloc];
 }
 

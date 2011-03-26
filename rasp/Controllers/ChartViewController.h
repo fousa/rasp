@@ -8,9 +8,12 @@
 
 #import "MWPhotoBrowser.h"
 
+#import "Chart.h"
+#import "Country.h"
+
 @interface ChartViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, MWPhotoBrowserDelegate>
-@property (nonatomic, retain) NSDictionary *element;
-@property (nonatomic, retain) NSDictionary *country;
+@property (nonatomic, retain) Chart *chart;
+@property (nonatomic, retain) Country *country;
 
 - (void)configureView;
 @end

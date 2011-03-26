@@ -6,11 +6,14 @@
 //  Copyright 2011 10to1. All rights reserved.
 //
 
+#import "Country.h"
+
 @interface RaspController : NSObject
-@property (nonatomic, readonly) NSDictionary *countries;
+@property (nonatomic, readonly) NSArray *regions;
 @property (nonatomic, retain) id delegate;
 
 + (RaspController *)instance;
 
-- (void)loadChartsForCountry:(NSString *)country;
+- (void)loadChartsForCountry:(Country *)country;
+- (NSArray *)convertCharts:(NSDictionary *)dictionary forCountry:(Country *)country;
 @end

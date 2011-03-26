@@ -7,10 +7,5 @@
 //
 
 @interface raspAppDelegate : NSObject <UIApplicationDelegate>
-+ (raspAppDelegate *)sharedAppDelegate;
-
-- (NSString *)selectedLanguage;
-
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-
 @end

@@ -21,7 +21,7 @@
 #pragma mark Translations
 
 + (NSString *)stringWithKey:(NSString *)key {
-	NSString *translationKey = [NSString stringWithFormat:@"%@.%@", current_language, key];
+	NSString *translationKey = [NSString stringWithFormat:@"en.%@", key];
 	return NSLocalizedString(translationKey, @"Retrieve the string");
 }
 

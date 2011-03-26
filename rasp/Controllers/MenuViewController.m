@@ -11,10 +11,13 @@
 #import "RaspController.h"
 #import "ChartViewController.h"
 
+#import "ChartGroup.h"
+#import "Chart.h"
+
 @implementation MenuViewController
 
 @synthesize country=_country;
-@synthesize charts=_charts;
+@synthesize detailViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,23 +30,23 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.title = [NSString stringWithKey:[NSString stringWithFormat:@"title.country.%@", [self.country objectForKey:@"name"]]];
+    self.title = [NSString stringWithKey:[NSString stringWithFormat:@"title.country.%@", self.country.name]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad || UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [_charts count];
+    return [self.country.charts count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [[_charts objectAtIndex:section] objectAtIndex:0];
+    return ((ChartGroup *) [self.country.charts objectAtIndex:section]).name;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [((NSArray *) [((NSArray *) [_charts objectAtIndex:section]) objectAtIndex:1]) count];
+    return [((ChartGroup *)[self.country.charts objectAtIndex:section]).charts count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {    
@@ -54,8 +57,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    NSDictionary *element = [[[_charts objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row];
-    cell.textLabel.text = [element objectForKey:@"name"];
+    Chart *chart = (Chart *)[((ChartGroup *)[self.country.charts objectAtIndex:indexPath.section]).charts objectAtIndex:indexPath.row];
+    cell.textLabel.text = chart.name;
     cell.textLabel.font = [UIFont systemFontOfSize:13];
     cell.textLabel.numberOfLines = 2;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -64,17 +67,23 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {	
-	NSDictionary *element = [[[_charts objectAtIndex:indexPath.section] objectAtIndex:1] objectAtIndex:indexPath.row];
+    Chart *chart = (Chart *)[((ChartGroup *)[self.country.charts objectAtIndex:indexPath.section]).charts objectAtIndex:indexPath.row];
     
-    ChartViewController *chartController = [[ChartViewController alloc] initWithNibName:@"ChartViewController" bundle:[NSBundle mainBundle]];
-    chartController.element = element;
-    chartController.country = self.country;
-    [chartController configureView];
-    [self.navigationController pushViewController:chartController animated:YES];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.detailViewController.chart = chart;
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    } else {
+        ChartViewController *chartController = [[ChartViewController alloc] initWithNibName:@"ChartViewController" bundle:[NSBundle mainBundle]];
+        chartController.chart = chart;
+        chartController.country = self.country;
+        [chartController configureView];
+        [self.navigationController pushViewController:chartController animated:YES];
+        [chartController release];
+    }
 }
 
 - (void)dealloc {
-    [_charts release], _charts = nil;
+    self.country = nil;
     [super dealloc];
 }
 

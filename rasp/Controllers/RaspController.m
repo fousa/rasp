@@ -11,11 +11,14 @@
 #import "ASIHTTPRequest.h"
 #import "JSON.h"
 
+#import "Region.h"
+#import "ChartGroup.h"
+#import "Chart.h"
+
 static RaspController *singletonRaspController = nil;
 
 @interface RaspController () {
-	NSMutableArray *_charts;
-    NSMutableDictionary *_countries;
+    NSMutableArray *_regions;
 }
 @end
 
@@ -44,42 +47,80 @@ static RaspController *singletonRaspController = nil;
 #pragma mark -
 #pragma mark Getters
 
-- (NSDictionary *)countries {
-    return _countries;
+- (NSArray *)regions {
+    return _regions;
 }
 
 #pragma - Countries
 
 - (void)loadCountries {
-	NSDictionary *parts = [[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Countries" ofType:@"plist"]] retain];
+	NSDictionary *parts = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Countries" ofType:@"plist"]];
     
-    NSMutableDictionary *filteredCountries = [NSMutableDictionary dictionary];
+    NSMutableArray *filteredRegions = [NSMutableArray array];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    for (NSString *key in [parts allKeys]) {
-        NSArray *countries = ((NSArray *)[parts objectForKey:key]);
+    for (NSString *part in [parts allKeys]) {
+        NSArray *countries = ((NSArray *)[parts objectForKey:part]);
         NSMutableArray *newCountries = [NSMutableArray array];
-        for (NSDictionary *dict in countries) {
-            if ([defaults boolForKey:((NSString *)[dict objectForKey:@"name"])]) {
-                [newCountries addObject:dict];
+        for (NSString *country in countries) {
+            if ([defaults boolForKey:country]) {
+                [newCountries addObject:country];
             }
         }
         if ([newCountries count] > 0) {
-            [filteredCountries setObject:newCountries forKey:key];
+            Region *region = [[Region alloc] initWithCountries:newCountries];
+            region.name = part;
+            [filteredRegions addObject:region];
+            [region release];
         }
     }
-    _countries = filteredCountries;
+    _regions = filteredRegions;
 }
 
 #pragma mark - Charts
 
-- (void)loadChartsForCountry:(NSString *)country {
-	NSURL *url = [NSURL URLWithString:[BASE_URL stringByAppendingFormat:@"menu?language=%@&country=%@",current_language, country]];
+- (NSArray *)convertCharts:(NSDictionary *)dictionary forCountry:(Country *)country {
+    NSMutableArray *groups = [NSMutableArray array];
+    for (NSString *groupName in [dictionary allKeys]) {
+        if ([groupName compare:@"config"] == NSOrderedSame) {
+            country.periods = [[dictionary objectForKey:groupName]objectForKey:@"periods"];
+        } else {
+            ChartGroup *group = [ChartGroup new];
+            group.name = groupName;
+            group.charts = [NSMutableArray array];
+            for (NSString *chartName in [dictionary objectForKey:groupName]) {
+                Chart *chart = [Chart new];
+                chart.name = chartName;
+                chart.country = country;
+                chart.hasPeriods = [[[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"has_periods"] boolValue];
+                NSString *yesterdayURL = [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"yesterday"];
+                if (yesterdayURL != nil) chart.yesterdayURL = yesterdayURL;
+
+                NSString *todayURL = [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"today"];
+                if (todayURL != nil) chart.todayURL = todayURL;
+                
+                NSString *tomorrowURL = [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"tomorrow"];
+                if (tomorrowURL != nil) chart.tomorrowURL = tomorrowURL;
+                
+                NSString *theDayAfterURL = [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"the_day_after"];
+                if (theDayAfterURL != nil) chart.theDayAfterURL = theDayAfterURL;
+                
+                [group.charts addObject:chart];
+                [chart release];
+            }
+            [groups addObject:group];
+            [group release];
+        }
+    }
+    return groups;
+}
+
+- (void)loadChartsForCountry:(Country *)country {
+	NSURL *url = [NSURL URLWithString:[BASE_URL stringByAppendingFormat:@"countries/%@/charts", country.name]];
 	
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self.delegate];
     [request setTimeOutSeconds:25];
     [request setDidFinishSelector:@selector(requestSuccess:)];
-    [request setUseKeychainPersistence:YES];
     [request startAsynchronous];
 }
 
@@ -87,7 +128,8 @@ static RaspController *singletonRaspController = nil;
 #pragma mark Memory
 
 - (void)dealloc {
-    [_countries release], _countries = nil;
+    [_regions release], _regions = nil;
+    self.delegate = nil;
     [super dealloc];
 }
 

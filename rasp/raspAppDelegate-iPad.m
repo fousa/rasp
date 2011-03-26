@@ -8,13 +8,12 @@
 
 #import "raspAppDelegate-iPad.h"
 
-#import "RootViewController.h"
 #import "RaspController.h"
 
 @implementation raspAppDelegate_iPad
 
 @synthesize splitViewController=_splitViewController;
-@synthesize rootViewController=_rootViewController;
+@synthesize countryViewController=_countryViewController;
 @synthesize detailViewController=_detailViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -27,7 +26,7 @@
 
 - (void)dealloc {
     [_splitViewController release];
-    [_rootViewController release];
+    [_countryViewController release];
     [_detailViewController release];
     [super dealloc];
 }

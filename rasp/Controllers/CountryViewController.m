@@ -13,10 +13,12 @@
 #import "ASIHTTPRequest.h"
 #import "JSON.h"
 
+#import "Region.h"
+
 #define CELL_LOADING_TAG 999;
 
 @interface CountryViewController () {
-    NSDictionary *_countries;
+    NSArray *_regions;
     BOOL _loading;
 }
 @end
@@ -24,6 +26,7 @@
 @implementation CountryViewController
 
 @synthesize country=_country;
+@synthesize detailViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +35,7 @@
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
     
-    _countries = [[RaspController instance].countries retain];
+    _regions = [[RaspController instance].regions retain];
     _loading = NO;
 }
 
@@ -43,19 +46,19 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad || UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[_countries allKeys] count];
+    return [_regions count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"title.world.%@", [[_countries allKeys] objectAtIndex:section]];
+    return [NSString stringWithKey:[NSString stringWithFormat:@"title.part.%@", ((Region *)[_regions objectAtIndex:section]).name]];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[_countries objectForKey:[[_countries allKeys] objectAtIndex:section]] count];
+    return [((Region *)[_regions objectAtIndex:section]).countries count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {    
@@ -66,8 +69,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    NSDictionary *element = [((NSArray *)[_countries objectForKey:[[_countries allKeys] objectAtIndex:indexPath.section]]) objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithKey:[NSString stringWithFormat:@"title.country.%@", [element objectForKey:@"name"]]];
+    Country *country = (Country *)[((Region *)[_regions objectAtIndex:indexPath.section]).countries objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithKey:[NSString stringWithFormat:@"title.country.%@", country.name]];
     cell.textLabel.font = [UIFont systemFontOfSize:13];
     cell.textLabel.numberOfLines = 2;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -80,8 +83,8 @@
     
     if (!_loading) {
         _loading = YES;
-        self.country = [((NSArray *)[_countries objectForKey:[[_countries allKeys] objectAtIndex:indexPath.section]]) objectAtIndex:indexPath.row];
-    
+        self.country = (Country *)[((Region *)[_regions objectAtIndex:indexPath.section]).countries objectAtIndex:indexPath.row];
+
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
         UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -89,25 +92,27 @@
         cell.tag = CELL_LOADING_TAG;
         cell.accessoryView = activity;
         [RaspController instance].delegate = self;
-        [[RaspController instance] loadChartsForCountry:[self.country objectForKey:@"name"]];
+        [[RaspController instance] loadChartsForCountry:self.country];
     }
 }
 
 #pragma mark - Chart loading
 
 - (void)requestSuccess:(ASIHTTPRequest *)aRequest {
-    NSArray *charts = [[aRequest responseString] JSONValue];
+    NSDictionary *charts = [[aRequest responseString] JSONValue];
     UITableViewCell *cell = ((UITableViewCell *)[self.tableView viewWithTag:999]);
-	if ([charts count] == 0) {
+	if ([[charts allKeys] count] == 0) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection error" message:@"An error occured trying to connect to the server." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
 		[alert show];
 		[alert release];
 	} else {
         MenuViewController *menuController = [[MenuViewController alloc] init];
-        menuController.charts = charts;
+        self.country.charts = [[RaspController instance] convertCharts:charts forCountry:self.country];
         menuController.country = self.country;
+        menuController.detailViewController = self.detailViewController;
         [menuController.tableView reloadData];
         [self.navigationController pushViewController:menuController animated:YES];
+        [menuController release];
     }
     cell.accessoryView = nil;
     cell.tag = 0;
@@ -115,7 +120,8 @@
 }
 
 - (void)dealloc {
-    [_countries release], _countries = nil;
+    [_regions release], _regions = nil;
+    self.country = nil;
     [super dealloc];
 }
 
