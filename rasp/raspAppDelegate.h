@@ -8,4 +8,6 @@
 
 @interface raspAppDelegate : NSObject <UIApplicationDelegate>
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+
+- (void)showAlert;
 @end

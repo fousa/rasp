@@ -14,6 +14,12 @@
 
 @synthesize window=_window;
 
+- (void)showAlert {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithKey:@"alert.title"] message:[NSString stringWithKey:@"alert.message"] delegate:nil cancelButtonTitle:[NSString stringWithKey:@"alert.cancel"] otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
 - (void)dealloc {
     [_window release];
     [super dealloc];

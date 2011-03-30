@@ -17,7 +17,7 @@
 @synthesize detailViewController=_detailViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [RaspController instance];
+    if ([[RaspController instance].regions count] == 0) [super showAlert];
     
     self.window.rootViewController = self.splitViewController;
     [self.window makeKeyAndVisible];

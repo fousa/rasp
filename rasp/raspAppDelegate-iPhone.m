@@ -15,7 +15,7 @@
 @synthesize navigationController=_navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [RaspController instance];
+    if ([[RaspController instance].regions count] == 0) [super showAlert];
     
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];

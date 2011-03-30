@@ -7,6 +7,10 @@
 "en.title.the_day_after" = "The Day After";
 "en.title.yesterday"     = "Yesterday";
 
+"en.alert.title"   = "No countries";
+"en.alert.message" = "Please select a country in the Settings app";
+"en.alert.cancel"  = "OK";
+
 "en.text.select"       = "Choose a chart";
 
 "en.title.part.europe"         = "Europe";
