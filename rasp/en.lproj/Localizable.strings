@@ -1,14 +1,14 @@
 /* English */
-"en.title.countries"   = "Countries";
-"en.title.empty"       = "No chart";
-"en.title.today"       = "Today";
-"en.title.tomorrow"    = "Tomorrow";
-"en.title.in_two_days" = "The Day After";
-"en.title.yesterday"   = "Yesterday";
+"en.title.countries"     = "Countries";
+"en.title.charts"        = "Charts";
+"en.title.empty"         = "No chart";
+"en.title.today"         = "Today";
+"en.title.tomorrow"      = "Tomorrow";
+"en.title.the_day_after" = "The Day After";
+"en.title.yesterday"     = "Yesterday";
 
 "en.text.select"       = "Choose a chart";
 
 "en.title.part.europe"         = "Europe";
+
 "en.title.country.benelux"     = "Benelux";
-"en.title.country.northfrance" = "North France";
-"en.title.country.longmynd"    = "Long Mynd";
