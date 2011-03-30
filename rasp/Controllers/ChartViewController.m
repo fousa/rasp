@@ -42,22 +42,18 @@
     if (self.chart.yesterdayURL != nil) {
         MWPhotoBrowser *browser = [self browserForURL:self.chart.yesterdayURL withName:@"yesterday"];
         [browsers addObject:browser];
-        [browser release];
     }
     if (self.chart.yesterdayURL != nil) {
         MWPhotoBrowser *browser = [self browserForURL:self.chart.todayURL withName:@"today"];
         [browsers addObject:browser];
-        [browser release];
     }
     if (self.chart.yesterdayURL != nil) {
         MWPhotoBrowser *browser = [self browserForURL:self.chart.tomorrowURL withName:@"tomorrow"];
         [browsers addObject:browser];
-        [browser release];
     }
     if (self.chart.yesterdayURL != nil) {
         MWPhotoBrowser *browser = [self browserForURL:self.chart.theDayAfterURL withName:@"the_day_after"];
         [browsers addObject:browser];
-        [browser release];
     }
     
     [self setViewControllers:browsers];
@@ -82,7 +78,7 @@
         _photos = [NSArray arrayWithObject:[MWPhoto photoWithURL:[NSURL URLWithString:URLString]]];
         _periods = [NSArray arrayWithObject:self.chart.name];
     }
-    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:_photos andTimeStamps:_periods andTabTitle:[NSString stringWithKey:[NSString stringWithFormat:@"title.%@", aName]]];
+    MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithPhotos:_photos andTimeStamps:_periods andTabTitle:[NSString stringWithKey:[NSString stringWithFormat:@"title.%@", aName]]] autorelease];
     browser.day = aName;
     [browser setInitialPageIndex:7];
     browser.delegate = self;

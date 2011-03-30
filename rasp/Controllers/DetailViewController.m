@@ -115,7 +115,7 @@
     browser.delegate = self;
     
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:browser];
+    UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:browser] autorelease];
     navigationController.navigationBar.tintColor = TINT_COLOR;
     [browser release];
     
@@ -127,22 +127,18 @@
     if (self.chart.yesterdayURL != nil) {
         UINavigationController *browser = [self browserForURL:self.chart.yesterdayURL withName:@"yesterday"];
         [browsers addObject:browser];
-        [browser release];
     }
     if (self.chart.yesterdayURL != nil) {
         UINavigationController *browser = [self browserForURL:self.chart.todayURL withName:@"today"];
         [browsers addObject:browser];
-        [browser release];
     }
     if (self.chart.yesterdayURL != nil) {
         UINavigationController *browser = [self browserForURL:self.chart.tomorrowURL withName:@"tomorrow"];
         [browsers addObject:browser];
-        [browser release];
     }
     if (self.chart.yesterdayURL != nil) {
         UINavigationController *browser = [self browserForURL:self.chart.theDayAfterURL withName:@"the_day_after"];
         [browsers addObject:browser];
-        [browser release];
     }
     
     [self setViewControllers:browsers];
