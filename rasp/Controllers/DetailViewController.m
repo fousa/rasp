@@ -103,7 +103,7 @@
         _photos = [self chartsFor:URLString andTimestamps:self.chart.country.periods];
         _periods = [NSMutableArray array];
         for (NSNumber *period in self.chart.country.periods) {
-            [_periods addObject:[NSString stringWithFormat:@"%@", period]];
+            [_periods addObject:[NSString stringWithFormat:@"%04d", [period intValue]]];
         }
     } else {
         _photos = [NSArray arrayWithObject:[MWPhoto photoWithURL:[NSURL URLWithString:URLString]]];
