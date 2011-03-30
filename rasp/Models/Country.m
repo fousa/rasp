@@ -11,7 +11,7 @@
 
 @implementation Country
 
-@synthesize name, charts, periods;
+@synthesize name, charts, periods, onlyHours;
 
 - (void)dealloc {
     self.name = nil;

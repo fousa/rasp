@@ -14,5 +14,6 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSArray *charts;
 @property (nonatomic, retain) NSArray *periods;
+@property (nonatomic, assign) BOOL onlyHours;
 
 @end

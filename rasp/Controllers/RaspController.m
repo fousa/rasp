@@ -83,6 +83,7 @@ static RaspController *singletonRaspController = nil;
     for (NSString *groupName in [dictionary allKeys]) {
         if ([groupName compare:@"config"] == NSOrderedSame) {
             country.periods = [[dictionary objectForKey:groupName]objectForKey:@"periods"];
+            country.onlyHours = [[[dictionary objectForKey:groupName]objectForKey:@"only_hours"] boolValue];
         } else {
             ChartGroup *group = [ChartGroup new];
             group.name = groupName;

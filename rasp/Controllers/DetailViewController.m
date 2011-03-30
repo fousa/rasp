@@ -26,7 +26,7 @@
 
 @interface DetailViewController (View)
 - (void)configureView;
-- (NSArray *)chartsFor:(NSString *)path andTimestamps:(NSArray *)timestamps;
+- (NSArray *)chartsFor:(NSString *)path andTimestamps:(NSArray *)timestamps onlyHours:(BOOL)hours;
 - (UINavigationController *)browserForURL:(NSString *)URLString withName:(NSString *)aName;
 @end
 
@@ -87,10 +87,16 @@
     }        
 }
 
-- (NSArray *)chartsFor:(NSString *)path andTimestamps:(NSArray *)timestamps {
+- (NSArray *)chartsFor:(NSString *)path andTimestamps:(NSArray *)timestamps onlyHours:(BOOL)hours {
     NSMutableArray *charts = [NSMutableArray array];
     for (NSString *timestamp in timestamps) {
-        [charts addObject:[MWPhoto photoWithURL:[NSURL URLWithString:[NSString stringWithFormat:path, [timestamp intValue]]]]];
+        NSString *URLString;
+        if (hours) {
+            URLString = [NSString stringWithFormat:path, (int)[[[NSString stringWithFormat:@"%04d", (int)[timestamp intValue]] substringToIndex:2] intValue]];
+        } else {
+            URLString = [NSString stringWithFormat:path, (int)[timestamp intValue]];
+        }
+        [charts addObject:[MWPhoto photoWithURL:[NSURL URLWithString:URLString]]];
     }
     
     return [NSArray arrayWithArray:charts];
@@ -100,7 +106,7 @@
     NSMutableArray *_periods;
     NSArray *_photos;
     if (self.chart.hasPeriods) {
-        _photos = [self chartsFor:URLString andTimestamps:self.chart.country.periods];
+        _photos = [self chartsFor:URLString andTimestamps:self.chart.country.periods onlyHours:self.chart.country.onlyHours];
         _periods = [NSMutableArray array];
         for (NSNumber *period in self.chart.country.periods) {
             [_periods addObject:[NSString stringWithFormat:@"%04d", [period intValue]]];
