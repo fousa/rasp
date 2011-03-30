@@ -43,15 +43,15 @@
         MWPhotoBrowser *browser = [self browserForURL:self.chart.yesterdayURL withName:@"yesterday"];
         [browsers addObject:browser];
     }
-    if (self.chart.yesterdayURL != nil) {
+    if (self.chart.todayURL != nil) {
         MWPhotoBrowser *browser = [self browserForURL:self.chart.todayURL withName:@"today"];
         [browsers addObject:browser];
     }
-    if (self.chart.yesterdayURL != nil) {
+    if (self.chart.tomorrowURL != nil) {
         MWPhotoBrowser *browser = [self browserForURL:self.chart.tomorrowURL withName:@"tomorrow"];
         [browsers addObject:browser];
     }
-    if (self.chart.yesterdayURL != nil) {
+    if (self.chart.theDayAfterURL != nil) {
         MWPhotoBrowser *browser = [self browserForURL:self.chart.theDayAfterURL withName:@"the_day_after"];
         [browsers addObject:browser];
     }
