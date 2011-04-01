@@ -18,7 +18,7 @@
 
 @interface ChartViewController (View)
 - (NSArray *)chartsFor:(NSString *)path andTimestamps:(NSArray *)timestamps;
-- (MWPhotoBrowser *)browserForURL:(NSString *)URLString withName:(NSString *)aName;
+- (MWPhotoBrowser *)browserForURL:(NSArray *)URLs withName:(NSString *)aName;
 @end
 
 @implementation ChartViewController
@@ -28,31 +28,22 @@
 
 #pragma mark - Detail element
 
-- (NSArray *)chartsFor:(NSString *)path andTimestamps:(NSArray *)timestamps {
-    NSMutableArray *charts = [NSMutableArray array];
-    for (NSString *timestamp in timestamps) {
-        [charts addObject:[MWPhoto photoWithURL:[NSURL URLWithString:[NSString stringWithFormat:path, [timestamp intValue]]]]];
-    }
-    
-    return [NSArray arrayWithArray:charts];
-}
-
 - (void)configureView {
     NSMutableArray *browsers = [NSMutableArray array];
-    if (self.chart.yesterdayURL != nil) {
-        MWPhotoBrowser *browser = [self browserForURL:self.chart.yesterdayURL withName:@"yesterday"];
+    if (self.chart.yesterdayURLs != nil) {
+        MWPhotoBrowser *browser = [self browserForURL:self.chart.yesterdayURLs withName:@"yesterday"];
         [browsers addObject:browser];
     }
-    if (self.chart.todayURL != nil) {
-        MWPhotoBrowser *browser = [self browserForURL:self.chart.todayURL withName:@"today"];
+    if (self.chart.todayURLs != nil) {
+        MWPhotoBrowser *browser = [self browserForURL:self.chart.todayURLs withName:@"today"];
         [browsers addObject:browser];
     }
-    if (self.chart.tomorrowURL != nil) {
-        MWPhotoBrowser *browser = [self browserForURL:self.chart.tomorrowURL withName:@"tomorrow"];
+    if (self.chart.tomorrowURLs != nil) {
+        MWPhotoBrowser *browser = [self browserForURL:self.chart.tomorrowURLs withName:@"tomorrow"];
         [browsers addObject:browser];
     }
-    if (self.chart.theDayAfterURL != nil) {
-        MWPhotoBrowser *browser = [self browserForURL:self.chart.theDayAfterURL withName:@"the_day_after"];
+    if (self.chart.theDayAfterURLs != nil) {
+        MWPhotoBrowser *browser = [self browserForURL:self.chart.theDayAfterURLs withName:@"the_day_after"];
         [browsers addObject:browser];
     }
     
@@ -65,23 +56,31 @@
     self.selectedIndex = 1;
 }
 
-- (MWPhotoBrowser *)browserForURL:(NSString *)URLString withName:(NSString *)aName {
+- (NSArray *)chartsFor:(NSArray *)URLs {
+    NSMutableArray *charts = [NSMutableArray array];
+    for (NSString *URLString in URLs) {
+        [charts addObject:[MWPhoto photoWithURL:[NSURL URLWithString:URLString]]];
+    }
+    
+    return [NSArray arrayWithArray:charts];
+}
+
+- (MWPhotoBrowser *)browserForURL:(NSArray *)URLs withName:(NSString *)aName {
     NSMutableArray *_periods;
-    NSArray *_photos;
+    NSArray *_photos = [self chartsFor:URLs];
     if (self.chart.hasPeriods) {
-        _photos = [self chartsFor:URLString andTimestamps:self.country.periods];
         _periods = [NSMutableArray array];
         for (NSNumber *period in self.chart.country.periods) {
             [_periods addObject:[NSString stringWithFormat:@"%04d", [period intValue]]];
         }
     } else {
-        _photos = [NSArray arrayWithObject:[MWPhoto photoWithURL:[NSURL URLWithString:URLString]]];
         _periods = [NSArray arrayWithObject:self.chart.name];
     }
-    MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithPhotos:_photos andTimeStamps:_periods andTabTitle:[NSString stringWithKey:[NSString stringWithFormat:@"title.%@", aName]]] autorelease];
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:_photos andTimeStamps:_periods andTabTitle:[NSString stringWithKey:[NSString stringWithFormat:@"title.%@", aName]]];
     browser.day = aName;
     [browser setInitialPageIndex:7];
     browser.delegate = self;
+    
     return browser;
 }
 

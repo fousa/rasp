@@ -93,17 +93,35 @@ static RaspController *singletonRaspController = nil;
                 chart.name = chartName;
                 chart.country = country;
                 chart.hasPeriods = [[[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"has_periods"] boolValue];
-                NSString *yesterdayURL = [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"yesterday"];
-                if (yesterdayURL != nil) chart.yesterdayURL = yesterdayURL;
-
-                NSString *todayURL = [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"today"];
-                if (todayURL != nil) chart.todayURL = todayURL;
                 
-                NSString *tomorrowURL = [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"tomorrow"];
-                if (tomorrowURL != nil) chart.tomorrowURL = tomorrowURL;
-                
-                NSString *theDayAfterURL = [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"the_day_after"];
-                if (theDayAfterURL != nil) chart.theDayAfterURL = theDayAfterURL;
+                chart.yesterdayURLs = nil;
+                if ([[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"yesterday"] != nil) {
+                    chart.yesterdayURLs = [NSMutableArray array];
+                    for (NSString *URL in [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"yesterday"]) {
+                        [chart.yesterdayURLs addObject:URL];
+                    }
+                }
+                chart.todayURLs = nil;
+                if ([[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"today"] != nil) {
+                    chart.todayURLs = [NSMutableArray array];
+                    for (NSString *URL in [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"today"]) {
+                        [chart.todayURLs addObject:URL];
+                    }
+                }
+                chart.tomorrowURLs = nil;
+                if ([[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"tomorrow"] != nil) {
+                    chart.tomorrowURLs = [NSMutableArray array];
+                    for (NSString *URL in [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"tomorrow"]) {
+                        [chart.tomorrowURLs addObject:URL];
+                    }
+                }
+                chart.theDayAfterURLs = nil;
+                if ([[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"the_day_after"] != nil) {
+                    chart.theDayAfterURLs = [NSMutableArray array];
+                    for (NSString *URL in [[[dictionary objectForKey:groupName] objectForKey:chartName] objectForKey:@"the_day_after"]) {
+                        [chart.theDayAfterURLs addObject:URL];
+                    }
+                }
                 
                 [group.charts addObject:chart];
                 [chart release];

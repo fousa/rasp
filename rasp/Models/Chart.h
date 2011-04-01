@@ -14,10 +14,10 @@
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, assign) BOOL hasPeriods;
-@property (nonatomic, retain) NSString *yesterdayURL;
-@property (nonatomic, retain) NSString *todayURL;
-@property (nonatomic, retain) NSString *tomorrowURL;
-@property (nonatomic, retain) NSString *theDayAfterURL;
+@property (nonatomic, retain) NSMutableArray *yesterdayURLs;
+@property (nonatomic, retain) NSMutableArray *todayURLs;
+@property (nonatomic, retain) NSMutableArray *tomorrowURLs;
+@property (nonatomic, retain) NSMutableArray *theDayAfterURLs;
 
 @property (nonatomic, retain) Country *country;
 

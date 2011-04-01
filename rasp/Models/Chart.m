@@ -9,14 +9,14 @@
 #import "Chart.h"
 
 @implementation Chart
-@synthesize name, hasPeriods, yesterdayURL, todayURL, tomorrowURL, theDayAfterURL, country;
+@synthesize name, hasPeriods, yesterdayURLs, todayURLs, tomorrowURLs, theDayAfterURLs, country;
 
 - (void)dealloc {
     self.name = nil;
-    self.yesterdayURL = nil;
-    self.todayURL = nil;
-    self.tomorrowURL = nil;
-    self.theDayAfterURL = nil;
+    self.yesterdayURLs = nil;
+    self.todayURLs = nil;
+    self.tomorrowURLs = nil;
+    self.theDayAfterURLs = nil;
     self.country = nil;
     
     [super dealloc];
