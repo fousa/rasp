@@ -8,8 +8,8 @@
 #warning "This project uses features only available in iPhone SDK 3.0 and later."
 #endif
 
-#define BASE_URL @"http://localhost:3000/"
-//#define BASE_URL @"http://rasp.heroku.com/"
+//#define BASE_URL @"http://localhost:3000/"
+#define BASE_URL @"http://rasp.heroku.com/"
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>

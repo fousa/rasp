@@ -62,7 +62,7 @@ static RaspController *singletonRaspController = nil;
         NSArray *countries = ((NSArray *)[parts objectForKey:part]);
         NSMutableArray *newCountries = [NSMutableArray array];
         for (NSString *country in countries) {
-            if ([defaults boolForKey:country]) {
+            if ([defaults objectForKey:country] == nil || [defaults boolForKey:country]) {
                 [newCountries addObject:country];
             }
         }
