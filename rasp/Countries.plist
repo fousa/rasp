@@ -4,6 +4,7 @@
 <dict>
 	<key>europe</key>
 	<array>
+		<string>alps</string>
 		<string>benelux</string>
 		<string>westernswissalps</string>
 	</array>
