@@ -58,10 +58,15 @@ static RaspController *singletonRaspController = nil;
     
     NSMutableArray *filteredRegions = [NSMutableArray array];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    for (NSString *part in [parts allKeys]) {
+    
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(compare:)];
+    NSArray* sortedParts = [[parts allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    for (NSString *part in sortedParts) {
         NSArray *countries = ((NSArray *)[parts objectForKey:part]);
         NSMutableArray *newCountries = [NSMutableArray array];
-        for (NSString *country in countries) {
+        NSArray* sortedCountries = [countries sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        for (NSString *country in sortedCountries) {
             if ([defaults objectForKey:country] == nil || [defaults boolForKey:country]) {
                 [newCountries addObject:country];
             }
@@ -80,7 +85,9 @@ static RaspController *singletonRaspController = nil;
 
 - (NSArray *)convertCharts:(NSDictionary *)dictionary forCountry:(Country *)country {
     NSMutableArray *groups = [NSMutableArray array];
-    for (NSString *groupName in [dictionary allKeys]) {
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(compare:)];
+    NSArray* sortedGroups = [[dictionary allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    for (NSString *groupName in sortedGroups) {
         if ([groupName compare:@"config"] == NSOrderedSame) {
             country.periods = [[dictionary objectForKey:groupName]objectForKey:@"periods"];
             country.onlyHours = [[[dictionary objectForKey:groupName]objectForKey:@"only_hours"] boolValue];
@@ -88,7 +95,8 @@ static RaspController *singletonRaspController = nil;
             ChartGroup *group = [ChartGroup new];
             group.name = groupName;
             group.charts = [NSMutableArray array];
-            for (NSString *chartName in [dictionary objectForKey:groupName]) {
+            NSArray* sortedCharts = [[[dictionary objectForKey:groupName] allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+            for (NSString *chartName in sortedCharts) {
                 Chart *chart = [Chart new];
                 chart.name = chartName;
                 chart.country = country;
