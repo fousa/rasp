@@ -122,9 +122,11 @@
 
 - (void)configureView {
     NSMutableArray *browsers = [NSMutableArray array];
+    int selectedBrowser = 0;
     if (self.chart.yesterdayURLs != nil) {
         UINavigationController *browser = [self browserForURL:self.chart.yesterdayURLs withName:@"yesterday"];
         [browsers addObject:browser];
+        selectedBrowser++;
     }
     if (self.chart.todayURLs != nil) {
         UINavigationController *browser = [self browserForURL:self.chart.todayURLs withName:@"today"];
@@ -145,7 +147,7 @@
         browser.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
         browser.tabBarItem.title = [NSString stringWithKey:[NSString stringWithFormat:@"title.%@", ((MWPhotoBrowser *)browser.topViewController).day]];
     }
-    self.selectedIndex = 1;
+    self.selectedIndex = selectedBrowser;
     
     if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
         ((UINavigationController *)self.selectedViewController).topViewController.navigationItem.leftBarButtonItem = _barButtonItem;
