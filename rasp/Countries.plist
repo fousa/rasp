@@ -9,5 +9,9 @@
 		<string>westernswissalps</string>
 		<string>germany</string>
 	</array>
+	<key>northamerica</key>
+	<array>
+		<string>southerncalifornia</string>
+	</array>
 </dict>
 </plist>
