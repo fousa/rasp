@@ -66,13 +66,19 @@
 		602E7AAF132D026B0021FBAF /* UIImageViewTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7AA8132D026B0021FBAF /* UIImageViewTap.m */; };
 		602E7AB0132D026B0021FBAF /* UIViewTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7AAA132D026B0021FBAF /* UIViewTap.m */; };
 		602E7AB3132D070C0021FBAF /* MWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 602E7AB2132D070C0021FBAF /* MWPhotoBrowser.m */; };
-		604687E513394E1300CEB80E /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 604687E313394E1200CEB80E /* calendar.png */; };
-		604687E613394E1300CEB80E /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 604687E413394E1300CEB80E /* calendar@2x.png */; };
 		605649E0134245720023F2A7 /* Chart.m in Sources */ = {isa = PBXBuildFile; fileRef = 605649DF134245720023F2A7 /* Chart.m */; };
 		605649E3134245EF0023F2A7 /* ChartGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 605649E2134245EF0023F2A7 /* ChartGroup.m */; };
 		605649E61342461E0023F2A7 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 605649E51342461E0023F2A7 /* Country.m */; };
 		605649E91342463D0023F2A7 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 605649E81342463D0023F2A7 /* Region.m */; };
 		60BCCE19133D5F9100CA9B96 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60BCCE18133D5F9100CA9B96 /* Settings.bundle */; };
+		60D27C96134A266C0059B255 /* calendar-the_day_after.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C8E134A266C0059B255 /* calendar-the_day_after.png */; };
+		60D27C97134A266C0059B255 /* calendar-the_day_after@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C8F134A266C0059B255 /* calendar-the_day_after@2x.png */; };
+		60D27C98134A266C0059B255 /* calendar-today.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C90134A266C0059B255 /* calendar-today.png */; };
+		60D27C99134A266C0059B255 /* calendar-today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C91134A266C0059B255 /* calendar-today@2x.png */; };
+		60D27C9A134A266C0059B255 /* calendar-tomorrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C92134A266C0059B255 /* calendar-tomorrow.png */; };
+		60D27C9B134A266C0059B255 /* calendar-tomorrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C93134A266C0059B255 /* calendar-tomorrow@2x.png */; };
+		60D27C9C134A266C0059B255 /* calendar-yesterday.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C94134A266C0059B255 /* calendar-yesterday.png */; };
+		60D27C9D134A266C0059B255 /* calendar-yesterday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C95134A266C0059B255 /* calendar-yesterday@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,8 +189,6 @@
 		602E7AAA132D026B0021FBAF /* UIViewTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewTap.m; sourceTree = "<group>"; };
 		602E7AB1132D070C0021FBAF /* MWPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhotoBrowser.h; sourceTree = "<group>"; };
 		602E7AB2132D070C0021FBAF /* MWPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPhotoBrowser.m; sourceTree = "<group>"; };
-		604687E313394E1200CEB80E /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
-		604687E413394E1300CEB80E /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		605649DE134245720023F2A7 /* Chart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chart.h; path = Models/Chart.h; sourceTree = "<group>"; };
 		605649DF134245720023F2A7 /* Chart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chart.m; path = Models/Chart.m; sourceTree = "<group>"; };
 		605649E1134245EF0023F2A7 /* ChartGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChartGroup.h; path = Models/ChartGroup.h; sourceTree = "<group>"; };
@@ -194,6 +198,14 @@
 		605649E71342463D0023F2A7 /* Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Region.h; path = Models/Region.h; sourceTree = "<group>"; };
 		605649E81342463D0023F2A7 /* Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Region.m; path = Models/Region.m; sourceTree = "<group>"; };
 		60BCCE18133D5F9100CA9B96 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		60D27C8E134A266C0059B255 /* calendar-the_day_after.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-the_day_after.png"; sourceTree = "<group>"; };
+		60D27C8F134A266C0059B255 /* calendar-the_day_after@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-the_day_after@2x.png"; sourceTree = "<group>"; };
+		60D27C90134A266C0059B255 /* calendar-today.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-today.png"; sourceTree = "<group>"; };
+		60D27C91134A266C0059B255 /* calendar-today@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-today@2x.png"; sourceTree = "<group>"; };
+		60D27C92134A266C0059B255 /* calendar-tomorrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-tomorrow.png"; sourceTree = "<group>"; };
+		60D27C93134A266C0059B255 /* calendar-tomorrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-tomorrow@2x.png"; sourceTree = "<group>"; };
+		60D27C94134A266C0059B255 /* calendar-yesterday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-yesterday.png"; sourceTree = "<group>"; };
+		60D27C95134A266C0059B255 /* calendar-yesterday@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-yesterday@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,8 +239,14 @@
 		60058E0C132D1E4C00A266FF /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				604687E313394E1200CEB80E /* calendar.png */,
-				604687E413394E1300CEB80E /* calendar@2x.png */,
+				60D27C8E134A266C0059B255 /* calendar-the_day_after.png */,
+				60D27C8F134A266C0059B255 /* calendar-the_day_after@2x.png */,
+				60D27C90134A266C0059B255 /* calendar-today.png */,
+				60D27C91134A266C0059B255 /* calendar-today@2x.png */,
+				60D27C92134A266C0059B255 /* calendar-tomorrow.png */,
+				60D27C93134A266C0059B255 /* calendar-tomorrow@2x.png */,
+				60D27C94134A266C0059B255 /* calendar-yesterday.png */,
+				60D27C95134A266C0059B255 /* calendar-yesterday@2x.png */,
 				60058E59132D46AD00A266FF /* filler.png */,
 			);
 			path = Images;
@@ -598,10 +616,16 @@
 				60058EA3132D4BC500A266FF /* MainWindow-iPad.xib in Resources */,
 				60058EB1132D504000A266FF /* MainWindow-iPhone.xib in Resources */,
 				60058EB9132D5E0B00A266FF /* ChartViewController.xib in Resources */,
-				604687E513394E1300CEB80E /* calendar.png in Resources */,
-				604687E613394E1300CEB80E /* calendar@2x.png in Resources */,
 				60134234133D386100FCF99E /* Countries.plist in Resources */,
 				60BCCE19133D5F9100CA9B96 /* Settings.bundle in Resources */,
+				60D27C96134A266C0059B255 /* calendar-the_day_after.png in Resources */,
+				60D27C97134A266C0059B255 /* calendar-the_day_after@2x.png in Resources */,
+				60D27C98134A266C0059B255 /* calendar-today.png in Resources */,
+				60D27C99134A266C0059B255 /* calendar-today@2x.png in Resources */,
+				60D27C9A134A266C0059B255 /* calendar-tomorrow.png in Resources */,
+				60D27C9B134A266C0059B255 /* calendar-tomorrow@2x.png in Resources */,
+				60D27C9C134A266C0059B255 /* calendar-yesterday.png in Resources */,
+				60D27C9D134A266C0059B255 /* calendar-yesterday@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,13 +799,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jelle Vandebeeck";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jelle Vandebeeck";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "14FD0796-40F4-4325-86DD-D9088DECEF84";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "14FD0796-40F4-4325-86DD-D9088DECEF84";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -873,13 +900,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jelle Vandebeeck";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jelle Vandebeeck";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "14FD0796-40F4-4325-86DD-D9088DECEF84";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "14FD0796-40F4-4325-86DD-D9088DECEF84";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -890,6 +920,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jelle Vandebeeck";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jelle Vandebeeck";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -898,7 +929,8 @@
 				INFOPLIST_FILE = "rasp/rasp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8C025807-FAC0-4607-A4B9-A5E84C095900";
+				PROVISIONING_PROFILE = "14FD0796-40F4-4325-86DD-D9088DECEF84";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "14FD0796-40F4-4325-86DD-D9088DECEF84";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

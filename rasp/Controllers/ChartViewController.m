@@ -35,26 +35,29 @@
         MWPhotoBrowser *browser = [self browserForURL:self.chart.yesterdayURLs withName:@"yesterday"];
         [browsers addObject:browser];
         selectedBrowser++;
+        browser.tabBarItem.image = [UIImage imageNamed:@"calendar-yesterday.png"];
+        browser.tabBarItem.title = [NSString stringWithKey:@"title.yesterday"];
     }
     if (self.chart.todayURLs != nil) {
         MWPhotoBrowser *browser = [self browserForURL:self.chart.todayURLs withName:@"today"];
         [browsers addObject:browser];
+        browser.tabBarItem.image = [UIImage imageNamed:@"calendar-today.png"];
+        browser.tabBarItem.title = [NSString stringWithKey:@"title.today"];
     }
     if (self.chart.tomorrowURLs != nil) {
         MWPhotoBrowser *browser = [self browserForURL:self.chart.tomorrowURLs withName:@"tomorrow"];
         [browsers addObject:browser];
+        browser.tabBarItem.image = [UIImage imageNamed:@"calendar-tomorrow.png"];
+        browser.tabBarItem.title = [NSString stringWithKey:@"title.tomorrow"];
     }
     if (self.chart.theDayAfterURLs != nil) {
         MWPhotoBrowser *browser = [self browserForURL:self.chart.theDayAfterURLs withName:@"the_day_after"];
         [browsers addObject:browser];
+        browser.tabBarItem.image = [UIImage imageNamed:@"calendar-the_day_after.png"];
+        browser.tabBarItem.title = [NSString stringWithKey:@"title.the_day_after"];
     }
     
     [self setViewControllers:browsers];
-    for (int i = 0; i < [browsers count]; i++) {
-        MWPhotoBrowser *browser = ((MWPhotoBrowser *)[browsers objectAtIndex:i]);
-        browser.tabBarItem.image = [UIImage imageNamed:@"calendar.png"];
-        browser.tabBarItem.title = [NSString stringWithKey:[NSString stringWithFormat:@"title.%@", browser.day]];
-    }
     self.selectedIndex = selectedBrowser;
 }
 
