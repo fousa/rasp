@@ -80,6 +80,7 @@
 		60D27C9C134A266C0059B255 /* calendar-yesterday.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C94134A266C0059B255 /* calendar-yesterday.png */; };
 		60D27C9D134A266C0059B255 /* calendar-yesterday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C95134A266C0059B255 /* calendar-yesterday@2x.png */; };
 		60D27CA2134A59C20059B255 /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D27CA1134A59C20059B255 /* SMPageControl.m */; };
+		60D27CA4134A6ED60059B255 /* fail.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27CA3134A6ED60059B255 /* fail.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +210,7 @@
 		60D27C95134A266C0059B255 /* calendar-yesterday@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-yesterday@2x.png"; sourceTree = "<group>"; };
 		60D27CA0134A59C20059B255 /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
 		60D27CA1134A59C20059B255 /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
+		60D27CA3134A6ED60059B255 /* fail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fail.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 		60058E0C132D1E4C00A266FF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				60D27CA3134A6ED60059B255 /* fail.png */,
 				60D27C8E134A266C0059B255 /* calendar-the_day_after.png */,
 				60D27C8F134A266C0059B255 /* calendar-the_day_after@2x.png */,
 				60D27C90134A266C0059B255 /* calendar-today.png */,
@@ -639,6 +642,7 @@
 				60D27C9B134A266C0059B255 /* calendar-tomorrow@2x.png in Resources */,
 				60D27C9C134A266C0059B255 /* calendar-yesterday.png in Resources */,
 				60D27C9D134A266C0059B255 /* calendar-yesterday@2x.png in Resources */,
+				60D27CA4134A6ED60059B255 /* fail.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

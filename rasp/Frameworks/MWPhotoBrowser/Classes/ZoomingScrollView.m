@@ -119,6 +119,31 @@
 // Image failed so just show black!
 - (void)displayImageFailure {
 	[spinner stopAnimating];
+    
+    if (index != NSNotFound && photoImageView.image == nil) {
+        // Reset
+		self.maximumZoomScale = 1;
+		self.minimumZoomScale = 1;
+		self.zoomScale = 1;
+		self.contentSize = CGSizeMake(0, 0);
+		
+		// Get image
+		UIImage *img = [UIImage imageNamed:@"fail.png"];
+		// Set image
+        photoImageView.image = img;
+        photoImageView.hidden = NO;
+			
+        // Setup photo frame
+        CGRect photoImageViewFrame;
+        photoImageViewFrame.origin = CGPointZero;
+        photoImageViewFrame.size = img.size;
+        photoImageView.frame = photoImageViewFrame;
+        self.contentSize = photoImageViewFrame.size;
+            
+        // Set zoom to minimum zoom
+        [self setMaxMinZoomScalesForCurrentBounds];
+		[self setNeedsLayout];
+    }
 }
 
 #pragma mark -

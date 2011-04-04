@@ -195,7 +195,6 @@
 	int index = [photos indexOfObject:photo];
 	if (index != NSNotFound) {
 		if ([self isDisplayingPageForIndex:index]) {
-			
 			// Tell page to display image again
 			ZoomingScrollView *page = [self pageDisplayedAtIndex:index];
 			if (page) [page displayImage];
