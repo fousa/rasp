@@ -79,6 +79,7 @@
 		60D27C9B134A266C0059B255 /* calendar-tomorrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C93134A266C0059B255 /* calendar-tomorrow@2x.png */; };
 		60D27C9C134A266C0059B255 /* calendar-yesterday.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C94134A266C0059B255 /* calendar-yesterday.png */; };
 		60D27C9D134A266C0059B255 /* calendar-yesterday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D27C95134A266C0059B255 /* calendar-yesterday@2x.png */; };
+		60D27CA2134A59C20059B255 /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D27CA1134A59C20059B255 /* SMPageControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +207,8 @@
 		60D27C93134A266C0059B255 /* calendar-tomorrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-tomorrow@2x.png"; sourceTree = "<group>"; };
 		60D27C94134A266C0059B255 /* calendar-yesterday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-yesterday.png"; sourceTree = "<group>"; };
 		60D27C95134A266C0059B255 /* calendar-yesterday@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-yesterday@2x.png"; sourceTree = "<group>"; };
+		60D27CA0134A59C20059B255 /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
+		60D27CA1134A59C20059B255 /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +307,7 @@
 		602E79D4132CFAC00021FBAF /* rasp */ = {
 			isa = PBXGroup;
 			children = (
+				60D27C9F134A59C10059B255 /* Components */,
 				605649DC134245450023F2A7 /* Models */,
 				60058E31132D347F00A266FF /* Utilities */,
 				60058E0C132D1E4C00A266FF /* Images */,
@@ -532,6 +536,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		60D27C9F134A59C10059B255 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				60D27CA0134A59C20059B255 /* SMPageControl.h */,
+				60D27CA1134A59C20059B255 /* SMPageControl.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -696,6 +709,7 @@
 				605649E3134245EF0023F2A7 /* ChartGroup.m in Sources */,
 				605649E61342461E0023F2A7 /* Country.m in Sources */,
 				605649E91342463D0023F2A7 /* Region.m in Sources */,
+				60D27CA2134A59C20059B255 /* SMPageControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

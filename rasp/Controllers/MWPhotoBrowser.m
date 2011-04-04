@@ -14,7 +14,7 @@
 // MWPhotoBrowser
 @implementation MWPhotoBrowser
 
-@synthesize delegate, day;
+@synthesize delegate, day, pageControl;
 
 - (id)initWithPhotos:(NSArray *)photosArray andTimeStamps:(NSArray *)timeStampsArray andTabTitle:(NSString *)aTabTitle {
 	if ((self = [super init])) {
@@ -70,6 +70,7 @@
 	[visiblePages release], visiblePages = nil;
 	[recycledPages release], recycledPages = nil;
     self.delegate = nil;
+    self.pageControl = nil;
     [super dealloc];
 }
 
@@ -94,6 +95,21 @@
     pagingScrollView.contentSize = [self contentSizeForPagingScrollView];
 	pagingScrollView.contentOffset = [self contentOffsetForPageAtIndex:currentPageIndex];
 	[self.view addSubview:pagingScrollView];
+    
+    int count = [photos count];
+    if (count > 1) {
+        self.pageControl = [[SMPageControl alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 30, self.view.frame.size.width, 30)];
+        self.pageControl.numberOfPages = count > 10 ? 10 : count;
+        pageControl.backgroundColor = [UIColor clearColor];
+        self.pageControl.activePageColor = [UIColor colorWithRed:0.125 green:0.290 blue:0.682 alpha:1.000];
+        self.pageControl.inactivePageColor = [UIColor colorWithRed:0.494 green:0.651 blue:0.847 alpha:1.000];
+        self.pageControl.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+        int current = currentPageIndex;
+        if (count > 10) current = currentPageIndex / ((float)count / 10.0);
+        self.pageControl.currentPage = current;
+        
+        [self.view addSubview:self.pageControl];
+    }
 	
 	// Setup pages
 	visiblePages = [[NSMutableSet alloc] init];
@@ -369,6 +385,11 @@
         } else {
             aTitle = [NSString stringWithFormat:@"%@:%@", [time substringToIndex:2], [time substringFromIndex:2]];
         }
+        int current = currentPageIndex;
+        int count = [photos count];
+        if (count > 10) current = currentPageIndex / ((float)count / 10.0);
+        self.pageControl.currentPage = current;
+        
         [self.delegate updateTitle:aTitle andTabTitle:tabTitle onBrowser:self];
     }
 }

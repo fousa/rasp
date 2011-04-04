@@ -10,6 +10,8 @@
 
 #import "MWPhoto.h"
 
+#import "SMPageControl.h"
+
 @class ZoomingScrollView;
 
 @interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, MWPhotoDelegate> {
@@ -34,6 +36,7 @@
 
 @property (nonatomic, retain) id delegate;
 @property (nonatomic, retain) NSString *day;
+@property (nonatomic, retain) SMPageControl *pageControl;
 
 // Init
 - (id)initWithPhotos:(NSArray *)photosArray andTimeStamps:(NSArray *)timeStampsArray andTabTitle:(NSString *)aTabTitle;
