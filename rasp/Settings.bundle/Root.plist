@@ -14,6 +14,16 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
+			<string>alps</string>
+			<key>Title</key>
+			<string>Alps</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
 			<string>benelux</string>
 			<key>Title</key>
 			<string>Benelux</string>
@@ -24,9 +34,45 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
+			<string>germany</string>
+			<key>Title</key>
+			<string>Germany</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
 			<string>westernswissalps</string>
 			<key>Title</key>
 			<string>Western Swiss Alps</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>North America</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>bryon</string>
+			<key>Title</key>
+			<string>Bryon</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>southerncalifornia</string>
+			<key>Title</key>
+			<string>Southern California</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>
