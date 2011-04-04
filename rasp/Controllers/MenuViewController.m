@@ -49,6 +49,10 @@
     self.tableView.contentOffset = CGPointMake(0, self.searchBar.frame.size.height);
     
     self.charts = self.country.charts;
+    
+    CGSize contentSize = self.contentSizeForViewInPopover;
+    contentSize.height = 480;
+    self.contentSizeForViewInPopover = contentSize;
 }
 
 

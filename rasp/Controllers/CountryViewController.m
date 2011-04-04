@@ -37,6 +37,10 @@
     
     _regions = [[RaspController instance].regions retain];
     _loading = NO;
+    
+    CGSize contentSize = self.contentSizeForViewInPopover;
+    contentSize.height = 480;
+    self.contentSizeForViewInPopover = contentSize;
 }
 
 
