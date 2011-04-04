@@ -11,9 +11,15 @@
 
 @interface Country : NSObject
 
+- (NSArray *)periodsForDay:(NSString *)day;
+
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSArray *charts;
 @property (nonatomic, retain) NSArray *periods;
+@property (nonatomic, retain) NSArray *yesterdayPeriods;
+@property (nonatomic, retain) NSArray *todayPeriods;
+@property (nonatomic, retain) NSArray *tomorrowPeriods;
+@property (nonatomic, retain) NSArray *theDayAfterPeriods;
 @property (nonatomic, assign) BOOL onlyHours;
 
 @end

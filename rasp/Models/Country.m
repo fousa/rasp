@@ -11,11 +11,24 @@
 
 @implementation Country
 
-@synthesize name, charts, periods, onlyHours;
+@synthesize name, charts, periods, onlyHours, theDayAfterPeriods, yesterdayPeriods, todayPeriods, tomorrowPeriods;
+
+- (NSArray *)periodsForDay:(NSString *)day {
+    if ([day compare:@"yesterday"] == NSOrderedSame && self.yesterdayPeriods != nil) return self.yesterdayPeriods;
+    if ([day compare:@"today"] == NSOrderedSame && self.todayPeriods != nil) return self.todayPeriods;
+    if ([day compare:@"tomorrow"] == NSOrderedSame && self.tomorrowPeriods != nil) return self.tomorrowPeriods;
+    if ([day compare:@"the_day_after"] == NSOrderedSame && self.theDayAfterPeriods != nil) return self.theDayAfterPeriods;
+    
+    return self.periods;
+}
 
 - (void)dealloc {
     self.name = nil;
     self.charts = nil;
+    self.yesterdayPeriods = nil;
+    self.todayPeriods = nil;
+    self.tomorrowPeriods = nil;
+    self.theDayAfterPeriods = nil;
     self.periods = nil;
     
     [super dealloc];

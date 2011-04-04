@@ -77,7 +77,9 @@
     BOOL stopCounting = NO;
     if (self.chart.hasPeriods) {
         _periods = [NSMutableArray array];
-        for (NSNumber *period in self.chart.country.periods) {
+        NSArray *chartPeriods = [self.chart.country periodsForDay:aName];
+        NSLog(@"name: %@", aName);
+        for (NSNumber *period in chartPeriods) {
             NSString *periodString = [NSString stringWithFormat:@"%04d", [period intValue]];
             if (!stopCounting && [periodString compare:@"1200"] != NSOrderedSame) {
                 selectedPeriod++;
@@ -89,6 +91,7 @@
     } else {
         _periods = [NSArray arrayWithObject:self.chart.name];
     }
+    NSLog(@"periods: %d", [_periods count]);
     MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithPhotos:_photos andTimeStamps:_periods andTabTitle:[NSString stringWithKey:[NSString stringWithFormat:@"title.%@", aName]]] autorelease];
     browser.day = aName;
     [browser setInitialPageIndex:selectedPeriod];

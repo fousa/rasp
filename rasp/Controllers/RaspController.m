@@ -123,8 +123,12 @@ static RaspController *singletonRaspController = nil;
     NSArray* sortedGroups = [[dictionary allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     for (NSString *groupName in sortedGroups) {
         if ([groupName compare:@"config"] == NSOrderedSame) {
-            country.periods = [[dictionary objectForKey:groupName]objectForKey:@"periods"];
-            country.onlyHours = [[[dictionary objectForKey:groupName]objectForKey:@"only_hours"] boolValue];
+            country.periods = [[dictionary objectForKey:groupName] objectForKey:@"periods"];
+            country.yesterdayPeriods = [[dictionary objectForKey:groupName] objectForKey:@"yesterday_periods"];
+            country.todayPeriods = [[dictionary objectForKey:groupName] objectForKey:@"today_periods"];
+            country.tomorrowPeriods = [[dictionary objectForKey:groupName] objectForKey:@"tomorrow_periods"];
+            country.theDayAfterPeriods = [[dictionary objectForKey:groupName] objectForKey:@"the_day_after_periods"];
+            country.onlyHours = [[[dictionary objectForKey:groupName] objectForKey:@"only_hours"] boolValue];
         } else {
             ChartGroup *group = [ChartGroup new];
             group.name = groupName;
