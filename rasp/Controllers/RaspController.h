@@ -16,4 +16,5 @@
 
 - (void)loadChartsForCountry:(Country *)country;
 - (NSArray *)convertCharts:(NSDictionary *)dictionary forCountry:(Country *)country;
+- (NSArray *)convertCharts:(NSArray *)charts search:(NSString *)searchTerm;
 @end

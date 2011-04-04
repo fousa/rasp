@@ -10,7 +10,7 @@
 
 #import "DetailViewController.h"
 
-@interface MenuViewController : UITableViewController
+@interface MenuViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 @property (nonatomic, retain) Country *country;
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 @end

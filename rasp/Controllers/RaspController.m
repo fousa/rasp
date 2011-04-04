@@ -83,6 +83,40 @@ static RaspController *singletonRaspController = nil;
 
 #pragma mark - Charts
 
+- (NSArray *)convertCharts:(NSArray *)charts search:(NSString *)searchTerm {
+    if (searchTerm == nil || [searchTerm isEqualToString:@""]) return charts;
+    
+    NSMutableArray *newGroups = [NSMutableArray array];
+    for (ChartGroup *group in charts) {
+        ChartGroup *newGroup = [ChartGroup new];
+        newGroup.name = group.name;
+        
+        NSMutableArray *newCharts = [NSMutableArray array];
+        for (Chart *chart in group.charts) {
+            if ([chart.name rangeOfString:searchTerm options:NSCaseInsensitiveSearch].location != NSNotFound) {
+                Chart *newChart = [Chart new];
+                newChart.name = chart.name;
+                newChart.country = chart.country;
+                newChart.hasPeriods = chart.hasPeriods;
+                newChart.yesterdayURLs = chart.yesterdayURLs;
+                newChart.todayURLs = chart.todayURLs;
+                newChart.tomorrowURLs = chart.tomorrowURLs;
+                newChart.theDayAfterURLs = chart.theDayAfterURLs;
+                
+                [newCharts addObject:chart];
+                [newChart release];
+            }
+        }
+        if ([newCharts count] > 0) {
+            newGroup.charts = newCharts;
+            [newGroups addObject:newGroup];
+        }
+        [newGroup release];
+    }
+    
+    return newGroups;
+}
+
 - (NSArray *)convertCharts:(NSDictionary *)dictionary forCountry:(Country *)country {
     NSMutableArray *groups = [NSMutableArray array];
     NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES selector:@selector(compare:)];
