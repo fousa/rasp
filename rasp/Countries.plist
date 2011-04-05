@@ -12,7 +12,8 @@
 	<key>northamerica</key>
 	<array>
 		<string>southerncalifornia</string>
-		<string>bryon</string>
+		<string>bryon3km</string>
+		<string>bryon750m</string>
 	</array>
 </dict>
 </plist>
