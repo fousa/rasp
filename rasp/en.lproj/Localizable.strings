@@ -13,6 +13,7 @@
 
 "en.text.select"       = "Choose a chart";
 
+"en.title.part.africa"       = "Africa";
 "en.title.part.europe"       = "Europe";
 "en.title.part.northamerica" = "North America";
 
@@ -23,3 +24,4 @@
 "en.title.country.southerncalifornia" = "Southern California";
 "en.title.country.bryon3km"           = "Bryon 3km";
 "en.title.country.bryon750m"          = "Bryon 750m";
+"en.title.country.swsouthafrica"      = "SW South-Africa";

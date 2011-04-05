@@ -6,6 +6,22 @@
 	<array>
 		<dict>
 			<key>Title</key>
+			<string>Africa</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>swsouthafrica</string>
+			<key>Title</key>
+			<string>SW South Africa</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
 			<string>Europe</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>

@@ -9,6 +9,10 @@
 		<string>westernswissalps</string>
 		<string>germany</string>
 	</array>
+	<key>africa</key>
+	<array>
+		<string>swsouthafrica</string>
+	</array>
 	<key>northamerica</key>
 	<array>
 		<string>southerncalifornia</string>
