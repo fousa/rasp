@@ -76,9 +76,29 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
+			<string>avenal13km</string>
+			<key>Title</key>
+			<string>Avenal ~ 1.3km</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>avenal4km</string>
+			<key>Title</key>
+			<string>Avenal ~ 4km</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
 			<string>bryon3km</string>
 			<key>Title</key>
-			<string>Bryon 3km</string>
+			<string>Bryon ~ 3km</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>
@@ -88,7 +108,7 @@
 			<key>Key</key>
 			<string>bryon750m</string>
 			<key>Title</key>
-			<string>Bryon 750m</string>
+			<string>Bryon ~ 750m</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>

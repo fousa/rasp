@@ -15,6 +15,8 @@
 	</array>
 	<key>northamerica</key>
 	<array>
+		<string>avenal13km</string>
+		<string>avenal4km</string>
 		<string>southerncalifornia</string>
 		<string>bryon3km</string>
 		<string>bryon750m</string>

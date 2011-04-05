@@ -22,6 +22,8 @@
 "en.title.country.germany"            = "Germany";
 "en.title.country.westernswissalps"   = "Western Swiss Alps";
 "en.title.country.southerncalifornia" = "Southern California";
-"en.title.country.bryon3km"           = "Bryon 3km";
-"en.title.country.bryon750m"          = "Bryon 750m";
+"en.title.country.bryon3km"           = "Bryon ~ 3km";
+"en.title.country.bryon750m"          = "Bryon ~ 750m";
+"en.title.country.avenal13km"         = "Avenal ~ 1.3km";
+"en.title.country.avenal4km"          = "Avenal ~ 4km";
 "en.title.country.swsouthafrica"      = "SW South-Africa";
