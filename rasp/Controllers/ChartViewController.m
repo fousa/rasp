@@ -73,19 +73,12 @@
 - (MWPhotoBrowser *)browserForURL:(NSArray *)URLs withName:(NSString *)aName {
     NSMutableArray *_periods;
     NSArray *_photos = [self chartsFor:URLs];
-    int selectedPeriod = 0;
-    BOOL stopCounting = NO;
     if (self.chart.hasPeriods) {
         _periods = [NSMutableArray array];
         NSArray *chartPeriods = [self.chart.country periodsForDay:aName];
         NSLog(@"name: %@", aName);
         for (NSNumber *period in chartPeriods) {
             NSString *periodString = [NSString stringWithFormat:@"%04d", [period intValue]];
-            if (!stopCounting && [periodString compare:@"1200"] != NSOrderedSame) {
-                selectedPeriod++;
-            } else {
-                stopCounting = YES;
-            }
             [_periods addObject:periodString];
         }
     } else {
@@ -94,7 +87,7 @@
     NSLog(@"periods: %d", [_periods count]);
     MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithPhotos:_photos andTimeStamps:_periods andTabTitle:[NSString stringWithKey:[NSString stringWithFormat:@"title.%@", aName]]] autorelease];
     browser.day = aName;
-    [browser setInitialPageIndex:selectedPeriod];
+    [browser setInitialPageIndex:[_periods count]/2];
     browser.delegate = self;
     
     return browser;
