@@ -15,8 +15,6 @@
 #define BAR_VIEW_TAG 101
 #define DETAIL_VIEW_TAG 102
 
-#define TINT_COLOR [UIColor colorWithRed:.209882 green:.459732 blue:.75887 alpha:1]
-
 @interface DetailViewController () {
     UIBarButtonItem *_barButtonItem;
     BOOL initialLoad;

@@ -10,6 +10,7 @@
 
 //#define BASE_URL @"http://localhost:3000/"
 #define BASE_URL @"http://rasp.heroku.com/"
+#define TINT_COLOR [UIColor colorWithRed:.209882 green:.459732 blue:.75887 alpha:1]
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>

@@ -38,6 +38,7 @@
 	self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
 	self.searchBar.keyboardType = UIKeyboardTypeAlphabet;
 	self.searchBar.delegate = self;
+    self.searchBar.tintColor = TINT_COLOR;
 	self.tableView.tableHeaderView = self.searchBar;
     
 	// Create the search display controller
