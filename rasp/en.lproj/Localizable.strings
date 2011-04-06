@@ -1,5 +1,5 @@
 /* English */
-"en.title.countries"     = "Countries";
+"en.title.countries"     = "RASP";
 "en.title.charts"        = "Charts";
 "en.title.empty"         = "No chart";
 "en.title.today"         = "Today";
@@ -7,8 +7,8 @@
 "en.title.the_day_after" = "The Day After";
 "en.title.yesterday"     = "Yesterday";
 
-"en.alert.title"   = "No countries";
-"en.alert.message" = "Please select a country in the Settings app";
+"en.alert.title"   = "No rasp regions";
+"en.alert.message" = "Please select a region in the Settings app";
 "en.alert.cancel"  = "OK";
 
 "en.text.select"       = "Choose a chart";
