@@ -39,13 +39,8 @@
 	self.searchBar.keyboardType = UIKeyboardTypeAlphabet;
 	self.searchBar.delegate = self;
     self.searchBar.tintColor = TINT_COLOR;
+    self.searchBar.showsSearchResultsButton = NO;
 	self.tableView.tableHeaderView = self.searchBar;
-    
-	// Create the search display controller
-	self.searchController = [[[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self] autorelease];
-	self.searchController.searchResultsDataSource = self;
-	self.searchController.searchResultsDelegate = self;
-    self.searchController.delegate = self;
     
     self.tableView.contentOffset = CGPointMake(0, self.searchBar.frame.size.height);
     
@@ -56,7 +51,6 @@
     self.contentSizeForViewInPopover = contentSize;
 }
 
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.title = [NSString stringWithKey:[NSString stringWithFormat:@"title.country.%@", self.country.name]];
@@ -64,15 +58,36 @@
 
 #pragma mark - Searching
 
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-    self.charts = [[RaspController instance] convertCharts:self.country.charts search:searchString];
-    
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    [self.searchBar setShowsCancelButton:YES animated:YES];
     return YES;
 }
 
-- (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller {
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    self.charts = [[RaspController instance] convertCharts:self.country.charts search:searchText];
+    [self.tableView reloadData];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.searchBar resignFirstResponder];
+    [self.searchBar setShowsCancelButton:NO animated:YES];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     self.charts = self.country.charts;
     [self.tableView reloadData];
+    
+    [self.searchBar resignFirstResponder];
+    [self.searchBar setShowsCancelButton:NO animated:YES];
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.2];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    
+    self.tableView.contentOffset = CGPointMake(0, self.searchBar.frame.size.height);
+    
+    [UIView commitAnimations];
+    
+    self.searchBar.text = @"";
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
