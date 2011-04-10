@@ -180,7 +180,7 @@ static RaspController *singletonRaspController = nil;
 }
 
 - (void)loadChartsForCountry:(Country *)country {
-	NSURL *url = [NSURL URLWithString:[BASE_URL stringByAppendingFormat:@"countries/%@/charts", country.name]];
+	NSURL *url = [NSURL URLWithString:[BASE_URL stringByAppendingFormat:@"regions/%@", country.name]];
 	
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setDelegate:self.delegate];
