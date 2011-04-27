@@ -40,6 +40,16 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
+			<string>baltic</string>
+			<key>Title</key>
+			<string>Baltic Area</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
 			<string>benelux</string>
 			<key>Title</key>
 			<string>Benelux</string>
