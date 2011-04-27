@@ -60,11 +60,12 @@
 		for (NSInteger i = 0; i < [self numberOfPages]; i++){
 			if (i == [self currentPage]){
 				CGContextSetFillColorWithColor(context, [activePageColor CGColor]);
-			} else {
-				CGContextSetFillColorWithColor(context, [inactivePageColor CGColor]);
+                CGContextFillEllipseInRect(context, CGRectMake(offset + (dotSize + 10) * i, (self.frame.size.height / 2) - (dotSize / 2), dotSize, dotSize));
 			}
+            CGContextSetStrokeColorWithColor(context, [inactivePageColor CGColor]);
+            CGContextSetLineWidth(context, 1.5);
+            CGContextStrokeEllipseInRect(context, CGRectMake(offset + (dotSize + 10) * i, (self.frame.size.height / 2) - (dotSize / 2), dotSize, dotSize));
 			
-			CGContextFillEllipseInRect(context, CGRectMake(offset + (dotSize + 10) * i, (self.frame.size.height / 2) - (dotSize / 2), dotSize, dotSize));
 		}
 	}
 }
