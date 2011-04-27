@@ -76,7 +76,6 @@
     if (self.chart.hasPeriods) {
         _periods = [NSMutableArray array];
         NSArray *chartPeriods = [self.chart.country periodsForDay:aName];
-        NSLog(@"name: %@", aName);
         for (NSNumber *period in chartPeriods) {
             NSString *periodString = [NSString stringWithFormat:@"%04d", [period intValue]];
             [_periods addObject:periodString];
@@ -84,7 +83,6 @@
     } else {
         _periods = [NSArray arrayWithObject:self.chart.name];
     }
-    NSLog(@"periods: %d", [_periods count]);
     MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithPhotos:_photos andTimeStamps:_periods andTabTitle:[NSString stringWithKey:[NSString stringWithFormat:@"title.%@", aName]]] autorelease];
     browser.day = aName;
     [browser setInitialPageIndex:[_periods count]/2];
