@@ -146,6 +146,16 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
+			<string>hilltown</string>
+			<key>Title</key>
+			<string>Hilltown</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
 			<string>southerncalifornia</string>
 			<key>Title</key>
 			<string>Southern California</string>
