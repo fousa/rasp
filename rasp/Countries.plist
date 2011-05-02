@@ -6,6 +6,10 @@
 	<array>
 		<string>swsouthafrica</string>
 	</array>
+	<key>australia</key>
+	<array>
+		<string>southaustralia</string>
+	</array>
 	<key>europe</key>
 	<array>
 		<string>alps</string>
