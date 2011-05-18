@@ -20,7 +20,7 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>
-        <dict>
+		<dict>
 			<key>Title</key>
 			<string>Australia</string>
 			<key>Type</key>
@@ -30,6 +30,12 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
+			<string>newsouthwales</string>
+			<key>Title</key>
+			<string>New South Wales</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
 		<dict>
 			<key>DefaultValue</key>
 			<true/>
@@ -40,6 +46,10 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
 			<string>southaustralia</string>
 			<key>Title</key>
 			<string>South Australia</string>
