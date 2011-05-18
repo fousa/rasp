@@ -30,6 +30,16 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>queensland</string>
+			<key>Title</key>
+			<string>Queensland</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
 			<string>southaustralia</string>
 			<key>Title</key>
 			<string>South Australia</string>
