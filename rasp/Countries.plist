@@ -6,6 +6,12 @@
 	<array>
 		<string>swsouthafrica</string>
 	</array>
+	<key>australia</key>
+	<array>
+		<string>southaustralia</string>
+		<string>queensland</string>
+		<string>newsouthwales</string>
+	</array>
 	<key>europe</key>
 	<array>
 		<string>alps</string>
@@ -23,6 +29,7 @@
 		<string>southerncalifornia</string>
 		<string>bryon3km</string>
 		<string>bryon750m</string>
+		<string>hilltown</string>
 	</array>
 </dict>
 </plist>

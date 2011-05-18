@@ -14,6 +14,7 @@
 "en.text.select"       = "Choose a chart";
 
 "en.title.part.africa"       = "Africa";
+"en.title.part.australia"    = "Australia";
 "en.title.part.europe"       = "Europe";
 "en.title.part.northamerica" = "North America";
 
@@ -29,4 +30,8 @@
 "en.title.country.bryon750m"          = "Bryon ~ 750m";
 "en.title.country.avenal13km"         = "Avenal ~ 1.3km";
 "en.title.country.avenal4km"          = "Avenal ~ 4km";
+"en.title.country.hilltown"           = "Hilltown";
 "en.title.country.swsouthafrica"      = "SW South-Africa";
+"en.title.country.southaustralia"     = "South Australia";
+"en.title.country.newsouthwales"      = "New South Wales";
+"en.title.country.queensland"         = "Queensland";

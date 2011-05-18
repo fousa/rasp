@@ -22,6 +22,42 @@
 		</dict>
 		<dict>
 			<key>Title</key>
+			<string>Australia</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>newsouthwales</string>
+			<key>Title</key>
+			<string>New South Wales</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>queensland</string>
+			<key>Title</key>
+			<string>Queensland</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>southaustralia</string>
+			<key>Title</key>
+			<string>South Australia</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
 			<string>Europe</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
@@ -139,6 +175,16 @@
 			<string>bryon750m</string>
 			<key>Title</key>
 			<string>Bryon ~ 750m</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>hilltown</string>
+			<key>Title</key>
+			<string>Hilltown</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>
