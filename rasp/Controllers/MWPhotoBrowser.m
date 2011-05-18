@@ -29,10 +29,23 @@
 		currentPageIndex = 0;
 		performingLayout = NO;
 		rotating = NO;
+        
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(switchPage:)];
+        [self.view addGestureRecognizer:gesture];
+        [gesture release];
 		
         initialLoad = YES;
 	}
 	return self;
+}
+
+- (void)switchPage:(UITapGestureRecognizer *)gesture {
+    CGPoint touch = [gesture locationInView:self.view];
+    if (touch.x < self.view.center.x) {
+        [self gotoPreviousPage];
+    } else {
+        [self gotoNextPage];
+    }
 }
 
 #pragma mark -
@@ -405,7 +418,7 @@
 }
 
 - (void)gotoPreviousPage { [self jumpToPageAtIndex:currentPageIndex-1]; }
-- (void)gotoNextPage { [self jumpToPageAtIndex:currentPageIndex+1]; }
+- (void)gotoNextPage { [self jumpToPageAtIndex:currentPageIndex+1]; [self tilePages]; }
 
 #pragma mark -
 #pragma mark Rotation
