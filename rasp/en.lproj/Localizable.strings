@@ -11,6 +11,10 @@
 "en.alert.message" = "Please select a region in the Settings app";
 "en.alert.cancel"  = "OK";
 
+"en.sheet.cancel" = "Cancel";
+"en.sheet.source" = "Go straight to the source!";
+"en.sheet.safari" = "Open in Safari";
+
 "en.text.select"       = "Choose a chart";
 
 "en.title.part.africa"       = "Africa";

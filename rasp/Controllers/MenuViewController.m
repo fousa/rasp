@@ -49,6 +49,11 @@
     CGSize contentSize = self.contentSizeForViewInPopover;
     contentSize.height = 480;
     self.contentSizeForViewInPopover = contentSize;
+    
+    // Add share button
+    UIBarButtonItem *openButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showAction:)];
+    self.navigationItem.rightBarButtonItem = openButton;
+    [openButton release];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -138,6 +143,25 @@
         [chartController release];
     }
 }
+
+#pragma mark - Actions
+
+- (void)showAction:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithKey:@"sheet.source"] delegate:self cancelButtonTitle:[NSString stringWithKey:@"sheet.cancel"] destructiveButtonTitle:nil otherButtonTitles:[NSString stringWithKey:@"sheet.safari"], nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [actionSheet showFromBarButtonItem:sender animated:YES];
+    [actionSheet release];
+}
+
+#pragma mark - Action sheet delegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.country.URL]];
+    }
+}
+
+#pragma mark - Memory
 
 - (void)dealloc {
     self.country = nil;

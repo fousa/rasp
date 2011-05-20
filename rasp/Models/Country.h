@@ -14,6 +14,7 @@
 - (NSArray *)periodsForDay:(NSString *)day;
 
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *URL;
 @property (nonatomic, retain) NSArray *charts;
 @property (nonatomic, retain) NSArray *periods;
 @property (nonatomic, retain) NSArray *yesterdayPeriods;

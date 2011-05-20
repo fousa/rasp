@@ -129,6 +129,7 @@ static RaspController *singletonRaspController = nil;
             country.tomorrowPeriods = [[dictionary objectForKey:groupName] objectForKey:@"tomorrow_periods"];
             country.theDayAfterPeriods = [[dictionary objectForKey:groupName] objectForKey:@"the_day_after_periods"];
             country.onlyHours = [[[dictionary objectForKey:groupName] objectForKey:@"only_hours"] boolValue];
+            country.URL = [[dictionary objectForKey:groupName] objectForKey:@"source_url"];
         } else {
             ChartGroup *group = [ChartGroup new];
             group.name = groupName;

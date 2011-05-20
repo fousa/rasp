@@ -11,7 +11,7 @@
 
 @implementation Country
 
-@synthesize name, charts, periods, onlyHours, theDayAfterPeriods, yesterdayPeriods, todayPeriods, tomorrowPeriods;
+@synthesize name, URL, charts, periods, onlyHours, theDayAfterPeriods, yesterdayPeriods, todayPeriods, tomorrowPeriods;
 
 - (NSArray *)periodsForDay:(NSString *)day {
     if ([day compare:@"yesterday"] == NSOrderedSame && self.yesterdayPeriods != nil) return self.yesterdayPeriods;
@@ -24,6 +24,7 @@
 
 - (void)dealloc {
     self.name = nil;
+    self.URL = nil;
     self.charts = nil;
     self.yesterdayPeriods = nil;
     self.todayPeriods = nil;
