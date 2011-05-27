@@ -59,8 +59,6 @@
     
     [self setViewControllers:browsers];
     self.selectedIndex = selectedBrowser;
-    
-    self.navigationItem.prompt = [NSString stringWithKey:@"text.leftright"];
 }
 
 - (NSArray *)chartsFor:(NSArray *)URLs {
@@ -109,6 +107,20 @@
     self.chart = nil;
     self.country = nil;
     self.viewControllers = nil;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
+    self.navigationItem.rightBarButtonItem = refreshButton;
+    [refreshButton release];
+}
+
+#pragma mark - Action
+
+- (void)refresh:(id)sender {
+    [self configureView];
 }
 
 #pragma mark - Memory
