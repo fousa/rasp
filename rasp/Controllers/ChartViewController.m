@@ -59,6 +59,8 @@
     
     [self setViewControllers:browsers];
     self.selectedIndex = selectedBrowser;
+    
+    self.navigationItem.prompt = [NSString stringWithKey:@"text.leftright"];
 }
 
 - (NSArray *)chartsFor:(NSArray *)URLs {
@@ -100,12 +102,16 @@
     return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
+#pragma mark - View flow
+
 - (void)viewDidDisappear:(BOOL)animated {
     [photos release], photos = nil;
     self.chart = nil;
     self.country = nil;
     self.viewControllers = nil;
 }
+
+#pragma mark - Memory
 
 - (void)dealloc {
     [photos release], photos = nil;

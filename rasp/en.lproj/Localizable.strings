@@ -16,6 +16,7 @@
 "en.sheet.safari" = "Open in Safari";
 
 "en.text.select"       = "Choose a chart";
+"en.text.leftright"    = "Tap left/right on the chart to change time";
 
 "en.title.part.africa"       = "Africa";
 "en.title.part.australia"    = "Australia";
