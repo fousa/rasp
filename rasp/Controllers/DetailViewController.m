@@ -156,6 +156,12 @@
     if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
         ((UINavigationController *)self.selectedViewController).topViewController.navigationItem.leftBarButtonItem = _barButtonItem;
     }
+    
+    for (UINavigationController *navController in self.viewControllers) {
+        UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
+        navController.topViewController.navigationItem.rightBarButtonItem = refreshButton;
+        [refreshButton release];
+    }
 }
 
 - (void)updateTitle:(NSString *)aTitle andTabTitle:(NSString *)aTabTitle onBrowser:(MWPhotoBrowser *)browser {
@@ -186,11 +192,21 @@
     self.popoverController = nil;
 }
 
+#pragma mark - View flow
+
 - (void)viewDidUnload {
 	[super viewDidUnload];
 
 	self.popoverController = nil;
 }
+
+#pragma mark - Action
+
+- (void)refresh:(id)sender {
+    [self configureView];
+}
+
+#pragma mark - Memory
 
 - (void)dealloc {
     [_myPopoverController release];
