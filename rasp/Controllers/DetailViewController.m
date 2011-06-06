@@ -110,7 +110,6 @@
     }
     MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithPhotos:_photos andTimeStamps:_periods andTabTitle:[NSString stringWithKey:[NSString stringWithFormat:@"title.%@", aName]]];
     browser.day = aName;
-    [browser setInitialPageIndex:[_periods count]/2];
     browser.delegate = self;
     
     
@@ -161,6 +160,10 @@
         UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
         navController.topViewController.navigationItem.rightBarButtonItem = refreshButton;
         [refreshButton release];
+    
+        if ([navController.topViewController class] == [MWPhotoBrowser class] && self.chart.hasPeriods) {
+            [((MWPhotoBrowser *)navController.topViewController) setInitialPageIndex:[[self.chart.country periodsForDay:((MWPhotoBrowser *)navController.topViewController).day] count]/2];
+        }
     }
 }
 
@@ -203,7 +206,10 @@
 #pragma mark - Action
 
 - (void)refresh:(id)sender {
+    int _selectedIndex = self.selectedIndex;
     [self configureView];
+    
+    self.selectedIndex = _selectedIndex;
 }
 
 #pragma mark - Memory

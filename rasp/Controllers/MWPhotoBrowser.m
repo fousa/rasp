@@ -451,11 +451,13 @@
 #pragma mark Properties
 
 - (void)setInitialPageIndex:(int)index {
-    if (index < 0 || index >= photos.count) {
-        currentPageIndex = 0;
-    } else {
-        currentPageIndex = index;
-    }
+    //if (![self isViewLoaded]) {
+        if (index < 0 || index >= photos.count) {
+            currentPageIndex = 0;
+        } else {
+            currentPageIndex = index;
+        }
+    //}
 }
 
 @end

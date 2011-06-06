@@ -59,6 +59,12 @@
     
     [self setViewControllers:browsers];
     self.selectedIndex = selectedBrowser;
+    
+    for (MWPhotoBrowser *browser in self.viewControllers) {
+        if (self.chart.hasPeriods) {
+            [browser setInitialPageIndex:[[self.chart.country periodsForDay:browser.day] count]/2];
+        }
+    }
 }
 
 - (NSArray *)chartsFor:(NSArray *)URLs {
@@ -85,7 +91,7 @@
     }
     MWPhotoBrowser *browser = [[[MWPhotoBrowser alloc] initWithPhotos:_photos andTimeStamps:_periods andTabTitle:[NSString stringWithKey:[NSString stringWithFormat:@"title.%@", aName]]] autorelease];
     browser.day = aName;
-    [browser setInitialPageIndex:[_periods count]/2];
+//    [browser setInitialPageIndex:[_periods count]/2];
     browser.delegate = self;
     
     return browser;
@@ -120,7 +126,10 @@
 #pragma mark - Action
 
 - (void)refresh:(id)sender {
+    int _selectedIndex = self.selectedIndex;
     [self configureView];
+    
+    self.selectedIndex = _selectedIndex;
 }
 
 #pragma mark - Memory
