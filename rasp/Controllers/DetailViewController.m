@@ -160,10 +160,6 @@
         UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
         navController.topViewController.navigationItem.rightBarButtonItem = refreshButton;
         [refreshButton release];
-    
-        if ([navController.topViewController class] == [MWPhotoBrowser class] && self.chart.hasPeriods) {
-            [((MWPhotoBrowser *)navController.topViewController) setInitialPageIndex:[[self.chart.country periodsForDay:((MWPhotoBrowser *)navController.topViewController).day] count]/2];
-        }
     }
 }
 

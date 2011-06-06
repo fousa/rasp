@@ -59,12 +59,6 @@
     
     [self setViewControllers:browsers];
     self.selectedIndex = selectedBrowser;
-    
-    for (MWPhotoBrowser *browser in self.viewControllers) {
-        if (self.chart.hasPeriods) {
-            [browser setInitialPageIndex:[[self.chart.country periodsForDay:browser.day] count]/2];
-        }
-    }
 }
 
 - (NSArray *)chartsFor:(NSArray *)URLs {

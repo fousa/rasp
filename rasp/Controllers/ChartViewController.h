@@ -11,7 +11,7 @@
 #import "Chart.h"
 #import "Country.h"
 
-@interface ChartViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, MWPhotoBrowserDelegate>
+@interface ChartViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, MWPhotoBrowserDelegate, UITabBarControllerDelegate>
 @property (nonatomic, retain) Chart *chart;
 @property (nonatomic, retain) Country *country;
 
