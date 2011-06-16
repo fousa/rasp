@@ -126,6 +126,16 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
+			<string>uk</string>
+			<key>Title</key>
+			<string>United Kingdom</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
 			<string>westernswissalps</string>
 			<key>Title</key>
 			<string>Western Swiss Alps</string>
