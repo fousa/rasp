@@ -30,7 +30,7 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
-			<string>newsouthwales</string>
+			<string>nsw</string>
 			<key>Title</key>
 			<string>New South Wales</string>
 			<key>Type</key>
@@ -40,7 +40,17 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
-			<string>queensland</string>
+			<string>nt</string>
+			<key>Title</key>
+			<string>Northern Territory</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>qld</string>
 			<key>Title</key>
 			<string>Queensland</string>
 			<key>Type</key>
@@ -50,9 +60,39 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
-			<string>southaustralia</string>
+			<string>sa</string>
 			<key>Title</key>
 			<string>South Australia</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>tas</string>
+			<key>Title</key>
+			<string>Tasmania</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>vic</string>
+			<key>Title</key>
+			<string>Victoria</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>wa</string>
+			<key>Title</key>
+			<string>Western Australia</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>

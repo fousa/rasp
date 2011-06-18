@@ -8,9 +8,13 @@
 	</array>
 	<key>australia</key>
 	<array>
-		<string>southaustralia</string>
-		<string>queensland</string>
-		<string>newsouthwales</string>
+		<string>nsw</string>
+		<string>nt</string>
+		<string>qld</string>
+		<string>sa</string>
+		<string>tas</string>
+		<string>vic</string>
+		<string>wa</string>
 	</array>
 	<key>europe</key>
 	<array>

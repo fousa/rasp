@@ -38,6 +38,10 @@
 "en.title.country.avenal4km"          = "Avenal ~ 4km";
 "en.title.country.hilltown"           = "Hilltown";
 "en.title.country.swsouthafrica"      = "SW South-Africa";
-"en.title.country.southaustralia"     = "South Australia";
-"en.title.country.newsouthwales"      = "New South Wales";
-"en.title.country.queensland"         = "Queensland";
+"en.title.country.nt"                 = "Northern Territory";
+"en.title.country.sa"                 = "South Australia";
+"en.title.country.wa"                 = "Western Australia";
+"en.title.country.nsw"                = "New South Wales";
+"en.title.country.qld"                = "Queensland";
+"en.title.country.tas"                = "Tasmania";
+"en.title.country.vic"                = "Victoria";
