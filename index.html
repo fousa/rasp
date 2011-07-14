@@ -1,108 +1,183 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset='utf-8'>
-
-  <title>Rasp</title>
-
-  <style type="text/css">
-		* { padding: 0; margin: 0; }
-		body { font-family: "Trebuchet MS", Verdana, sans-serif; font-size: medium; background-color: #DDD; }
-
-		#container { width: 800px; margin: 0 auto; padding: 20px 0 20px 0; }
-		img { border: 0; }
-		h1 { font-size: 600%; color: #666; }
-		h1 a { color: #000; }
-		h1 img { border: none; }
-		.appstore { float: right; }
-		a { text-decoration: none; }
-		p { margin: 0 0 10px 0; font-family: Georgia, serif; font-size: 120%; line-height: 40px; color: #666; }
-		h2 { margin: 20px 0; color: #000; }
-		.download { margin: 20px; }
-		p a, li a { color: #000; text-decoration: none; }
-		li { list-style-type: none; font-size: 120%; font-family: Georgia, serif; line-height: 40px; color: #666; margin: 0 0 0 20px; }
-		.or { font-size: larger; margin: 0 1em; font-weight: bolder; position: relative; bottom: 20px; }
-
-  </style>
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-2750996-12']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		 })();
-
-	 </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>RASP</title>
+  <meta name="description" content="RASP (Regional Atmospheric Soaring Predictions) soaring weather charts for iPhone, iPod, iPhone and Android mobile devices.">
+  <meta name="author" content="Jelle Vandebeeck &amp; Simon Schoeters">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <!--[if lte IE8]>
+    <script src='javascripts/html5.js' type='text/javascript'></script>
+  <![endif]-->
 </head>
-
 <body>
-	<a href="http://github.com/fousa/rasp/tree/master"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" /></a>
-
-	<div id="container">
-		
-		<h1>
-			<a href="http://itunes.apple.com/us/app/rasp/id426040634?mt=8&ls=1" class="appstore"><img src="appstore.png" alt="Download at the iTunes App Store" /></a>
-			<a href="http://github.com/fousa/rasp/tree/master">RASP</a>
-		</h1>
-
-		<div class="description">
-<p>View the <abbr title="Regional Atmospheric Soaring Prediction">RASP<abbr> soaring weather charts on your iPhone or iPad.</p>
-
-<p>Can be very useful when you're on an airfield and want to check the soaring weather forecast for today.</p>
-
-<p>Scroll through the different hours of the day by swiping through the charts and check the forecast for tomorrow or the day after. Ow, and don't forget to pinch when you want to take a closer look.</p>
-
-<h2>Charts</h2>
-<ul>
-<li><a href="http://users.zsd.co.za/~ian2/rasp/">South-West South Africa</a></li>
-<li><a href="http://www.soaringmeteo.ch/ALPSRasp/ALPSRasp.html">Alps</a></li> 
-<li><a href="http://www.soaringmeteo.ch/WSAsRasp/WSAsRasp.html">Western Swiss Alps</a></li>
-<li><a href="http://rasp.kzc.nl/">Benelux</a></li>
-<li><a href="http://rasp.linta.de/GERMANY/index_en.html">Germany</a></li>
-<li><a href="http://www.norcalsoaring.org/BLIP/BYRON/index.html">Bryon</a></li>
-<li><a href="http://alcald.homelinux.org/RASP/AVENAL2/FCST/index.html">Avenal</a></li>
-<li><a href="http://www.soaringpredictor.info/rasptable/RASPtable.html">Southern California</a></li>
-<li>v1.2 - <a href="http://parool.ee/ilm/EESTID/RASPTable.html">Baltic Area</a></li>
-<li>v1.2 - <a href="http://rasp.kzc.nl/blois/index.php?Lang=En">North/Central France</a></li>
-<li>v1.2 - <a href="http://www.suio.fi/ennuste/slovakia">Slovakia</a></li>
-<li>v1.3 - <a href="http://www.turnpointsolutions.com/blipmaps/HILLTOWN/">Hilltown</a></li>
-<li>v1.3 - <a href="http://blipmap.walsys.net/UNI/univiewer.html">New South Wales</a></li>
-<li>v1.3 - <a href="http://glidingforecast.on.net/RASP/RASPtable.html">Queensland</a></li>
-<li>v1.3 - <a href="http://www.users.on.net/~dsg/HG/RASPTables.html">South Australia</a></li>
-<li>v1.4 - <a href="http://rasp.inn.leedsmet.ac.uk/RASPtable.html">United Kingdom</a></li>
-<li>v1.5 - <a href="http://blipmap.walsys.net/UNI/univiewer.html">New South Wales (updated)</a></li>
-<li>v1.5 - <a href="http://blipmap.walsys.net/UNI/univiewer.html">Northern Territory (updated)</a></li>
-<li>v1.5 - <a href="http://blipmap.walsys.net/UNI/univiewer.html">Queensland (updated)</a></li>
-<li>v1.5 - <a href="http://blipmap.walsys.net/UNI/univiewer.html">Tasmania (updated)</a></li>
-<li>v1.5 - <a href="http://blipmap.walsys.net/UNI/univiewer.html">Western Australia (updated)</a></li>
-<li>v1.5 - <a href="http://blipmap.walsys.net/UNI/univiewer.html">Victoria (updated)</a></li>
-<li>v1.5 - <a href="http://blipmap.walsys.net/UNI/univiewer.html">South Autralia (updated)</a></li>
-</ul>
-
-			<h2>Download</h2>
-			<p>You can download the application from the <a href="http://itunes.apple.com/us/app/rasp/id426040634?mt=8&ls=1">iTunes App Store</a> (recommended) or download the source code below or from <a href="http://github.com/fousa/rasp/tree/master">Github</a>.</p>
-			<p class="download">
-				<a href="http://itunes.apple.com/us/app/rasp/id426040634?mt=8&ls=1">
-					<img width="154" src="appstore.png" alt="Download at the iTunes App Store" /></a>
-				<span class="or">or</span>
-				<a href="http://github.com/fousa/rasp/zipball/master">
-					<img width="60" src="http://github.com/images/modules/download/zip.png"></a>
-				<a href="http://github.com/fousa/rasp/tarball/master">
-					<img width="60" src="http://github.com/images/modules/download/tar.png"></a>
-			</p>
-
-			<h2>Screenshots</h2>
-
-			<div><img src="screenshot.png" alt="Screenshots" /></div>
-
-			<h2>Devs</h2>
-			<ul>
-				<li><a href="http://www.fousa.be">Jelle Vandebeeck</a></li>
-			</ul>
-		</div>
-	</div>
+  <header>
+    <h1><abbr title="Regional Atmospheric Soaring Predicitions">RASP</abbr></h1>
+    <a href="https://market.android.com/details?id=be.suffix.rasp" class="store" title="Download RASP from the Android Market for free">
+      <img src="images/android.png" alt="Android" />
+      <span class="byline">Available on the</span><br />
+      <span class="name">Market</span>
+    </a>
+    <a href="http://itunes.apple.com/us/app/rasp/id426040634?mt=8&amp;ls=1" class="store" title="Download RASP from the App Store for free">
+      <img src="images/iphone.png" alt="iOS" />
+      <span class="byline">Available on the</span><br />
+      <span class="name">App Store</span>
+    </a>
+    <span id="downloads">Over 2800 downloads. 100% free.</span>
+  </header>
+  <div id="clouds">
+    <span id="cloud1"></span>
+    <span id="cloud2"></span>
+    <span id="cloud3"></span>
+    <span id="cloud4"></span>
+    <span id="cloud5"></span>
+    <span id="cloud6"></span>
+    <span id="cloud7"></span>
+    <span id="cloud8"></span>
+  </div>
+  <div id="main" role="main">
+    <section>
+      <p>So, you are a glider pilot on an airfield ready for takeoff, but what about the weather forcast for today? Or you are on your way home on a Friday evening wondering wether you have to wake up early this weekend, what will the weather be like tomorrow?</p>
+      <p class="headline">&ldquo;Soaring weather predications made easy for phones and tablets. Now available for iPod, iPhone and Android devices.&rdquo;</p>
+      <p><abbr title="Regional Atmospheric Soarding Predictions">RASP</abbr> is a simple mobile application for your smartphone or tablet. It's a simple way to flip through the <abbr title="Regional Atmospheric Soaring Predctions">RASP</abbr> charts for your region. Ow, and don't forget to pinch on a chart to take a closer look.</p>
+    </section>
+    <section>
+      <ul id="tabs">
+        <li id="iosTab" class="selected">
+          <span class="arrow"></span>
+          <a href="#ios">iOS</a>
+        </li>
+        <li id="androidTab">
+          <span class="arrow"></span>
+          <a href="#android">Android</a>
+        </li>
+      </ul>
+      <section id="ios">
+        <h2>iPhone, iPod &amp; iPad</h2>
+        <p class="screenshot">
+          <img src="images/screenshot-ios.png" alt="iOS screenshot" />
+        </p>
+        <h3>Download</h3>
+        <p>You can download <abbr title="Regional Atmospheric Soaring Predicitions">RASP</abbr> for your <strong>iPod</strong>, <strong>iPhone</strong> and <strong>iPad</strong> for <strong>free</strong> from the Apple <a href="http://itunes.apple.com/us/app/rasp/id426040634?mt=8&amp;ls=1" title="Download RASP from the App Store for free">App Store</a>. You can even take a look at the <a href="https://github.com/fousa/rasp" title="Fork this application on github">source code</a> if you are an iOS developer, patches are welcome!</p>
+        <h3>Charts</h3>
+        <p>Following regions are available in the iOS version. Charts are downloaded from their respective websites, make sure to pay them a visit and send them a thank you note.</p>
+        <h4>Africa</h4>
+        <ul class="regions">
+          <li><a href="http://users.zsd.co.za/~ian2/rasp/">South-West South Africa</a></li>
+        </ul>
+        <h4>Europe</h4>
+        <ul class="regions">
+          <li><a href="http://www.soaringmeteo.ch/ALPSRasp/ALPSRasp.html">Alps</a></li>
+          <li><a href="http://parool.ee/ilm/EESTID/RASPTable.html">Baltic Area</a></li>
+          <li><a href="http://rasp.kzc.nl/">Benelux</a></li>
+          <li><a href="http://rasp.linta.de/GERMANY/index_en.html">Germany</a></li>
+          <li><a href="http://rasp.kzc.nl/blois/index.php?Lang=En">North/Central France</a></li>
+          <li><a href="http://www.suio.fi/ennuste/slovakia">Slovakia</a></li>
+          <li><a href="http://rasp.inn.leedsmet.ac.uk/RASPtable.html">United Kingdom</a></li>
+          <li><a href="http://www.soaringmeteo.ch/WSAsRasp/WSAsRasp.html">Western Swiss Alps</a></li>
+        </ul>
+        <h4>United States</h4>
+        <ul class="regions">
+          <li><a href="http://alcald.homelinux.org/RASP/AVENAL2/FCST/index.html">Avenal</a></li>
+          <li><a href="http://www.norcalsoaring.org/BLIP/BYRON/index.html">Bryon</a></li>
+          <li><a href="http://www.turnpointsolutions.com/blipmaps/HILLTOWN/">Hilltown</a></li>
+          <li><a href="http://www.soaringpredictor.info/rasptable/RASPtable.html">Southern California</a></li>
+        </ul>
+        <h4>Australia</h4>
+        <ul class="regions">
+          <li><a href="http://blipmap.walsys.net/UNI/univiewer.html">New South Wales</a></li>
+          <li><a href="http://blipmap.walsys.net/UNI/univiewer.html">Northern Territory</a></li>
+          <li><a href="http://glidingforecast.on.net/RASP/RASPtable.html">Queensland</a></li>
+          <li><a href="http://www.users.on.net/~dsg/HG/RASPTables.html">South Australia</a></li>
+          <li><a href="http://blipmap.walsys.net/UNI/univiewer.html">Tasmania</a></li>
+          <li><a href="http://blipmap.walsys.net/UNI/univiewer.html">Victoria</a></li>
+          <li><a href="http://blipmap.walsys.net/UNI/univiewer.html">Western Australia</a></li>
+        </ul>
+      </section>
+      <section id="android">
+        <h2>Android</h2>
+        <p class="screenshot">
+          <img src="images/screenshot-android.png" alt="Android screenshot" />
+        </p>
+        <h3>Download</h3>
+        <p>You can download <abbr title="Regional Atmospheric Soaring Predicitions">RASP</abbr> for your <strong>Android</strong> smartphone for <strong>free</strong> from the Google <a href="https://market.android.com/details?id=be.suffix.rasp" title="Download RASP from the Android Market for free">Android Market</a>.</p>
+        <h3>Charts</h3>
+        <p>Following regions are available on the Android version. Charts are downloaded from their respective websites. Make sure to pay them a visit and send them a thank you note.</p>
+        <h4>Africa</h4>
+        <ul class="regions">
+          <li><a href="http://users.zsd.co.za/~ian2/rasp/">South-West South Africa</a></li>
+        </ul>
+        <h4>Europe</h4>
+        <ul class="regions">
+          <li><a href="http://www.soaringmeteo.ch/ALPSRasp/ALPSRasp.html">Alps</a></li>
+          <li><a href="http://parool.ee/ilm/EESTID/RASPTable.html">Baltic Area</a></li>
+          <li><a href="http://rasp.kzc.nl/">Benelux</a></li>
+          <li><a href="http://rasp.linta.de/GERMANY/index_en.html">Germany</a></li>
+          <li><a href="http://www.suio.fi/ennuste/slovakia">Slovakia</a></li>
+          <li><a href="http://rasp.inn.leedsmet.ac.uk/RASPtable.html">United Kingdom</a></li>
+          <li><a href="http://www.soaringmeteo.ch/WSAsRasp/WSAsRasp.html">Western Swiss Alps</a></li>
+        </ul>
+        <h4>United States</h4>
+        <ul class="regions">
+          <li><a href="http://alcald.homelinux.org/RASP/AVENAL2/FCST/index.html">Avenal</a></li>
+          <li><a href="http://www.norcalsoaring.org/BLIP/BYRON/index.html">Bryon</a></li>
+          <li><a href="http://www.turnpointsolutions.com/blipmaps/HILLTOWN/">Hilltown</a></li>
+          <li><a href="http://www.soaringpredictor.info/rasptable/RASPtable.html">Southern California</a></li>
+        </ul>
+        <h4>Australia</h4>
+        <ul class="regions">
+          <li><a href="http://blipmap.walsys.net/UNI/univiewer.html">New South Wales</a></li>
+          <li><a href="http://blipmap.walsys.net/UNI/univiewer.html">Northern Territory</a></li>
+          <li><a href="http://glidingforecast.on.net/RASP/RASPtable.html">Queensland</a></li>
+          <li><a href="http://www.users.on.net/~dsg/HG/RASPTables.html">South Australia</a></li>
+          <li><a href="http://blipmap.walsys.net/UNI/univiewer.html">Tasmania</a></li>
+          <li><a href="http://blipmap.walsys.net/UNI/univiewer.html">Victoria</a></li>
+          <li><a href="http://blipmap.walsys.net/UNI/univiewer.html">Western Australia</a></li>
+        </ul>
+      </section>
+    </section>
+  </div>
+  <footer>
+    <p>The original idea, <a href="http://rasp.heroku.com" title="RASP public API"><abbr title="Application Programming Interface">API</abbr></a> and iOS application are from <span class="vcard"><a class="url fn" href="http://www.fousa.be">Jelle Vandebeeck</a></span>. The Android application is mainained by <span class="vcard"><a class="url fn" href="http://www.suffix.be">Simon Schoeters</a></span>.</p>
+  </footer>
+  <script src="javascripts/zepto.min.js" type="text/javascript"></script>
+  <script>
+    var iosPane     = $('#ios');
+    var androidPane = $('#android');
+    var iosTab      = $('#iosTab');
+    var androidTab  = $('#androidTab');
+    function getURLTarget() {
+      var url        = decodeURI(window.location);
+      var indexPound = url.indexOf("#");
+      if (indexPound >= 0) {
+        return url.substring(indexPound);
+      }
+    }
+    function show(tab, pane) {
+      tab.addClass('selected');
+      pane.show();
+    }
+    function hide(tab, pane) {
+      tab.removeClass('selected');
+      pane.hide();
+    }
+    function activate(target) {
+      if (target == '#android') {
+        hide(iosTab, iosPane);
+        show(androidTab, androidPane);
+      } else {
+        show(iosTab, iosPane);
+        hide(androidTab, androidPane);
+      }
+    }
+    $("#tabs li").bind('click', function(event){
+      var target = $(event.target).get(0);
+      activate(target.hash);
+    });
+    var anchor = getURLTarget();
+    activate(anchor);
+  </script>
 </body>
 </html>
