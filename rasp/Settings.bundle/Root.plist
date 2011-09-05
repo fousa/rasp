@@ -136,6 +136,16 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
+			<string>finland</string>
+			<key>Title</key>
+			<string>Finland</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
 			<string>centralfrance</string>
 			<key>Title</key>
 			<string>North/Central France</string>
