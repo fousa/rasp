@@ -9,11 +9,11 @@
 #warning "This project uses features only available in iPhone SDK 3.0 and later."
 #endif
 
-#if TARGET_IPHONE_SIMULATOR
-#define BASE_URL @"http://rasp.dev/"
-#else
+//#if TARGET_IPHONE_SIMULATOR
+//#define BASE_URL @"http://localhost:4567/"
+//#else
 #define BASE_URL @"http://rasp.heroku.com/"
-#endif
+//#endif
 
 #define TINT_COLOR [UIColor colorWithRed:.209882 green:.459732 blue:.75887 alpha:1]
 

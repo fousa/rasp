@@ -166,6 +166,16 @@
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>
+			<string>blackforest</string>
+			<key>Title</key>
+			<string>Black Forest</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
 			<string>jaca</string>
 			<key>Title</key>
 			<string>Pyrenees</string>
